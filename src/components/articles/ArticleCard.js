@@ -1,0 +1,1 @@
+// returns HTML for individual Articles (cards)
