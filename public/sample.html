@@ -1,0 +1,143 @@
+// USE THESE SAMPLES IN JS HTML CONVERTERS
+
+// WHERE EVER THERE IS BOTH AN ID AND A CLASS FOR A SINGLE DIV...
+//...IDS ARE DESIGNED TO HOLD INTERPOLATIONS OF UNIQUE IDENTIFIERS WHILE CLASSES ARE USED FOR CSS PURPOSES.
+
+
+<!-- USER INFO DISPLAY HTML -->
+<div class="user__profilePicture">
+    <img class="mainUserImage" src="/images/userIcon.png">
+</div>
+<div class="user__userName">
+    <p>${users.userName} <sup>&#8226;</sup></p>
+</div>
+
+
+
+<!-- USER TASK DISPLAY -->
+<div id="task__${tasks.id}" class="singleTask">
+    <div class="task__header">
+        <div class="completeBy">
+            <p>Complete by: ${tasks.expectedCompletionDate}</p>
+        </div>
+        <div class="taskDeleteButton">
+            <button id="deleteTask__${obj.id}" class="deleteBtn" type="button">&times;</button>
+        </div>
+    </div> 
+    <div class="taskBody">
+        <div class="task__checkbox">
+            <input type="checkbox" class="checkbox">
+        </div>
+        <div class="task__description">
+            <h3>${tasks.title}</h3>
+        </div>   
+    </div>
+</div>
+
+// NOTE: USE TASK CHECKBOX TO TOGGLE THE TASKS.COMPLETE BOOLEAN.
+
+
+
+<!-- CHAT LOG MESSAGE DISPLAY -->
+<div id="chat__${obj.id}" class="singleChat">
+    <div class="chatFloat__left">
+        <div class="chat__profilePicture">
+            <img class="chat__userImage" src="/images/userIcon.png">
+        </div>
+    </div>
+    <div class="chatFloat__middle">
+        <div class="chatAbove__userName">
+            <h4>${obj.users.username}</h4>
+        </div>
+        <div class="chatBelow__message">
+            <p class="chat__text">
+                ${obj.content}
+            </p>
+        </div>
+    </div>
+    <div class="chatFloat__right">
+        <div class="chat__date">
+            <div class="chatDate__container">
+                <p class="chatData__text">${obj.date}</p>
+            </div>
+        </div>
+        <div class="chat__buttonContainer">
+            <div class="chatEditButton">
+                <button id="editChat__${obj.id}" class="chat__editBtn" type="button">Edit</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- ARTICLE HTML DISPLAY -->
+<div id="article__${obj.id}" class="singleArticle">
+    <div class="article__header">
+        <div class="nameDate">
+            <div class="article__user">
+            ${obj.users.username}
+            </div>
+            <div class="article__date">
+                ${obj.date}
+            </div>
+        </div>        
+        <div class="article__deleteButton">
+            <button id="deleteArticle__${obj.id}" class="deleteBtn" type="button">&times;</button>
+        </div>
+    </div>
+    <div class="articleTitle">
+        <h3>
+            <a href="${articles.url}" alt="${articles.title}">${obj.title}</a>
+        </h3>
+    </div>
+    <div class="article__description">
+        <p>${obj.description}</p>
+    </div>
+</div>
+
+
+
+<!-- EVENT HTML DISPLAY -->
+<div id="event__${obj.id}" class="singleEvent">
+    <div class="event__header">
+    <div class="event__name">
+        <h4>${obj.title}</h4>
+        <button id="deleteEvent__${obj.id}" class="deleteBtn" type="button">&times;</button>
+        </div>    
+    </div>
+    <div class="event__details">
+        <dl>
+            <dt>HOST</dt>
+                <dd>${obj.user.userId}</dd>
+            <dt>WHEN</dt>
+                <dd>${obj.date}</dd>
+            <dt>WHERE</dt>
+                <dd>${obj.location}</dd>
+        </dl>
+    </div>
+</div>
+
+
+
+<!-- FRIEND HTML DISPLAY -->
+<div id="friend__${obj.id}" class="singleFriend">
+    <div class="friend__userDetails">
+        <img class="friend__userImage" src="/images/userIcon.png">
+        <div class="friend__name">
+            ${obj.userId}
+        </div>
+    </div>
+    <div class="friendsList__deleteBtn">
+        <button id="deleteFriend__${obj.id}" class="deleteBtn" type="button">&times;</button>
+    </div>
+</div>
+
+
+
+
+
+</article>
+
+<!-- LOGIN ELEMENT -->
+
