@@ -1,10 +1,8 @@
 import React from "react";
-import { Route } from "react-router-dom";
-// import Login from "./auth/Login"
-// import Home from "./home/Home"
-
-//Message Imports
-import MessageList from './components/messages/MessageList';
+import { Route, Redirect } from "react-router-dom";
+import Home from "./components/home/Home";
+import Login from "./components/auth/Login";
+import MessageList from "./components/messages/MessageList";
 
 //Article Imports
 import ArticleList from './components/articles/ArticleList';
@@ -19,35 +17,31 @@ import ArticleList from './components/articles/ArticleList';
 // import FriendList from './components/friends/FriendList';
 
 
-const ApplicationViews = () => {
+const ApplicationViews = (props) => {
+
+    const hasUser = props.hasUser;
+    const setUser = props.setUser;
+
     return (
       <React.Fragment>
-        {/* LOGIN ROUTES */}
-        {/* <Route 
-          path="/login" 
-          render={props => {
-            return <Login 
-            // setUser={setUser} 
-            {...props} />
-        }} /> */}
+        <Route path="/login" render={props => {
+            return <Login setUser={setUser} {...props} />
+        }} />
 
-        {/* HOME ROUTES */}
-        {/* <Route
-          exact
-          path="/"
-          render={props => {
-            return <Home />;
-        }}
-        /> */}
+        <Route exact path="/"
+        render={props => {
+          return <Home {...props} />
+        }} />
 
-        {/* MESSAGE ROUTES */}
         <Route
-          exact
-          path="/messages"
+          exact path="/messages"
           render={props => {
+              if (hasUser) {
               return <MessageList {...props} />
-        }}
-        />
+              } else {
+                  return <Redirect to="/login" />  
+              }
+          }} />
 
         {/* ARTICLE ROUTES */}
         <Route
