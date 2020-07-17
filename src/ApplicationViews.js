@@ -6,6 +6,7 @@ import MessageList from "./components/messages/MessageList";
 
 //Article Imports
 import ArticleList from './components/articles/ArticleList';
+import ArticleForm from './components/articles/ArticleForm'
 
 //Event Imports
 // import EventList from './components/events/EventList';
@@ -51,6 +52,13 @@ console.log(props)
           path="/articles"
           render={props => {
               return <ArticleList {...props} />
+        }}
+        />
+        <Route
+          exact
+          path="/articles/new"
+          render={props => {
+              return <ArticleForm {...props} />
         }}
         />
 
