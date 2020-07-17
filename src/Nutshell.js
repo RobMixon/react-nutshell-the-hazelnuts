@@ -1,14 +1,30 @@
-import React from "react";
+import React, { useState } from "react";
+import NavBar from "./components/nav/NavBar";
 import ApplicationViews from "./ApplicationViews";
-import NavBar from "./components/nav/NavBar"
+import "./Nutshell.css";
 
-const Nutshell = () => {
-    return (
-        <>
-            <NavBar />
-            <ApplicationViews />
-        </>
-    )
-}
+const NutShell = () => {
 
-export default Nutshell
+  const isAuthenticated = () => sessionStorage.getItem("credentials") !== null;
+
+  const clearUser = () => {
+    sessionStorage.clear()
+    setHasUser(isAuthenticated())
+  }
+
+  const [hasUser, setHasUser] = useState(isAuthenticated());
+
+  const setUser = user => {
+    sessionStorage.setItem("credentials", JSON.stringify(user));
+    setHasUser(isAuthenticated());
+  };
+
+  return (
+    <>
+      <NavBar hasUser={hasUser} clearUser={clearUser} />
+      <ApplicationViews hasUser={hasUser} setUser={setUser} />
+    </>
+  );
+};
+
+export default NutShell;
