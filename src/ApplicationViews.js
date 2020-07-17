@@ -12,7 +12,7 @@ import ArticleForm from './components/articles/ArticleForm'
 // import EventList from './components/events/EventList';
 
 //Task Imports
-// import TaskList from './components/tasks/TaskList';
+import TaskList from './components/tasks/TaskList';
 
 //Friends Imports
 // import FriendList from './components/friends/FriendList';
@@ -20,6 +20,7 @@ import ArticleForm from './components/articles/ArticleForm'
 
 const ApplicationViews = (props) => {
 
+console.log(props)
     const hasUser = props.hasUser;
     const setUser = props.setUser;
 
@@ -71,13 +72,13 @@ const ApplicationViews = (props) => {
         /> */}
 
         {/* TASK ROUTES */}
-        {/* <Route
+        <Route
           exact
           path="/tasks"
           render={props => {
               return <TaskList {...props} />
         }}
-        /> */}
+        />
 
         {/* FRIEND ROUTE */}
         {/* <Route
