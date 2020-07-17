@@ -23,7 +23,8 @@ const ArticleForm = props => {
       window.alert("Please input an animal name and breed");
     } else {
       setIsLoading(true);
-      currentDateTime(article.date);
+      const timestamp = Date.now()
+      article.date = currentDateTime(timestamp);
       article.userId= 1;
       ArticleManager.postArticle(article)
         .then(() => props.history.push("/articles"));
