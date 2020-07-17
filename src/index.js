@@ -1,12 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import Nutshell from './components/Nutshell';
+// import Nutshell from './Nutshell';
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
   <React.StrictMode>
-    <Nutshell />
+    {/* <Nutshell /> */}
   </React.StrictMode>,
   document.getElementById('root')
 );
