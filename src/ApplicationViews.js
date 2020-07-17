@@ -33,14 +33,15 @@ const ApplicationViews = (props) => {
           return <Home {...props} />
         }} />
 
+        {/* MESSAGE ROUTES */}
         <Route
           exact path="/messages"
           render={props => {
-              if (hasUser) {
+            if (hasUser) {
               return <MessageList {...props} />
-              } else {
-                  return <Redirect to="/login" />  
-              }
+            } else {
+              return <Redirect to="/login" />  
+            }
           }} />
 
         {/* ARTICLE ROUTES */}

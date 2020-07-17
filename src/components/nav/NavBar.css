@@ -1,5 +1,6 @@
-small {
-  font-size: 75%;
+h2 {
+  font-size: 100%;
+  margin-top: 0;
 }
 
 header {
@@ -9,8 +10,22 @@ header {
 
 .site-title {
   color: ghostwhite;
+  display: flex;
+  flex-direction: column;
   text-align: center;
+  align-items: center;
 }
+
+picture {
+  width: 20%;
+  height: auto;
+  margin-top: 20px;
+}
+
+/* .bannerLogo {
+  width: 20%;
+  height: auto;
+} */
 
 nav .container {
   display: flex;
@@ -22,7 +37,7 @@ nav .container li {
   flex: 1;
   padding: 10px;
   text-align: center;
-  font-size: 1.5em;
+  font-size: 1.15em;
   color: silver;
   box-sizing: border-box;
   background-color: lightgrey;

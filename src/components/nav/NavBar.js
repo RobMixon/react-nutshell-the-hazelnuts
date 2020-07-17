@@ -11,11 +11,13 @@ const NavBar = props => {
 
   return (
     <header>
-      <h1 className="site-title">
-        Nutshell
+      <div className="site-title">
+        <picture>
+          <img src="./nutshell2logo.png" alt="logo" className="bannerLogo" />
+        </picture>
         <br />
-        <small>A Website for Chit Chat and Pictures of what you ate last night.</small>
-      </h1>
+        <h2>A Website for Chit Chat and Pictures of what you ate last night.</h2>
+      </div>
       <nav>
         <ul className="container">
           <li>
