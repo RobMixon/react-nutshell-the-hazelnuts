@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import NavBar from "./nav/NavBar";
+import NavBar from "./components/nav/NavBar";
 import ApplicationViews from "./ApplicationViews";
-import "./NutShell.css";
+import "./Nutshell.css";
 
 const NutShell = () => {
 
