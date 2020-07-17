@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import { currentDateTime } from "../modules/helperFunctions";
 
 const ArticleCard = (props) => {
@@ -25,9 +24,9 @@ const ArticleCard = (props) => {
       </div>
       <div className="articleTitle">
           <h3>
-            <Link to={props.article.url}>
+            <a rel="noopener noreferrer" href ={props.article.url} target="_blank">
               {props.article.title}
-            </Link>
+            </a>
           </h3>
       </div>
       <div className="article__description">
