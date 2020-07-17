@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from "react";
 import MessageManager from "../modules/MessageManager";
 
-
-
 const MessageForm = props => { 
     //need to add userId: sessionStorage.getItem("credentials", parseInt(....))
     //date will be converted in MessageCard
@@ -10,11 +8,16 @@ const MessageForm = props => {
     //initally button will not be disabled because nothing will be loading
     const [isLoading, setIsLoading] = useState(false)
     
-
     const handleFieldChange = event => {
         const stateToChange = {...message}
         stateToChange[event.target.id] = event.target.value
         setMessage(stateToChange)
+    }
+
+    //logic for submit or edit
+    const handleSubmitButton = event => {
+        event.preventDefault();
+        
     }
 
     useEffect(() => {
@@ -31,13 +34,23 @@ const MessageForm = props => {
             setIsLoading(true);
             MessageManager.postMessage(message)
             .then(() => {
-                MessageManager.getWithUser()
-                setMessage(message)
+                // //need to getMessages again
+                // MessageManager.getWithUser()
+                // setMessage(message)
             })
             //to get sent to same page in message list?
             // window.location.reload(true)
         }
     };
+
+
+    useEffect(() => {
+        MessageManager.getMessage(props.match.params.messageId)
+        .then((message) => {
+            setMessage(message)
+            setIsLoading(false)
+        })
+    }, [props.match.params.messageId]);
 
     return(
         <>
@@ -56,7 +69,7 @@ const MessageForm = props => {
                 <button
                     type="button"
                     disabled={isLoading}
-                    onClick={postNewMessage}>
+                    onClick={handleSubmitButton}>
                         Enter
                 </button> 
                         

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import MessageManager from "../modules/MessageManager";
 import MessageCard from "./MessageCard";
 import MessageForm from "./MessageForm";
+import MessageEditForm from "./MessageEditForm";
 
 
 const MessageList = (props) => {
@@ -22,14 +23,23 @@ const MessageList = (props) => {
         getMessages();
     }, []);
 
+    //trying code to edit --delete below if not working
+    const updateExistingMessage = () => {
+        return (
+            <MessageForm />
+        )
+    }
+    //end delete
+
     return (
         <>
         <div>
-        <MessageForm {...props} />
+        <MessageForm {...props} editForm={updateExistingMessage} />
         </div>
         <div className="container-cards">
             {messages.map(message => <MessageCard key={message.id}
                                                   message={message}
+                                                  editForm={updateExistingMessage}
                                                   {...props} 
                                                   />  )} 
         </div>

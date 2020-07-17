@@ -33,13 +33,40 @@ const MessageEditForm = (props) => {
     }
 
     useEffect(() => {
-        MessageManager.get(props.match.params.messageId)
+        MessageManager.getMessage(props.match.params.messageId)
         .then((message) => {
             setMessage(message)
             setIsLoading(false)
         })
     }, [props.match.params.messageId]);
 
+   return (
+    <>
+    <form>
+        <fieldset>
+            <label htmlFor="content">Start A Chat</label>
+            <input name="content"  
+                type="text"
+                required
+                onChange={handleFieldChange}
+                id="content"
+                autoFocus
+                spellCheck={true}
+                >
+            </input>
+            <button
+                type="button"
+                disabled={isLoading}
+                onClick={updateExistingMessage}>
+                    Enter
+            </button> 
+                    
+        </fieldset>
+    </form>
    
+    </>
+   )
 
 }
+
+export default MessageEditForm;

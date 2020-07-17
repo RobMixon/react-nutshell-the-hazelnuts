@@ -49,8 +49,8 @@
             <button 
                 className="chat__editBtn" 
                 type="button"
-                // onClick={} --need to send current message back to form on same or different page? and allow user to edit and submit again..
-                >
+                //trying code- delete if not working
+                onClick={() => props.updateExistingMessage}>
                 Edit
                 </button>} 
                 
