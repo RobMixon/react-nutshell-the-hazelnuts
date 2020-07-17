@@ -16,6 +16,7 @@ const MessageForm = props => {
 
     //logic for submit or edit
     const handleSubmitButton = event => {
+        const stateToChange = {...message,}
         event.preventDefault();
         
     }
