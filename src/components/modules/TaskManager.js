@@ -1,7 +1,7 @@
-taskUrl = "http://localhost:5002/"
+const taskUrl = "http://localhost:5002/"
 
-TaskManager = {
-    getAll = () => {
+const TaskManager = {
+    getAll() {
         return (fetch (`${taskUrl}/tasks`).then((task) => {
            task.json() 
         }) )

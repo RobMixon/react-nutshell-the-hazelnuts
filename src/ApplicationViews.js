@@ -13,7 +13,7 @@ import MessageList from './components/messages/MessageList';
 // import EventList from './components//event/EventList';
 
 //Task Imports
-// import TaskList from './components//task/TaskList';
+ import TaskList from './components/tasks/TaskList';
 
 //Friends Imports
 // import FriendList from './components//friend/FriendList';
@@ -68,13 +68,13 @@ const ApplicationViews = () => {
         /> */}
 
         {/* TASK ROUTES */}
-        {/* <Route
+        <Route
           exact
           path="/tasks"
           render={props => {
               return <TaskList {...props} />
         }}
-        /> */}
+        />
 
         {/* FRIEND ROUTE */}
         {/* <Route
