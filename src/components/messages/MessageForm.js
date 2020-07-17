@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import MessageManager from "../modules/MessageManager";
-import MessageList from "./MessageList"; 
+
 
 
 const MessageForm = props => { 
@@ -9,12 +9,17 @@ const MessageForm = props => {
     const [message, setMessage] = useState({userId: 1, date: new Date() , content:""});
     //initally button will not be disabled because nothing will be loading
     const [isLoading, setIsLoading] = useState(false)
+    
 
     const handleFieldChange = event => {
         const stateToChange = {...message}
         stateToChange[event.target.id] = event.target.value
         setMessage(stateToChange)
     }
+
+    useEffect(() => {
+       MessageManager.getWithUser()
+    }, []);
 
     const postNewMessage = event => {
         event.preventDefault();
@@ -27,9 +32,10 @@ const MessageForm = props => {
             MessageManager.postMessage(message)
             .then(() => {
                 MessageManager.getWithUser()
+                setMessage(message)
             })
             //to get sent to same page in message list?
-           
+            // window.location.reload(true)
         }
     };
 
