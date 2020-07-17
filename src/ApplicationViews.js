@@ -13,6 +13,13 @@ const ApplicationViews = () => {
         }}
         />
         </>
+
+
+
+
+
+        // Tasks views
+        
     )
 };
 
