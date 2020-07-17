@@ -9,7 +9,7 @@ import TaskList from './components/tasks/TaskList';
 
 const ApplicationViews = (props) => {
 
-
+console.log(props)
     const hasUser = props.hasUser;
     const setUser = props.setUser;
 
