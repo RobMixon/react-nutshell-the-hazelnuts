@@ -64,13 +64,13 @@ console.log(props)
         /> */}
 
         {/* TASK ROUTES */}
-        {/* <Route
+        <Route
           exact
           path="/tasks"
           render={props => {
               return <TaskList {...props} />
         }}
-        /> */}
+        />
 
         {/* FRIEND ROUTE */}
         {/* <Route
