@@ -40,8 +40,6 @@ const MessageEditForm = (props) => {
         })
     }, [props.match.params.messageId]);
 
-    return (
-        
-    )
+   
 
 }
