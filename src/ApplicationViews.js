@@ -7,16 +7,16 @@ import { Route } from "react-router-dom";
 import MessageList from './components/messages/MessageList';
 
 //Article Imports
-// import ArticleList from './components//article/ArticleList';
+import ArticleList from './components/articles/ArticleList';
 
 //Event Imports
-// import EventList from './components//event/EventList';
+// import EventList from './components/events/EventList';
 
 //Task Imports
-// import TaskList from './components//task/TaskList';
+// import TaskList from './components/tasks/TaskList';
 
 //Friends Imports
-// import FriendList from './components//friend/FriendList';
+// import FriendList from './components/friends/FriendList';
 
 
 const ApplicationViews = () => {
@@ -50,13 +50,13 @@ const ApplicationViews = () => {
         />
 
         {/* ARTICLE ROUTES */}
-        {/* <Route
+        <Route
           exact
           path="/articles"
           render={props => {
               return <ArticleList {...props} />
         }}
-        /> */}
+        />
 
         {/* EVENT ROUTES */}
         {/* <Route
