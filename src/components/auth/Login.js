@@ -3,8 +3,8 @@ import React, { useState } from "react"
 const Login = props => {
   console.log(props)
 
-  const [credentials, setCredentials] = useState({ email: "", password: "", id: 1 });
-
+  const [credentials, setCredentials] = useState({ email: "", password: ""});
+  console.log(props.match.params.id)
   // Update state whenever an input field is edited
   const handleFieldChange = (evt) => {
     const stateToChange = { ...credentials };

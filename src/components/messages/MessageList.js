@@ -6,6 +6,7 @@ import MessageEditForm from "./MessageEditForm";
 
 
 const MessageList = (props) => {
+    const setUser = props.setUser
     //declaring initial state as empty array
     const [messages, setMessages] = useState([])
 
@@ -39,6 +40,7 @@ const MessageList = (props) => {
         <div className="container-cards">
             {messages.map(message => <MessageCard key={message.id}
                                                   message={message}
+                                                  setUser={setUser}
                                                   editForm={updateExistingMessage}
                                                   {...props} 
                                                   />  )} 

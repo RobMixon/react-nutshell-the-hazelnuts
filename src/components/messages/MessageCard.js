@@ -2,7 +2,9 @@
   import { currentDateTime } from "../modules/helperFunctions";
 
   const MessageCard = props => {
-
+    const hasUser = props.hasUser
+    const setUser = props.setUser
+    console.log(setUser)
     return (
         <>
         <div className="singleChat">
@@ -31,7 +33,7 @@
 
         {/* added add friend button if not the current user (should this be username?) */}
             <div className="chatAddFriendButton">
-                {props.message.userId === 1 ? null : 
+                {setUser() ? null : 
                 <button
                 className="chat__addFriendBtn"
                 type="button"
@@ -52,7 +54,7 @@
                 //trying code- delete if not working
                 onClick={() => props.updateExistingMessage}>
                 Edit
-                </button>} 
+            </button>} 
                 
             </div>
         </div>

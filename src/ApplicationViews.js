@@ -38,7 +38,7 @@ const ApplicationViews = (props) => {
           exact path="/messages"
           render={props => {
             if (hasUser) {
-              return <MessageList {...props} />
+              return <MessageList {...props} hasUser={hasUser} setUser={setUser} />
             } else {
               return <Redirect to="/login" />  
             }
