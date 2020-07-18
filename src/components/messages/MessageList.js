@@ -2,7 +2,8 @@ import React, { useEffect, useState } from "react";
 import MessageManager from "../modules/MessageManager";
 import MessageCard from "./MessageCard";
 import MessageForm from "./MessageForm";
-import UserCard from "../auth/UserCard"
+import UserCard from "../auth/UserCard";
+import NavBar from "../nav/NavBar";
 
 
 const MessageList = (props) => {
@@ -19,12 +20,22 @@ const MessageList = (props) => {
         })
     };
 
-    useEffect(() => {
-        getMessages();
-    }, []);
+    const isAuthenticated = () => sessionStorage.getItem("credentials") !== null;
+
+    const clearUser = () => {
+        sessionStorage.clear()
+        setHasUser(isAuthenticated())
+    }
+
+    const [hasUser, setHasUser] = useState(isAuthenticated());
+
+        useEffect(() => {
+            getMessages();
+        }, []);
 
     return (
         <>
+            <NavBar hasUser={hasUser} clearUser={clearUser} />
             <main className="chatContainer"> 
                 <section className="chatContainer__left">
                     <UserCard />

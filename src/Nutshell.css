@@ -53,3 +53,7 @@ img {
   flex-wrap: wrap;
   justify-content: space-between;
 }
+
+.mainFlex {
+  display: flex;
+}

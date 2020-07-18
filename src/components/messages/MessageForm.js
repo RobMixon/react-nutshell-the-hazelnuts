@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import MessageManager from "../modules/MessageManager";
-
+import { currentDateTime } from "../modules/helperFunctions";
 
 
 const MessageForm = props => { 
@@ -24,6 +24,8 @@ const MessageForm = props => {
            
             //this will be in process of submitting new message so do not want user to keep clicking submit button
             setIsLoading(true);
+            const timestamp = Date.now()
+            message.date = currentDateTime(timestamp);
             MessageManager.postMessage(message)
             .then(() => {
                 MessageManager.getWithUser()
@@ -53,6 +55,7 @@ const MessageForm = props => {
                                     required
                                     onChange={handleFieldChange}
                                     id="content"
+                                    placeholder="Get to gettin' and write something..."
                                     autoFocus
                                     spellCheck={true}
                                     >

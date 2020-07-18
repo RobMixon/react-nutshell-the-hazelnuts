@@ -1,5 +1,4 @@
   import React from "react";
-  import { currentDateTime } from "../modules/helperFunctions";
 
   const MessageCard = props => {
 
@@ -35,7 +34,7 @@
             <div className="chatCard__right">
                 <div className="chat__date">
                     <div className="chatDate__container">
-                        <p className="chatDate__text">{currentDateTime(props.message.date)}</p>
+                        <p className="chatDate__text">{props.message.date}</p>
                     </div>
                 </div>
                 <div className="chat__buttonContainer">

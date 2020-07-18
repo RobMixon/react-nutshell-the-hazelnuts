@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import ArticleCard from './ArticleCard';
 import ArticleManager from "../modules/ArticleManager";
+import NavBar from "../nav/NavBar";
 
 
 const ArticleList = (props) => {
@@ -25,10 +26,19 @@ const ArticleList = (props) => {
     getArticles();
   }, []);
 
+  const isAuthenticated = () => sessionStorage.getItem("credentials") !== null;
+
+  const clearUser = () => {
+    sessionStorage.clear()
+    setHasUser(isAuthenticated())
+  }
+
+  const [hasUser, setHasUser] = useState(isAuthenticated());
+
   // Finally we use map() to "loop over" the articles array to show a list of article cards
   return (
     <>
-    
+      <NavBar hasUser={hasUser} clearUser={clearUser} />
       <section className="section-content">
         <button type="button"
             className="admitbtn"

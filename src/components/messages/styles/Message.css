@@ -7,13 +7,11 @@
 }
 
 .chatContainer__left {
-  border: 1px solid blue;
   width: 18%;
   margin: 10px 20px 0 5px;
 }
 
 .chatContainer__middle {
-  border: 1px solid red;
   width: 60%;
   margin: 10px 20px 0 0;
   padding: 10px 20px

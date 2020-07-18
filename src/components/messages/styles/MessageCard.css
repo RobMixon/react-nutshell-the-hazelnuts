@@ -1,18 +1,20 @@
 .chatLog__container {
-  padding: 5px 10px 10px; 
-  background-color: #373737;
+  padding: 5px 0 10px; 
+  /* background-color: #373737; */
   border-radius: 3px;
+  margin-top: 20px;
 }
 
 .chatLog__container > h3 {
   margin: 0 0 5px 0;
-  color: whitesmoke;
+  color: #373737;
+  border-bottom: #373737 solid 1px;
 }
 
 .chatLog {
-  background-color: white;
-  padding: 0 10px;
-  height: 250px;
+  margin-left: 0;
+  padding: 0 10px 0 0;
+  height: 350px;
   overflow-y: scroll;
   overflow-x: hidden;
 }
@@ -42,8 +44,9 @@
   display: flex;
   flex-direction: row;
   background-color: whitesmoke;
-  border-radius: 5px;
-  margin: 10px;
+  border-radius: 2px;
+  margin: 10px 10px 10px 0;
+  box-shadow: 2px 2px 4px #302e2ece;
 }
 
 .chatCard__left {
@@ -99,3 +102,6 @@
   font-size: 12px;
 }
 
+.chatEditButton {
+  margin-bottom: 5px;
+}
