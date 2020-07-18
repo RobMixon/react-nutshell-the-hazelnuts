@@ -39,7 +39,7 @@ const MessageForm = props => {
         <>
             <div className="messageForm">
                 <div className="messageForm__title">
-                    <h3>WRITE A MESSAGE</h3>
+                    <h3>Write A Message</h3>
                 </div>
                 <div className="messageForm__container">
                     <div className="messageForm__profilePicture">

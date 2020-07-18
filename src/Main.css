@@ -4,4 +4,5 @@
 /* CSS */
 @import "./components/auth/styles/User.css";
 @import "./components/messages/styles/Message.css";
-@import "./Button.css"
+@import "./components/friends/Friend.css";
+@import "./Button.css";

@@ -1,23 +1,9 @@
 @import "./MessageForm.css";
 @import "./MessageCard.css";
 
+
 .chatContainer {
-  display: flex;
-  flex-direction: row;
-}
-
-.chatContainer__left {
-  width: 18%;
-  margin: 10px 20px 0 5px;
-}
-
-.chatContainer__middle {
-  width: 60%;
+  width: 65%;
   margin: 10px 20px 0 0;
-  padding: 10px 20px
-}
-
-.chatContainer__right {
-  border: 1px solid green;
-  width: 22%;
+  padding: 10px 100px;
 }

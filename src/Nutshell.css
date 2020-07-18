@@ -56,4 +56,5 @@ img {
 
 .mainFlex {
   display: flex;
+  justify-content: space-between;
 }

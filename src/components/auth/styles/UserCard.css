@@ -7,7 +7,9 @@
   padding: 20px;
   background-color: #373737;
   box-shadow: 3px 3px 8px #302e2ece;
-  width: 80%;
+  width: 12%;
+  margin: 10px 5px 5px 10px;
+  height: 100%
 }
 
 .user__profilePicture {

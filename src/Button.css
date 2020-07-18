@@ -76,11 +76,11 @@
   font-weight: 600;
   margin-top: 2px;
   padding: 1px 0 13px 8px;
-  background-color: #3efa0f;
+  background-color: limegreen;
   box-shadow: 1px 1px 1px 0px #000000;
   -webkit-box-shadow: 1px 1px 1px 0px #000000;
   -moz-box-shadow: 1px 1px 1px 0px #000000;
-  border: solid #3efa0f 1px;
+  border: solid limegreen 1px;
   text-decoration: none;
   display: inline-block;
   cursor: pointer;
@@ -88,8 +88,8 @@
 }
   
 #addFriendBtn:hover {
-  background: #7ee705;
-  border: solid #7ee705 1px;
+  background: lightgreen;
+  border: solid lightgreen 1px;
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
   border-radius: 3px;
@@ -102,4 +102,32 @@
   margin: 0;
   padding: 0;
   
+}
+
+.deleteBtn {
+  border-radius: 3px;
+  height: 0px;
+  line-height: 0px;
+  color: #000000;
+  font-family: 'Open Sans' sans-serif;
+  width: 20px;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 10px 0 10px 0;
+  background-color: transparent;
+  border: transparent;
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
+  text-align: center;
+}
+  
+.deleteBtn:hover {
+  background: darkred;
+  border: solid darkred 1px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  text-decoration: none;
+  color: white;
 }

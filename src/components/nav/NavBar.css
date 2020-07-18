@@ -24,6 +24,7 @@ picture {
 
 nav .container {
   display: flex;
+  flex-direction: column;
   padding: 0;
   margin-bottom: 0;
 }
@@ -31,16 +32,15 @@ nav .container {
 nav .container li {
   flex: 1;
   padding: 10px;
-  text-align: center;
+  text-align: left;
   font-size: 1.15em;
   color: silver;
   box-sizing: border-box;
-  background-color: lightgrey;
   list-style-type: none;
 }
 
 .nav-link {
-  color: black;
+  color: silver;
   text-decoration: none;
   cursor: pointer;
 }

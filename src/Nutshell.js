@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import NavBar from "./components/nav/NavBar";
 import UserCard from "./components/auth/UserCard";
+import FriendList from "./components/friends/FriendList";
 import ApplicationViews from "./ApplicationViews";
 import "./Nutshell.css";
 import "./Main.css"
@@ -32,9 +33,11 @@ const NutShell = () => {
           <h2>A Website for Chit Chat and Pictures of What You Ate Last Night.</h2>
         </div>
       </header>
-      
+      <div className="mainFlex">
+        <UserCard />
         <ApplicationViews hasUser={hasUser} setUser={setUser} />
-      
+        <FriendList />
+      </div>
     </>
   );
 };
