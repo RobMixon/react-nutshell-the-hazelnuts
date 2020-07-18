@@ -1,0 +1,7 @@
+/* FONTS */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+/* CSS */
+@import "./components/auth/styles/User.css";
+@import "./components/messages/styles/Message.css";
+@import "./Button.css"

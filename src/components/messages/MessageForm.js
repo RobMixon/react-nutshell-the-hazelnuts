@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import MessageManager from "../modules/MessageManager";
-import MessageList from "./MessageList"; 
+
 
 
 const MessageForm = props => { 
@@ -33,36 +33,48 @@ const MessageForm = props => {
         }
     };
 
-    return(
+    return (
         <>
-        <form>
-            <fieldset>
-                <label htmlFor="content">Start A Chat</label>
-                <input name="content"  
-                    type="text"
-                    required
-                    onChange={handleFieldChange}
-                    id="content"
-                    autoFocus
-                    spellCheck={true}
-                    >
-                </input>
-                <button
-                    type="button"
-                    disabled={isLoading}
-                    onClick={postNewMessage}>
-                        Enter
-                </button> 
-                        
-            </fieldset>
-        </form>
-       
+            <div className="messageForm">
+                <div className="messageForm__title">
+                    <h3>WRITE A MESSAGE</h3>
+                </div>
+                <div className="messageForm__container">
+                    <div className="messageForm__profilePicture">
+                        <img className="messageForm__userImage" src="./userIcon-black.png" />
+                    </div>
+                    <div className="messageInput__compose">
+                        <form className="messageForm__form">
+                            <fieldset className="messageForm__fieldset">
+                                <input
+                                    className="messageForm__content" 
+                                    name="content"  
+                                    type="textarea"
+                                    required
+                                    onChange={handleFieldChange}
+                                    id="content"
+                                    autoFocus
+                                    spellCheck={true}
+                                    >
+                                </input>
+                            </fieldset>
+                        </form>
+                    </div>
+                    <div className="messageForm__button">
+                        <button
+                            className="messageForm__submit"
+                            type="button"
+                            id="blueBtn"
+                            disabled={isLoading}
+                            onClick={postNewMessage}>
+                            Post
+                        </button>                       
+                    </div>    
+                </div>
+            </div>
         </>
     )
 
 }
 
 export default MessageForm
-
-// Message is only visible fom field
-// save button to print to API

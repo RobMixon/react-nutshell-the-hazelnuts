@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import NavBar from "./components/nav/NavBar";
 import ApplicationViews from "./ApplicationViews";
 import "./Nutshell.css";
+import "./Main.css"
 
 const NutShell = () => {
 

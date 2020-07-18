@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import MessageManager from "../modules/MessageManager";
 import MessageCard from "./MessageCard";
 import MessageForm from "./MessageForm";
+import UserCard from "../auth/UserCard"
 
 
 const MessageList = (props) => {
@@ -24,15 +25,36 @@ const MessageList = (props) => {
 
     return (
         <>
-        <div>
-        <MessageForm {...props} />
-        </div>
-        <div className="container-cards">
-            {messages.map(message => <MessageCard key={message.id}
-                                                  message={message}
-                                                  {...props} 
-                                                  />  )} 
-        </div>
+            <main className="chatContainer"> 
+                <section className="chatContainer__left">
+                    <UserCard />
+                </section>
+                <section className="chatContainer__middle">
+                        <MessageForm {...props} />
+                    <div className="chatLog__container">
+                        <h3>Messages</h3>
+                        <div className="chatLog">
+                            {messages.map(message => 
+                                <MessageCard 
+                                    key={message.id}
+                                    message={message}
+                                    {...props} 
+                                /> )} 
+                        </div>
+                    </div>
+                </section>
+                <section className="chatContainer__right">
+                    <div className="friendsContainer">
+                        <div className="friendsContainer__header">
+                            <div className="friendsHeader__title">
+                                <h2>FRIENDS</h2>
+                            </div>
+
+                            
+                        </div>
+                    </div>
+                </section>
+            </main>
         </>
     );
 };

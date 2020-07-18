@@ -48,3 +48,7 @@ nav .container li {
 .nav-link:hover {
   color: orangered;
 }
+
+li:active {
+  color: white;
+}
