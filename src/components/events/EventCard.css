@@ -3,7 +3,7 @@
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     transition: 0.3s;
     border-radius: 5px; /* 5px rounded corners */
-    background: aliceblue;
+    background: #d3d3d3;
     margin-bottom: 2em;
     flex: 0 1 24%;
   }
@@ -16,7 +16,7 @@
     margin-top: 0;
     margin-bottom: .5em;
     font-weight: bold;
-    color: rgb(43, 112, 241);
+    color: black;
   }
   
   .card-content p {
@@ -25,13 +25,13 @@
   }
   
   .content-eventtitle {
-    color: darkslategrey;
+    color: rgb(17, 255, 255);
   }
   
   .card button {
-    background-color: cornflowerblue;
+    background-color: black;
     border: none;
-    color: cornsilk;
+    color: white;
     text-align: center;
     text-decoration: none;
     display: inline-block;
@@ -43,5 +43,5 @@
   }
   
   .card button:hover {
-    background-color: darkblue;
+    background-color: grey;
   }

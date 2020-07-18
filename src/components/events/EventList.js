@@ -13,10 +13,10 @@ const EventList = (props) => {
         })
     };
 
-    // const deleteEvent = id = {
-    //     EventManager.delete(id)
-    //         .then(() => EventManager.getAll().then(setEvents))
-    // };
+    const deleteEvent = id => {
+        EventManager.delete(id)
+            .then(() => EventManager.getAll().then(setEvents))
+    };
 
     useEffect(() => {
         getEvent()
@@ -25,12 +25,12 @@ const EventList = (props) => {
     return(
         <>
         <section className="section-content">
-
+            <button type="button" className="btn" 
+                onClick={() => {props.history.push("/events/new")}}>New Event</button>
         </section>
         <div className="container-cards">
-            {events.map(event => 
-            <EventCard key={event.id} event={event} {...props}/>
-            )}
+            {events.map(event => <EventCard key={event.id} event={event}
+                deleteEvent={deleteEvent} {...props}/> )}
         </div>
         </>
     )
