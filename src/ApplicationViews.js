@@ -2,7 +2,10 @@ import React from "react";
 import { Route, Redirect } from "react-router-dom";
 import Home from "./components/home/Home";
 import Login from "./components/auth/Login";
+
+//Message Imports
 import MessageList from "./components/messages/MessageList";
+import MessageEditForm from "./components/messages/MessageEditForm";
 
 //Article Imports
 import ArticleList from './components/articles/ArticleList';
@@ -13,6 +16,7 @@ import ArticleForm from './components/articles/ArticleForm'
 
 //Task Imports
 import TaskList from './components/tasks/TaskList';
+import AddFriendFromMessage from "./components/messages/AddFriendFromMessage";
 
 //Friends Imports
 // import FriendList from './components/friends/FriendList';
@@ -45,6 +49,13 @@ console.log(props)
               return <Redirect to="/login" />  
             }
           }} />
+
+          <Route
+            path="/messages/:messageId(\d+)/edit"
+            render={props => {
+              return <MessageEditForm {...props} />
+            }}
+            />
 
         {/* ARTICLE ROUTES */}
         <Route
@@ -79,15 +90,13 @@ console.log(props)
               return <TaskList {...props} />
         }}
         />
-
-        {/* FRIEND ROUTE */}
-        {/* <Route
+        <Route
           exact
           path="/friends"
           render={props => {
-              return <FriendList {...props} />
+              return <AddFriendFromMessage {...props} />
         }}
-        /> */}
+        />
       </React.Fragment>
     )
 };

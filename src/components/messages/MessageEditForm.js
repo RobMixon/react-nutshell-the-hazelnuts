@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import MessageManager from "../modules/MessageManager";
+import MessageWithUser from "./MessageWithUser";
 
 const MessageEditForm = (props) => {
     //change userId value to session storage (see MessageForm)
@@ -18,53 +19,61 @@ const MessageEditForm = (props) => {
 
     const editedMessage = {
         id: props.match.params.messageId,
-        //add session storage value here!
+       //
         userId: 1,
         content: message.content,
-        date: new Date()
+        date: new Date(),
     }
 
         //MessageManager update (PUT) function
         MessageManager.updateMessage(editedMessage)
         .then(() => {
-            //get messages again??
+           props.history.push("/messages")
         })
 
     }
 
     useEffect(() => {
         MessageManager.getMessage(props.match.params.messageId)
-        .then((message) => {
+        .then( () => {
             setMessage(message)
             setIsLoading(false)
-        })
-    }, [props.match.params.messageId]);
+        } )
+            
+        
+    }, []);
 
+    
    return (
-    <>
-    <form>
+     <> 
+
+     <form>
         <fieldset>
-            <label htmlFor="content">Start A Chat</label>
+            <label htmlFor="content">Edit Your Message</label>
             <input name="content"  
                 type="text"
                 required
                 onChange={handleFieldChange}
                 id="content"
                 autoFocus
+                value={message.content}
                 spellCheck={true}
                 >
-            </input>
+            </input> 
+           
             <button
                 type="button"
                 disabled={isLoading}
                 onClick={updateExistingMessage}>
                     Enter
-            </button> 
-                    
+            </button>  
         </fieldset>
-    </form>
-   
-    </>
+    </form> 
+    
+    <MessageWithUser {...props} />
+    
+    </>  
+ 
    )
 
 }

@@ -4,7 +4,8 @@ import MessageManager from "../modules/MessageManager";
 const MessageForm = props => { 
     //need to add userId: sessionStorage.getItem("credentials", parseInt(....))
     //date will be converted in MessageCard
-    const [message, setMessage] = useState({userId: 1, date: new Date() , content:""});
+    const [message, setMessage] = useState({id: "", userId: 1, date: new Date() , content:"", editing: false});
+
     //initally button will not be disabled because nothing will be loading
     const [isLoading, setIsLoading] = useState(false)
     
@@ -14,46 +15,21 @@ const MessageForm = props => {
         setMessage(stateToChange)
     }
 
-    //logic for submit or edit
-    const handleSubmitButton = event => {
-        const stateToChange = {...message,}
-        event.preventDefault();
-        
-    }
-
-    useEffect(() => {
-       MessageManager.getWithUser()
-    }, []);
-
+    
     const postNewMessage = event => {
         event.preventDefault();
         if (message.content === "") {
             window.alert("Write something first")
         } else {
-           
-            //this will be in process of submitting new message so do not want user to keep clicking submit button
             setIsLoading(true);
             MessageManager.postMessage(message)
-            .then(() => {
-                // //need to getMessages again
-                // MessageManager.getWithUser()
-                // setMessage(message)
-            })
-            //to get sent to same page in message list?
             // window.location.reload(true)
+            .then(() => props.history.push("/messages"))
+           }   
         }
-    };
-
-
-    useEffect(() => {
-        MessageManager.getMessage(props.match.params.messageId)
-        .then((message) => {
-            setMessage(message)
-            setIsLoading(false)
-        })
-    }, [props.match.params.messageId]);
-
-    return(
+            
+ 
+    return (
         <>
         <form>
             <fieldset>
@@ -70,7 +46,7 @@ const MessageForm = props => {
                 <button
                     type="button"
                     disabled={isLoading}
-                    onClick={handleSubmitButton}>
+                    onClick={postNewMessage}>
                         Enter
                 </button> 
                         
@@ -84,5 +60,3 @@ const MessageForm = props => {
 
 export default MessageForm
 
-// Message is only visible fom field
-// save button to print to API

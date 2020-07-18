@@ -2,9 +2,7 @@
   import { currentDateTime } from "../modules/helperFunctions";
 
   const MessageCard = props => {
-    const hasUser = props.hasUser
-    const setUser = props.setUser
-    console.log(setUser)
+    
     return (
         <>
         <div className="singleChat">
@@ -33,11 +31,11 @@
 
         {/* added add friend button if not the current user (should this be username?) */}
             <div className="chatAddFriendButton">
-                {setUser() ? null : 
+                {props.message.userId === 1 ? null : 
                 <button
                 className="chat__addFriendBtn"
                 type="button"
-                // onClick={} --need to present user with message asking to verify if want to add friend to friend list
+                onClick={() => {props.history.push("/friends")}} 
                 >
                 Add Friend
                 </button>
@@ -47,12 +45,11 @@
             <div className="chatEditButton">
             {/* shows edit button only for current user */}
             {/* sessionStorage.getItem("credentials", parseInt()) */}
-             {props.message.userId !== 1  ? null : 
+             {props.message.userId !== 1 ? null : 
             <button 
                 className="chat__editBtn" 
                 type="button"
-                //trying code- delete if not working
-                onClick={() => props.updateExistingMessage}>
+                onClick={() => props.history.push(`/messages/${props.message.id}/edit`)}>
                 Edit
             </button>} 
                 
