@@ -9,7 +9,10 @@ import ArticleList from './components/articles/ArticleList';
 import ArticleForm from './components/articles/ArticleForm'
 
 //Event Imports
-// import EventList from './components/events/EventList';
+import EventList from "./components/events/EventList";
+import EventDetail from "./components/events/EventDetail";
+import EventForm from "./components/events/EventForm";
+import EventEditForm from "./components/events/EventEditForm";
 
 //Task Imports
 import TaskList from './components/tasks/TaskList';
@@ -63,13 +66,27 @@ console.log(props)
         />
 
         {/* EVENT ROUTES */}
-        {/* <Route
-          exact
-          path="/events"
-          render={props => {
+        {/* route to get all events */}
+        <Route exact path="/events" render={props => {
+              if (hasUser) {
               return <EventList {...props} />
-        }}
-        /> */}
+              } else {
+                return <Redirect to="/login" /> 
+              } }}/>
+        {/* route to get specific event and details of it  */}
+        <Route exact path="/events/:eventId(\d+)" render={(props) => {
+          return (
+          <EventDetail eventId={parseInt(props.match.params.eventId)}{...props} />)}} />
+          {/* route to create new event */}
+        <Route path="/events/new" render={(props) => {
+          return <EventForm {...props} /> }} />
+          {/* route to edit events */}
+        <Route path="/events/:eventId(\d+)/edit" render={props => {
+          if (hasUser) {
+            return <EventEditForm {...props} />
+          } else {
+            return <Redirect to="/login" />
+          }}} />
 
         {/* TASK ROUTES */}
         <Route
