@@ -6,12 +6,13 @@ import MessageList from "./components/messages/MessageList";
 
 //Article Imports
 import ArticleList from './components/articles/ArticleList';
+import ArticleForm from './components/articles/ArticleForm'
 
 //Event Imports
 import EventList from "./components/events/EventList";
 
 //Task Imports
-// import TaskList from './components/tasks/TaskList';
+import TaskList from './components/tasks/TaskList';
 
 //Friends Imports
 // import FriendList from './components/friends/FriendList';
@@ -19,6 +20,7 @@ import EventList from "./components/events/EventList";
 
 const ApplicationViews = (props) => {
 
+console.log(props)
     const hasUser = props.hasUser;
     const setUser = props.setUser;
 
@@ -52,6 +54,13 @@ const ApplicationViews = (props) => {
               return <ArticleList {...props} />
         }}
         />
+        <Route
+          exact
+          path="/articles/new"
+          render={props => {
+              return <ArticleForm {...props} />
+        }}
+        />
 
         {/* EVENT ROUTES */}
         <Route
@@ -67,13 +76,13 @@ const ApplicationViews = (props) => {
         />
 
         {/* TASK ROUTES */}
-        {/* <Route
+        <Route
           exact
           path="/tasks"
           render={props => {
               return <TaskList {...props} />
         }}
-        /> */}
+        />
 
         {/* FRIEND ROUTE */}
         {/* <Route
