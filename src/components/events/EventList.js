@@ -1,9 +1,39 @@
-// get Events function
+import React, { useState, useEffect } from 'react';
+import EventCard from "./EventCard";
+import EventManager from "../modules/EventManager";
 
-// delete event function
+const EventList = (props) => {
+    //Initial state of empty array
+    const [events, setEvents] = useState([]);
 
-// save event button
+    const getEvent = () => {
+        //data comes back from API, we use setanimals to update state
+        return EventManager.getAll().then(eventsfromAPI => {
+            setEvents(eventsfromAPI)
+        })
+    };
 
-// useEffect
+    // const deleteEvent = id = {
+    //     EventManager.delete(id)
+    //         .then(() => EventManager.getAll().then(setEvents))
+    // };
 
-// return : open form button + EventCard function
+    useEffect(() => {
+        getEvent()
+    }, []);
+
+    return(
+        <>
+        <section className="section-content">
+
+        </section>
+        <div className="container-cards">
+            {events.map(event => 
+            <EventCard key={event.id} event={event} {...props}/>
+            )}
+        </div>
+        </>
+    )
+}
+
+export default EventList;

@@ -8,7 +8,7 @@ import MessageList from "./components/messages/MessageList";
 import ArticleList from './components/articles/ArticleList';
 
 //Event Imports
-// import EventList from './components/events/EventList';
+import EventList from "./components/events/EventList";
 
 //Task Imports
 // import TaskList from './components/tasks/TaskList';
@@ -54,13 +54,17 @@ const ApplicationViews = (props) => {
         />
 
         {/* EVENT ROUTES */}
-        {/* <Route
+        <Route
           exact
           path="/events"
           render={props => {
+              if (hasUser) {
               return <EventList {...props} />
+              } else {
+                return <Redirect to="/login" /> 
+              }
         }}
-        /> */}
+        />
 
         {/* TASK ROUTES */}
         {/* <Route
