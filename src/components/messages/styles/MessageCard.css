@@ -25,7 +25,7 @@
 /* SCROLLBAR */
 /* width */
 .chatLog::-webkit-scrollbar {
-  width: 6px;
+  width: 8px;
 }
 
 /* Track */
@@ -53,7 +53,7 @@
 }
 
 .chatCard__left {
-  float: left
+  float: left;
 }
 
 .chat__userImage {
