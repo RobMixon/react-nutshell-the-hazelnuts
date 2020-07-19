@@ -1,0 +1,11 @@
+@import "./EventForm.css";
+@import "./EventDetail.css";
+@import "./EventCard.css";
+
+
+.mainEventContainer {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+  width: 50%;
+}

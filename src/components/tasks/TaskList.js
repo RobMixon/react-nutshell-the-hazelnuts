@@ -1,5 +1,5 @@
 import TaskManager from "../modules/TaskManager"
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import TaskCard from "./TaskCard"
 import React, { useState, useEffect } from 'react';
 
@@ -25,19 +25,21 @@ TaskManager.getAll().then((result) => {
 useEffect(() => {
 getTask()
 }, []) 
+  
 // return : open form button + ArticleCard function
 return (
-    
+    <>
         <div className="container">
-      <h1>Add Task</h1>
+            <h1>Add Task</h1>
 
-      <button type="button" className="addbtn">Add</button>
-      
-      <section className="taskCard">{ task.map(element => 
-        <TaskCard key={element.id} task={element} {...props}/>
-        )};
-        </section>
-    </div>
+            <button type="button" className="addbtn">Add</button>
+            
+            <section className="taskCard">{ task.map(element => 
+                <TaskCard key={element.id} task={element} {...props}/>
+                )};
+                </section>
+        </div>
+    </>
     )
 
 }

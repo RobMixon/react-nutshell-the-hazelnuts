@@ -1,0 +1,63 @@
+.friendSection {
+  background-color: #373737;
+  width: 15%;
+  padding: 0;
+  margin: 10px 20px 0 0;
+}
+
+.friendsHeader__title > h3 {
+  margin: 5px 0 5px 10px;
+  color: whitesmoke;
+}
+
+.friendsContainer__header {
+  display: flex;
+  flex-direction: column;
+}
+
+.friendsContainer {
+  display: flex;
+  flex-direction: column;
+  
+  height: 100%;
+  margin: 0 5px 20px;
+}
+
+.friendOutput {
+  background-color: whitesmoke;
+}
+
+.singleFriend {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 5px;
+}
+
+.friend__userDetails {
+  display: flex;
+  flex-direction: row;
+}
+
+.friend__userImage {
+  padding-top: 2px;
+  height: 20px;
+  width: 20px;
+}
+
+.friend__name {
+  padding-left: 10px;
+  padding-top: 2px;
+  font-size: 14px;
+}
+
+.searchFriendsField {
+  padding: 0;
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+.searchFriendsField > input {
+  width: 100%;
+  height: 30px;
+}

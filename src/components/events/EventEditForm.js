@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react"
 import EventManager from "../modules/EventManager"
-import "./EventForm.css"
+
 
 const EventEditForm = props => {
   const [event, setEvent] = useState({ title: "", location: "", date: "" });

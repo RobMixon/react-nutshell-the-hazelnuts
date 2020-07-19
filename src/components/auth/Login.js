@@ -17,34 +17,60 @@ const Login = props => {
         the customer enters into session storage.
         ...Let's just trust the user... That's a good idea, right????
     */
-    sessionStorage.setItem(
-      "credentials",
-      JSON.stringify(credentials)
-    );
+    // sessionStorage.setItem(
+    //   "credentials",
+    //   JSON.stringify(credentials)
+    // );
     props.setUser(credentials);
     props.history.push("/");
   }
 
   return (
-    <form onSubmit={handleLogin}>
-      <fieldset>
-        <h3>Please sign in</h3>
-        <div className="formgrid">
-          <input onChange={handleFieldChange} type="email"
-            id="email"
-            placeholder="Email address"
-            required="" autoFocus="" />
-          <label htmlFor="inputEmail">Email address</label>
+    <div className="limiter">
+      <div className="loginBoxContainer">
+        <div className="loginBox">
+          <div className="loginLogo">
+            <img src="./nutshell2logo.png" alt="logo" />
+          </div>
 
-          <input onChange={handleFieldChange} type="password"
-            id="password"
-            placeholder="Password"
-            required="" />
-          <label htmlFor="inputPassword">Password</label>
+
+          <form onSubmit={handleLogin}>
+            <span className="loginHeader">
+              Welcome
+            </span>
+
+            <div className="form-input">
+              <input onChange={handleFieldChange} className="inputField" type="text" name="email"/>
+              <span className="focus-inputField" data-placeholder="Email"></span>
+            </div>
+
+            <div className="form-input">
+              <input onChange={handleFieldChange} className="inputField" type="password" name="pass"/>
+              <span className="focus-inputField" data-placeholder="Password"></span>
+            </div>
+
+            <div className="container-login-form-btn">
+              <div className="wrap-login-form-btn">
+                <div className="login-form-bgbtn"></div>
+                <button type="submit" className="login-form-btn">
+                  Login
+                </button>
+              </div>
+            </div>
+
+            <div className="registerAcct">
+              <span className="registerAcct__text">
+                Don’t have an account?
+              </span>
+
+              <a className="registerAcct__link">
+                Sign Up
+              </a>
+            </div>
+          </form>
         </div>
-        <button type="submit">Sign in</button>
-      </fieldset>
-    </form>
+      </div>
+	  </div>
   );
 };
 

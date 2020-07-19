@@ -1,0 +1,16 @@
+/* FONTS */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+/* CSS */
+@import "./components/auth/styles/Login.css";
+@import "./components/auth/styles/User.css";
+@import "./components/messages/styles/Message.css";
+@import "./components/articles/styles/Article.css";
+@import "./components/events/styles/Event.css";
+@import "./components/friends/Friend.css";
+@import "./Button.css";
+
+body, html {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+}
