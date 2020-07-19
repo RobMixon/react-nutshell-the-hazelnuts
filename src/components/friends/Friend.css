@@ -1,13 +1,18 @@
 .friendSection {
-  background-color: #373737;
+  background-color: none;
   width: 15%;
   padding: 0;
-  margin: 10px 20px 0 0;
+  margin: 0;
+  background-color: whitesmoke;
+  border-left: #373737 solid 1px;
+  border-top: #373737 solid 1px;
+  border-bottom: #373737 solid 1px;
+  margin-top: 10px;
 }
 
 .friendsHeader__title > h3 {
   margin: 5px 0 5px 10px;
-  color: whitesmoke;
+  color: #373737;
 }
 
 .friendsContainer__header {
@@ -18,13 +23,19 @@
 .friendsContainer {
   display: flex;
   flex-direction: column;
-  
+  justify-content: space-between;
   height: 100%;
-  margin: 0 5px 20px;
+  margin: 0 5px;
 }
 
 .friendOutput {
-  background-color: whitesmoke;
+  background-color: white;
+  margin-bottom: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  border: #373737 solid 1px;
 }
 
 .singleFriend {
@@ -52,9 +63,9 @@
 }
 
 .searchFriendsField {
-  padding: 0;
+  padding: 0 5px;
   margin-bottom: 10px;
-  width: 100%;
+  width: auto;
 }
 
 .searchFriendsField > input {
