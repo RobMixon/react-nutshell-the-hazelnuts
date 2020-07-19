@@ -17,10 +17,10 @@ const Login = props => {
         the customer enters into session storage.
         ...Let's just trust the user... That's a good idea, right????
     */
-    sessionStorage.setItem(
-      "credentials",
-      JSON.stringify(credentials)
-    );
+    // sessionStorage.setItem(
+    //   "credentials",
+    //   JSON.stringify(credentials)
+    // );
     props.setUser(credentials);
     props.history.push("/");
   }
@@ -30,7 +30,7 @@ const Login = props => {
       <div className="loginBoxContainer">
         <div className="loginBox">
           <div className="loginLogo">
-            <img src="./nutshell2logo.png" />
+            <img src="./nutshell2logo.png" alt="logo" />
           </div>
 
 
@@ -63,7 +63,7 @@ const Login = props => {
                 Don’t have an account?
               </span>
 
-              <a className="registerAcct__link" href="#">
+              <a className="registerAcct__link">
                 Sign Up
               </a>
             </div>

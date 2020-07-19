@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import NavBar from "./components/nav/NavBar";
 import UserCard from "./components/auth/UserCard";
 import FriendList from "./components/friends/FriendList";
 import ApplicationViews from "./ApplicationViews";
@@ -10,10 +9,10 @@ const NutShell = () => {
 
   const isAuthenticated = () => sessionStorage.getItem("credentials") !== null;
 
-  const clearUser = () => {
-    sessionStorage.clear()
-    setHasUser(isAuthenticated())
-  }
+  // const clearUser = () => {
+  //   sessionStorage.clear()
+  //   setHasUser(isAuthenticated())
+  // }
 
   const [hasUser, setHasUser] = useState(isAuthenticated());
 

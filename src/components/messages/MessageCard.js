@@ -7,7 +7,7 @@
             <div className="chatCard">
                 <div className="chatCard__left">
                 <div className="chat__userImage">
-                    <img src={`./userIcon-black.png`}/>
+                    <img src={`./userIcon-black.png`} alt="userIcon" />
                 </div>
             </div>
             <div className="chatCard__middle">
@@ -21,7 +21,7 @@
                         id="addFriendBtn"
                         // onClick={} --need to present user with message asking to verify if want to add friend to friend list
                         >
-                            <img src="./addFriend-black.png" className="addFriendIcon" />
+                            <img src="./addFriend-black.png" className="addFriendIcon" alt="addFriend" />
                         </button>
                         }
                 </div>

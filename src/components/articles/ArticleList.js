@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import ArticleCard from './ArticleCard';
 import ArticleManager from "../modules/ArticleManager";
-import NavBar from "../nav/NavBar";
 
 
 const ArticleList = (props) => {

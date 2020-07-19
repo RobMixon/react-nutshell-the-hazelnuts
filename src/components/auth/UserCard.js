@@ -29,7 +29,7 @@ const UserCard = props => {
   return (
     <div className="userContainer">
       <div className="user__profilePicture">
-        <img className="mainUserImage" src="./userIcon-white.png"/>
+        <img className="mainUserImage" src="./userIcon-white.png" alt="userIcon" />
       </div>
       <div className="user__userName">
         <p> UserName
