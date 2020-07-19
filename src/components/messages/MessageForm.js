@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import MessageManager from "../modules/MessageManager";
 
 const MessageForm = props => { 
     //need to add userId: sessionStorage.getItem("credentials", parseInt(....))
     //date will be converted in MessageCard
-    const [message, setMessage] = useState({id: "", userId: 1, date: new Date() , content:"", editing: false});
+    const [message, setMessage] = useState({userId: 1, date: new Date() , content:""});
 
     //initally button will not be disabled because nothing will be loading
     const [isLoading, setIsLoading] = useState(false)
@@ -23,12 +23,11 @@ const MessageForm = props => {
         } else {
             setIsLoading(true);
             MessageManager.postMessage(message)
-            // window.location.reload(true)
             .then(() => props.history.push("/messages"))
+            window.location.reload(true)
            }   
         }
             
- 
     return (
         <>
         <form>

@@ -16,10 +16,9 @@ import ArticleForm from './components/articles/ArticleForm'
 
 //Task Imports
 import TaskList from './components/tasks/TaskList';
-import AddFriendFromMessage from "./components/messages/AddFriendFromMessage";
 
-//Friends Imports
-// import FriendList from './components/friends/FriendList';
+// Friends Imports
+import FriendList from './components/friends/FriendList';
 
 
 const ApplicationViews = (props) => {
@@ -90,11 +89,12 @@ console.log(props)
               return <TaskList {...props} />
         }}
         />
+        {/* FRIEND ROUTES */}
         <Route
           exact
           path="/friends"
           render={props => {
-              return <AddFriendFromMessage {...props} />
+              return <FriendList {...props} />
         }}
         />
       </React.Fragment>

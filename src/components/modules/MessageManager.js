@@ -44,7 +44,7 @@ export default {
     },
 
     getUsers() {
-        fetch(`${remoteURL}/users`).then(result => result.json())
+        return fetch(`${remoteURL}/users`).then(result => result.json())
         
     }
    

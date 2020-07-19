@@ -21,7 +21,7 @@ const NutShell = () => {
 
   return (
     <>
-      <NavBar hasUser={hasUser} clearUser={clearUser} />
+      <NavBar  hasUser={hasUser} clearUser={clearUser} />
       <ApplicationViews hasUser={hasUser} setUser={setUser} />
     </>
   );

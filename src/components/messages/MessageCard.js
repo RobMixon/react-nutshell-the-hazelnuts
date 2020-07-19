@@ -29,7 +29,7 @@
         </div>
         <div className="chat__buttonContainer">
 
-        {/* added add friend button if not the current user (should this be username?) */}
+        {/* added add friend button if not the current user */}
             <div className="chatAddFriendButton">
                 {props.message.userId === 1 ? null : 
                 <button
@@ -44,7 +44,6 @@
 
             <div className="chatEditButton">
             {/* shows edit button only for current user */}
-            {/* sessionStorage.getItem("credentials", parseInt()) */}
              {props.message.userId !== 1 ? null : 
             <button 
                 className="chat__editBtn" 
