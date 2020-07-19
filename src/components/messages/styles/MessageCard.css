@@ -1,0 +1,110 @@
+.chatLog__container {
+  padding: 10px; 
+  /* background-color: #373737; */
+  border-radius: 3px;
+  margin-top: 20px;
+  border-radius: 3px;
+  box-shadow: 1px 1px 4px #302e2ece;
+}
+
+.chatContainer > h3 {
+  margin: 0 0 5px 0;
+  color: #373737;
+  border-bottom: #373737 solid 2px;
+  font-size: 20px;
+}
+
+.chatLog {
+  margin-left: 0;
+  padding: 0 10px 0 0;
+  height: 350px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+/* SCROLLBAR */
+/* width */
+.chatLog::-webkit-scrollbar {
+  width: 6px;
+}
+
+/* Track */
+.chatLog::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+ 
+/* Handle */
+.chatLog::-webkit-scrollbar-thumb {
+  background: #888; 
+}
+
+/* Handle on hover */
+.chatLog::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}
+
+.chatCard {
+  display: flex;
+  flex-direction: row;
+  background-color: whitesmoke;
+  border-radius: 2px;
+  margin: 10px 10px 20px 0;
+  box-shadow: 2px 2px 4px #302e2ece;
+}
+
+.chatCard__left {
+  float: left
+}
+
+.chat__userImage {
+  padding: 10px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50px;
+}
+
+.chatCard__middle {
+  display: flex;
+  width: 60%;
+  flex-direction: column;
+  float: left;
+  padding: 10px 0;
+  font-size: 13px;
+}
+
+.chatAbove__userName {
+  display: flex;
+  flex-direction: row;
+}
+
+.chatAbove__userName > h4 {
+  margin: 0 5px 5px 10px;
+  padding-top: 0px;
+  font-size: 14px;
+  color: #008DDE;
+}
+
+.chat__text {
+  margin: 0 5px 5px 10px;
+  padding-top: 0px;
+  font-size: 14px;
+}
+
+.chatCard__right {
+  display: flex;
+  flex-direction: column;
+  float: right;
+  text-align: right;
+  margin-right: 10px;
+  width: 30%;
+}
+
+.chatDate__text {
+  margin: 0 0 5px 10px;
+  padding-top: 10px;
+  font-size: 12px;
+}
+
+.chatEditButton {
+  margin-bottom: 5px;
+}
