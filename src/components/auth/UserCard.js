@@ -32,7 +32,9 @@ const UserCard = props => {
         <img className="mainUserImage" src="./userIcon-white.png"/>
       </div>
       <div className="user__userName">
-        <p>{user.userName} <sup>&#8226;</sup></p>
+        <p> UserName
+          {/* {user.userName}  */}
+          <sup> &#8226;</sup></p>
       </div>
       <div className="navBar">
         <NavBar hasUser={hasUser} clearUser={clearUser} />

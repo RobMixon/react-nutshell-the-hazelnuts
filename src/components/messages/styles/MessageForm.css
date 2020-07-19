@@ -55,6 +55,7 @@
   border-radius: 3px;
   font-size: 14px;
   font-family: sans-serif;
+  outline: none;
 }
 
 .messageForm__content:active {

@@ -1,14 +1,17 @@
 .chatLog__container {
-  padding: 5px 0 10px; 
+  padding: 10px; 
   /* background-color: #373737; */
   border-radius: 3px;
   margin-top: 20px;
+  border-radius: 3px;
+  box-shadow: 1px 1px 4px #302e2ece;
 }
 
-.chatLog__container > h3 {
+.chatContainer > h3 {
   margin: 0 0 5px 0;
   color: #373737;
-  border-bottom: #373737 solid 1px;
+  border-bottom: #373737 solid 2px;
+  font-size: 20px;
 }
 
 .chatLog {
@@ -45,7 +48,7 @@
   flex-direction: row;
   background-color: whitesmoke;
   border-radius: 2px;
-  margin: 10px 10px 10px 0;
+  margin: 10px 10px 20px 0;
   box-shadow: 2px 2px 4px #302e2ece;
 }
 
@@ -78,7 +81,7 @@
   margin: 0 5px 5px 10px;
   padding-top: 0px;
   font-size: 14px;
-  color: #42234d;
+  color: #008DDE;
 }
 
 .chat__text {

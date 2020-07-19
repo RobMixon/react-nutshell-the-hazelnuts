@@ -16,16 +16,16 @@ const NavBar = props => {
           <Link className="nav-link" to="/"> Home </Link>
         </li>
         <li>
-          <Link className="nav-link" to="/messages"> Messages </Link>
+          <Link className="nav-link" to="/messages"> &#x1F4AC; Messages </Link>
         </li>
         <li>
-          <Link className="nav-link" to="/articles"> Articles </Link>
+          <Link className="nav-link" to="/articles"> &#x1F4F0; Articles </Link>
         </li>
         <li>
-          <Link className="nav-link" to="/events"> Events </Link>
+          <Link className="nav-link" to="/events"> &#x1F4C5; Events </Link>
         </li>
         <li>
-          <Link className="nav-link" to="/tasks"> Tasks </Link>
+          <Link className="nav-link" to="/tasks"> &#x1F4DD; Tasks </Link>
         </li>
         <li>
           <Link className="nav-link" to="/login"> Login </Link>

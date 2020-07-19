@@ -35,9 +35,11 @@ const MessageList = (props) => {
     return (
         <>
             <section className="chatContainer">
-                    <MessageForm {...props} />
+                <MessageForm {...props} />
+                <br />
+                <br />
+                <h3>Messages</h3>
                 <div className="chatLog__container">
-                    <h3>Messages</h3>
                     <div className="chatLog">
                         {messages.map(message => 
                             <MessageCard 
