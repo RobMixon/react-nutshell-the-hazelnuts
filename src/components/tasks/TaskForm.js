@@ -1,7 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import TaskManager from '../../components/modules/TaskManager'
+const userId = 2; 
+const TaskForm = (props) => {
 
-const TaskForm = () => {
+    const [task, setTask] = useState({})
+  const [isLoading, setIsLoading] = useState(false);
 
 // add task function with userID, task name, due date(manual), complete (default: false)
 

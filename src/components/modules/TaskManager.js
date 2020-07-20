@@ -9,8 +9,9 @@ const TaskManager = {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
-              }
-        })
+              },
+              body: JSON.stringify(newTask)
+        }).then(data => data.json())
     }
 }
 
