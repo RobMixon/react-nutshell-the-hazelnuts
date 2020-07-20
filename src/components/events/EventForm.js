@@ -28,9 +28,9 @@ const EventForm = props => {
 
   return (
     <>
-      <form>
-        <fieldset>
-          <div className="formgrid">
+      <form className="eventForm__form">
+        <fieldset className="eventForm__fieldset">
+          <div className="event__formgrid">
             <input type="text" required onChange={handleFieldChange}
               id="title" placeholder="Event Title"/>
             <label htmlFor="title">Title</label>
@@ -41,9 +41,12 @@ const EventForm = props => {
               id="date" placeholder="date" />
             <label htmlFor="date">Event's date</label>
           </div>
-          <div className="alignRight">
-            <button type="button" disabled={isLoading} 
-            onClick={constructNewEvent} >Submit</button>
+          <div className="submitBtn">
+            <button 
+              type="button" 
+              className="wideBlueBtn"
+              disabled={isLoading} 
+              onClick={constructNewEvent} >Submit</button>
           </div>
         </fieldset>
       </form>

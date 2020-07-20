@@ -3,6 +3,10 @@
 
 /*Typography
 --------------------------------------------------------------*/
+body {
+  background: #e0e0e0;
+}
+
 body,
 button,
 input,
@@ -57,21 +61,21 @@ img {
 
 .mainFlex {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
 }
 
 .mainFlex__userCard {
-    width: 12%;
+    width: 15%;
 }
 
 .mainFlex__subpage {
   display: flex;
   flex-direction: column;
-  width: 40%;
-  margin: 10px 20px 0 0;
-  padding: 10px 60px;
+  width: 50%;
+  margin: 10px 0;
+  padding: 10px 40px;
 }
 
 .mainFlex__friendList {
-  width: 12%;
+  width: 15%;
 }
