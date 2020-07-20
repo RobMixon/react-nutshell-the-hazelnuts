@@ -1,4 +1,6 @@
 // renders individual task card
+//Gavin Swofford 7/20/2020
+
 import React from 'react';
 import { Link } from "react-router-dom";
 

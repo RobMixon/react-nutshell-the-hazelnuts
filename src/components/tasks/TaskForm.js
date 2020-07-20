@@ -1,3 +1,4 @@
+//Gavin Swofford 7/20/2020
 import React, { useState, useEffect } from 'react';
 import TaskManager from '../../components/modules/TaskManager'
 import UserCard from "../auth/UserCard";
@@ -26,7 +27,7 @@ const constructNewTask = evt => {
         completeBy: task.completeBy,
         status: task.status
     }
-    console.log(newTask)
+   
     TaskManager.post(newTask).then(() => props.history.push("/tasks"));
 }
 };
