@@ -23,9 +23,9 @@ const AddFriendFromMessage = (props) => {
     }
           
     return (
-       
+       // style={{ display: hidden ? "none" : "block" }}>
         <>
-        <div className="container"  // style={{ display: hidden ? "none" : "block" }}>
+        <div className="container" >
             <h1>Add Friend?</h1>
         <div className="clearfix">
         <button 
