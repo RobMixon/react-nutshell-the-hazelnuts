@@ -2,6 +2,9 @@ import React, { useEffect, useState } from "react";
 import MessageManager from "../modules/MessageManager";
 import MessageCard from "./MessageCard";
 import MessageForm from "./MessageForm";
+import UserCard from "../auth/UserCard";
+import FriendList from "../friends/FriendList";
+
 import AddFriendFromMessage from "./AddFriendFromMessage";
 
 const MessageList = (props) => {
@@ -27,21 +30,30 @@ const MessageList = (props) => {
 
     return (
         <>
-            <section className="chatContainer">
-                <MessageForm {...props} />
-                <br />
-                <div className="chatLog__container">
-                    <div className="chatLog">
-                        {messages.map(message => 
-                            <MessageCard 
-                                key={message.id}
-                                message={message}
-                                {...props} 
-                            /> )} 
-                    </div>
-                </div>
-            </section>
+            <main className="mainFlex">
+                <section className="mainFlex__userCard">
+                    <UserCard />
+                </section>
 
+                <section className="mainFlex__subpage">
+                    <MessageForm {...props} />
+                    <br />
+                    <div className="chatLog__container">
+                        <div className="chatLog">
+                            {messages.map(message => 
+                                <MessageCard 
+                                    key={message.id}
+                                    message={message}
+                                    {...props} 
+                                /> )} 
+                        </div>
+                    </div>
+                </section>
+                
+                <section className="mainFlex__friendList">
+                    <FriendList />
+                </section>
+            </main>
         </>
     );
 };

@@ -50,14 +50,15 @@ const FriendList = (props) => {
         <div className="friendOutput">
         
           </div>
-          <div className="searchFriendsField">
-            <input 
-              type="search" 
-              id="searchFriends" 
-              name="searchFriends" 
-              placeholder="Find A Friend..."/>
-          </div> 
-        </div>   
+        </div>
+        <div className="searchFriendsField">
+          <input 
+            type="search" 
+            id="searchFriends" 
+            name="searchFriends" 
+            placeholder="Find A Friend..."/>
+
+      </div>   
       
     </section>
   )};

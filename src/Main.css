@@ -8,7 +8,8 @@
 @import "./components/messages/styles/Message.css";
 @import "./components/articles/styles/Article.css";
 @import "./components/events/styles/Event.css";
-@import "./components/friends/Friend.css";
+@import "./components/tasks/styles/Task.css";
+@import "./components/friends/styles/Friend.css";
 @import "./Button.css";
 
 body, html {

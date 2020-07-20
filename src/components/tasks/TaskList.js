@@ -2,6 +2,8 @@ import TaskManager from "../modules/TaskManager"
 // import { Link } from "react-router-dom";
 import TaskCard from "./TaskCard"
 import React, { useState, useEffect } from 'react';
+import UserCard from "../auth/UserCard";
+import FriendList from "../friends/FriendList";
 
 const TaskList = (props) => {
     
@@ -29,16 +31,23 @@ getTask()
 // return : open form button + ArticleCard function
 return (
     <>
-        <div className="container">
-            <h1>Add Task</h1>
-
-            <button type="button" className="addbtn">Add</button>
-            
-            <section className="taskCard">{ task.map(element => 
-                <TaskCard key={element.id} task={element} {...props}/>
-                )};
-                </section>
-        </div>
+        <main className="mainFlex">
+            <section className="mainFlex__userCard">
+                <UserCard />
+            </section>
+            <section className="mainFlex__subpage ">
+                <div className="postTask__button">
+                    <button type="button" className="wideBlueBtn">Add Task</button>
+                </div>
+                <div className="taskCard">{ task.map(element => 
+                    <TaskCard key={element.id} task={element} {...props}/>
+                    )}
+                </div>
+            </section>
+            <section className="mainFlex__friendList">
+                <FriendList />
+            </section>
+        </main>
     </>
     )
 

@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import ArticleCard from './ArticleCard';
 import ArticleManager from "../modules/ArticleManager";
+import UserCard from "../auth/UserCard";
+import FriendList from "../friends/FriendList";
 
 
 const ArticleList = (props) => {
@@ -24,22 +26,30 @@ const ArticleList = (props) => {
 
   return (
     <>
-    <main className="mainArticleContainer">
-      <section className="postArticle__button">
-        <button type="button"
-            className="wideBlueBtn"
-            onClick={() => {props.history.push("/articles/new")}}>
-            Post New Article
-        </button>
+    <main className="mainFlex">
+      <section className="mainFlex__userCard">
+        <UserCard />
       </section>
-      <div className="articleContainer-cards">
-        {articles.map(article => 
-          <ArticleCard 
-            key={article.id} 
-            article={article}
-            deleteArticle={deleteArticle} 
-            {...props} />)}
-      </div>
+      <section className="mainFlex__subpage">
+        <div className="postArticle__button">
+          <button type="button"
+              className="wideBlueBtn"
+              onClick={() => {props.history.push("/articles/new")}}>
+              Post New Article
+          </button>
+        </div>
+        <div className="articleContainer-cards">
+          {articles.map(article => 
+            <ArticleCard 
+              key={article.id} 
+              article={article}
+              deleteArticle={deleteArticle} 
+              {...props} />)}
+        </div>
+      </section>
+      <section className="mainFlex__friendList">
+        <FriendList />
+      </section>
     </main>
     </>
   );
