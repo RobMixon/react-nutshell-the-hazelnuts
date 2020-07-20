@@ -5,6 +5,7 @@ const Home = () => {
   return (
     <>
       <main className="homeContainer">
+        <div className="homeContainer-contents">
         <section className="homeHeader">
           <h1>Your Nushells</h1>
         </section>
@@ -67,6 +68,7 @@ const Home = () => {
             </Link>
           </div>
         </section>
+        </div>
       </main>
     </>
   );

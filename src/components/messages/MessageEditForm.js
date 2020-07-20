@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import MessageManager from "../modules/MessageManager";
 import MessageWithUser from "./MessageWithUser";
+import { currentDateTime } from "../modules/helperFunctions";
 
 const MessageEditForm = (props) => {
     //change userId value to session storage (see MessageForm)
@@ -16,13 +17,15 @@ const MessageEditForm = (props) => {
     const updateExistingMessage = event => {
         event.preventDefault();
         setIsLoading(true)
+    
+    const timestamp = Date.now()
 
     const editedMessage = {
         id: props.match.params.messageId,
        //
         userId: 1,
         content: message.content,
-        date: new Date(),
+        date: currentDateTime(timestamp),
     }
 
         //MessageManager update (PUT) function
@@ -46,32 +49,37 @@ const MessageEditForm = (props) => {
     
    return (
      <> 
+        <main className="messageEditForm">
+            <section className="messageEditFormContainer">
+                <form className="messageEditForm__form">
+                    <fieldset className="messageEditForm__fieldSet">
+                        <label htmlFor="content">Edit Your Message</label>
+                        <input name="content"  
+                            type="textarea"
+                            required
+                            onChange={handleFieldChange}
+                            id="content"
+                            autoFocus
+                            value={message.content}
+                            spellCheck={true}
+                            >
+                        </input> 
+                        <button
+                            type="button"
+                            className="wideBlueBtn"
+                            id="submitBtn"
+                            disabled={isLoading}
+                            onClick={updateExistingMessage}>
+                                Enter
+                        </button>  
+                    </fieldset>
+                </form>
+            </section>
+            <section classname="messsageToBeEdited">
+                <MessageWithUser {...props} /> 
+            </section> 
+        </main>
 
-     <form>
-        <fieldset>
-            <label htmlFor="content">Edit Your Message</label>
-            <input name="content"  
-                type="text"
-                required
-                onChange={handleFieldChange}
-                id="content"
-                autoFocus
-                value={message.content}
-                spellCheck={true}
-                >
-            </input> 
-           
-            <button
-                type="button"
-                disabled={isLoading}
-                onClick={updateExistingMessage}>
-                    Enter
-            </button>  
-        </fieldset>
-    </form> 
-    
-    <MessageWithUser {...props} />
-    
     </>  
  
    )
