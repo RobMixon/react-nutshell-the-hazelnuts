@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import TaskManager from '../../components/modules/TaskManager'
 import UserCard from "../auth/UserCard";
 import FriendList from "../friends/FriendList";
-const userId = 2; 
+const userId = 1; 
 const TaskForm = (props) => {
 
     const [task, setTask] = useState({userId: userId, title: "", completeBy: "", status: false})

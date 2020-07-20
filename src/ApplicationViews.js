@@ -18,7 +18,8 @@ import EventEditForm from "./components/events/EventEditForm";
 
 //Task Imports
 import TaskList from './components/tasks/TaskList';
-import TaskForm from "./components/tasks/TaskForm"
+import TaskForm from "./components/tasks/TaskForm";
+import TaskFormEdit from "./components/tasks/TaskEditForm"
 
 // Friends Imports
 import FriendList from './components/friends/FriendList';
@@ -120,6 +121,11 @@ console.log(props)
               return <TaskForm {...props} />
         }}
         />
+        <Route path="/tasks/:tasksId(\d+)/edit" render={props => {
+              return <TaskFormEdit {...props} />
+            }} />
+
+
         {/* FRIEND ROUTES */}
         <Route
           exact

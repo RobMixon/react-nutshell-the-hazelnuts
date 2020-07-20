@@ -1,8 +1,11 @@
 // renders individual task card
 import React from 'react';
-import "./TaskCard.css"
+import "./TaskCard.css";
+import { Link } from "react-router-dom";
+
 
 const TaskCard = (props) => {
+  
     
  return (
      <div id={`task__${props.task.id}`} className="singleTask">
@@ -23,8 +26,7 @@ const TaskCard = (props) => {
              <h3>{props.task.title}</h3>
          </div>   
         
-         {props.userId == props.task.userId ?  <div className="clearfix">
-             <button type="button" className="editbtn">edit</button></div>:null}
+         {props.userId == props.task.userId ?  <div className="clearfix"> <Link to={`/tasks/${props.task.userId}/edit`}><button type="button" className="editbtn" >edit</button></Link></div>:null}
         
       
      </div>

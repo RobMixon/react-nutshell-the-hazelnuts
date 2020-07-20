@@ -41,7 +41,7 @@ return (
 
             
             <section className="taskCard">{ task.map(element => 
-                <TaskCard key={element.id} task={element} {...props}/>
+                <TaskCard key={element.id} task={element} userId={userId} {...props}/>
                 )}
                 </section>
         </div>
