@@ -1,8 +1,13 @@
 // renders individual task card
+//Gavin Swofford 7/20/2020
+
 import React from 'react';
+import { Link } from "react-router-dom";
+
+
 
 const TaskCard = (props) => {
-    console.log(props, "hey")
+
     return (
         <div id={`task__${props.task.id}`} className="singleTask">
             <div className="taskBody__left">
@@ -19,10 +24,12 @@ const TaskCard = (props) => {
                 </div>
                 <div className="taskButtonContainer">
                     <div className="clearfix">
-                        <button type="button" className="editbtn" id="darkBtn">Edit</button>
+                        
+                        {props.userId == props.task.userId ?  <div className="clearfix"> <Link to={`/tasks/${props.task.id}/edit`}><button type="button" className="editbtn" id="darkBtn">Edit</button></Link></div>:null}
                     </div>
                     <div className="taskDeleteButton">
-                        <button id={`deleteTask__${props.task.id}`} className="fullDeleteBtn" type="button">Delete</button>
+                    {props.userId == props.task.userId ?  <div className="clearfix"> <button id={`deleteTask__${props.task.id}`} className="fullDeleteBtn" type="button" onClick={() => props.deleteTask(props.task.id)}>Delete</button></div>:null}
+                        
                     </div>
                 </div>   
             </div>
