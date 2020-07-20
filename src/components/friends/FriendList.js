@@ -13,7 +13,7 @@ const FriendList = (props) => {
      const getFriends = () => {
          return FriendManager.getUserFriends().then(friendsFromAPI=> {
              console.log(friendsFromAPI)
-             setFriends(friendsFromAPI)
+             setFriends(friendsFromAPI.user)
  
          })
      };

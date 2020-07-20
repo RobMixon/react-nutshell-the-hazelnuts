@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react";
 import MessageManager from "../modules/MessageManager";
 import MessageWithUser from "./MessageWithUser";
+import { currentDateTime } from "../modules/helperFunctions";
 
 const MessageEditForm = (props) => {
+    const timestamp = Date.now()
     //change userId value to session storage (see MessageForm)
     const [message, setMessage] = useState({userId: 1, date: new Date() , content:""});
     const [isLoading, setIsLoading] = useState(false);
@@ -16,13 +18,14 @@ const MessageEditForm = (props) => {
     const updateExistingMessage = event => {
         event.preventDefault();
         setIsLoading(true)
+  
 
     const editedMessage = {
         id: props.match.params.messageId,
        //
         userId: 1,
         content: message.content,
-        date: new Date(),
+        date: currentDateTime(timestamp)
     }
 
         //MessageManager update (PUT) function

@@ -16,15 +16,17 @@
                     <h4>{props.message.user.username}</h4>
                     {/* added add friend button if not the current user */}
                     {props.message.userId === 1 ? null : 
+                    <Link to="/messages/addFriend">
                         <button
                         className="chat__addFriendBtn"
                         type="button"
                         id="addFriendBtn"
-                        onClick={props.history.push("/messages/addFriend")} 
+                        // onClick={props.history.push("/messages/addFriend")} 
                         >
                             <img src="./addFriend-black.png" className="addFriendIcon" alt="addFriend" />
                         </button>
-                        }
+                       
+                        </Link> }
                 </div>
                 <div className="chatBelow__message">
                     <p className="chat__text">
