@@ -38,6 +38,7 @@ console.log(props)
             return <Login setUser={setUser} {...props} />
         }} />
 
+        {/* login paths */}
         <Route path="/register" render={props => {
             return <Register setUser={setUser} {...props} />
         }} />
