@@ -50,7 +50,7 @@
 }
 
 .chatAbove__userName > h4 {
-  margin: 0 5px 5px 10px;
+  margin: 0 5px 0px 10px;
   padding-top: 0px;
   font-size: 14px;
   color: #008DDE;
@@ -79,4 +79,8 @@
 
 .chatEditButton {
   margin-bottom: 5px;
+}
+
+.chat__addFriendBtn {
+  margin-top: 0;
 }
