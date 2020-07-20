@@ -2,6 +2,9 @@ import React, { useEffect, useState } from "react";
 import MessageManager from "../modules/MessageManager";
 import MessageCard from "./MessageCard";
 import MessageForm from "./MessageForm";
+import UserCard from "../auth/UserCard";
+import FriendList from "../friends/FriendList";
+
 import AddFriendFromMessage from "./AddFriendFromMessage";
 
 const MessageList = (props) => {
@@ -27,6 +30,7 @@ const MessageList = (props) => {
 
     return (
         <>
+            <UserCard />
             <section className="chatContainer">
                 <MessageForm {...props} />
                 <br />
@@ -41,7 +45,7 @@ const MessageList = (props) => {
                     </div>
                 </div>
             </section>
-
+            <FriendList />
         </>
     );
 };
