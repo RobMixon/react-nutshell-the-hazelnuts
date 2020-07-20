@@ -54,10 +54,10 @@ const NavBar = props => {
           : null}
         {props.hasUser
             ? <li>
-                <span className="nav-link" onClick={handleLogout}> 
+                <Link className="nav-link" onClick={handleLogout} to="/login"> 
                 <span role="img" aria-label="logout">&#x1F52A; </span> 
                 Logout 
-                </span>
+                </Link>
               </li>
             : <li>
                 <Link className="nav-link" to="/login">Login</Link>
