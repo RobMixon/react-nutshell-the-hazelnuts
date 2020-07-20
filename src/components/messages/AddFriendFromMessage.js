@@ -1,7 +1,7 @@
 import React, { useState, useEffect} from "react";
 import FriendManager from "../modules/FriendManager";
 import {Link} from "react-router-dom"
-import "../friends/friend.css"
+import MessageManager from "../modules/MessageManager";
 
 
 const AddFriendFromMessage = (props) => {

@@ -73,12 +73,9 @@ const Register = props => {
               <span className="registerAcct__text">
                 Already have an account?
               </span>
-
-              <a className="registerAcct__link">
                 <Link to="/login">
                   Sign In
                 </Link>
-              </a>
             </div>
           </form>
         </div>

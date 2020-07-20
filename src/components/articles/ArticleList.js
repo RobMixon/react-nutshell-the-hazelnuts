@@ -26,25 +26,31 @@ const ArticleList = (props) => {
 
   return (
     <>
-    <UserCard />
-    <main className="mainArticleContainer">
-      <section className="postArticle__button">
-        <button type="button"
-            className="wideBlueBtn"
-            onClick={() => {props.history.push("/articles/new")}}>
-            Post New Article
-        </button>
+    <main className="mainFlex">
+      <section className="mainFlex__userCard">
+        <UserCard />
       </section>
-      <div className="articleContainer-cards">
-        {articles.map(article => 
-          <ArticleCard 
-            key={article.id} 
-            article={article}
-            deleteArticle={deleteArticle} 
-            {...props} />)}
-      </div>
+      <section className="mainFlex__subpage">
+        <div className="postArticle__button">
+          <button type="button"
+              className="wideBlueBtn"
+              onClick={() => {props.history.push("/articles/new")}}>
+              Post New Article
+          </button>
+        </div>
+        <div className="articleContainer-cards">
+          {articles.map(article => 
+            <ArticleCard 
+              key={article.id} 
+              article={article}
+              deleteArticle={deleteArticle} 
+              {...props} />)}
+        </div>
+      </section>
+      <section className="mainFlex__friendList">
+        <FriendList />
+      </section>
     </main>
-    <FriendList />
     </>
   );
 };

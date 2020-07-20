@@ -30,22 +30,30 @@ const MessageList = (props) => {
 
     return (
         <>
-            <UserCard />
-            <section className="chatContainer">
-                <MessageForm {...props} />
-                <br />
-                <div className="chatLog__container">
-                    <div className="chatLog">
-                        {messages.map(message => 
-                            <MessageCard 
-                                key={message.id}
-                                message={message}
-                                {...props} 
-                            /> )} 
+            <main className="mainFlex">
+                <section className="mainFlex__userCard">
+                    <UserCard />
+                </section>
+
+                <section className="mainFlex__subpage">
+                    <MessageForm {...props} />
+                    <br />
+                    <div className="chatLog__container">
+                        <div className="chatLog">
+                            {messages.map(message => 
+                                <MessageCard 
+                                    key={message.id}
+                                    message={message}
+                                    {...props} 
+                                /> )} 
+                        </div>
                     </div>
-                </div>
-            </section>
-            <FriendList />
+                </section>
+                
+                <section className="mainFlex__friendList">
+                    <FriendList />
+                </section>
+            </main>
         </>
     );
 };

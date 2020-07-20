@@ -14,7 +14,7 @@ const NavBar = props => {
         {props.hasUser
           ? <li>
               <Link className="nav-link" to="/"> 
-              <span role="img" aria-label="home">&#x1F3E0;</span> 
+              <span role="img" aria-label="home">&#x1F3E0; </span> 
               Home 
               </Link>
           </li>
@@ -22,7 +22,7 @@ const NavBar = props => {
         {props.hasUser
           ? <li>
               <Link className="nav-link" to="/messages"> 
-              <span role="img" aria-label="message">&#x1F4AC;</span> 
+              <span role="img" aria-label="message">&#x1F4AC; </span> 
               Messages 
               </Link>
           </li>
@@ -38,7 +38,7 @@ const NavBar = props => {
         {props.hasUser
           ? <li>
               <Link className="nav-link" to="/events"> 
-              <span role="img" aria-label="event">&#x1F4C5;</span> 
+              <span role="img" aria-label="event">&#x1F4C5; </span> 
               Events 
               </Link>
             </li>
@@ -46,7 +46,7 @@ const NavBar = props => {
         {props.hasUser
           ? <li>
               <Link className="nav-link" to="/tasks"> 
-              <span role="img" aria-label="task">&#x1F4DD;</span> 
+              <span role="img" aria-label="task">&#x1F4DD; </span> 
               Tasks 
               </Link>
           </li>
@@ -54,7 +54,7 @@ const NavBar = props => {
         {props.hasUser
             ? <li>
                 <span className="nav-link" onClick={handleLogout}> 
-                <span role="img" aria-label="logout">&#x1F52A;</span> 
+                <span role="img" aria-label="logout">&#x1F52A; </span> 
                 Logout 
                 </span>
               </li>

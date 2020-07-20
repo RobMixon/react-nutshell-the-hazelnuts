@@ -13,7 +13,7 @@ const FriendList = (props) => {
      const getFriends = () => {
          return FriendManager.getUserFriends().then(friendsFromAPI=> {
              console.log(friendsFromAPI)
-             setFriends(friendsFromAPI.user)
+             setFriends(friendsFromAPI)
  
          })
      };
@@ -48,14 +48,15 @@ const FriendList = (props) => {
         <div className="friendOutput">
         
           </div>
-          <div className="searchFriendsField">
-            <input 
-              type="search" 
-              id="searchFriends" 
-              name="searchFriends" 
-              placeholder="Find A Friend..."/>
-          </div> 
-        </div>   
+        </div>
+        <div className="searchFriendsField">
+          <input 
+            type="search" 
+            id="searchFriends" 
+            name="searchFriends" 
+            placeholder="Find A Friend..."/>
+
+      </div>   
       
     </section>
   )};

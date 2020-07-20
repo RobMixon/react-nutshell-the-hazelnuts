@@ -1,9 +1,12 @@
 @import "./MessageForm.css";
 @import "./MessageCard.css";
+@import "./MessageEditForm.css";
 
 
-.chatContainer {
-  width: 50%;
+.mainFlex__subpage {
+  display: flex;
+  flex-direction: column;
+  width: 40%;
   margin: 10px 20px 0 0;
-  padding: 10px 100px;
+  padding: 10px 60px;
 }
