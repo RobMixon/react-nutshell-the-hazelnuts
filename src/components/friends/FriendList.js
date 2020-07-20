@@ -23,7 +23,7 @@ const FriendList = (props) => {
      }, []);
 
     const deleteFriend = (id) => {
-        FriendManager.deleteFriend(props.match.params.friendId)
+        FriendManager.deleteFriend(props.friendId)
         .then(() => {
             FriendManager.getAllFriends().then((friendsFromAPI) => {
               console.log(friendsFromAPI)

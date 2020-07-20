@@ -3,10 +3,10 @@ import React from "react";
 const FriendCard = (props) => {
 
   // const showFriends = () => {
-  //   if (props.friend.user === "") {
+  //   if (props.friend.user === undefined) {
+  //    null
+  //   } else if (props.friend.userId === 1) {
   //     return null
-  //   // } else if (props.friend.userId === 1) {
-  //   //   return null
   //   }else {
   //     return props.friend.user.username
   //   }
@@ -18,7 +18,7 @@ const FriendCard = (props) => {
             <div className="friend__userDetails">
               <img className="friend__userImage" src="./userIcon-black.png" alt="userIcon" />
               <div className="friend__name">
-              {/* {showFriends} */}
+            
               {props.friend.user === undefined ? null : props.friend.user.username}
               </div>
             </div>
