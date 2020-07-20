@@ -1,7 +1,7 @@
   import React from "react";
 
   const MessageCard = props => {
-
+    
     return (
         <>
             <div className="chatCard">
@@ -38,18 +38,15 @@
                     </div>
                 </div>
                 <div className="chat__buttonContainer">
-                    <div className="chatEditButton">
-                        {/* shows edit button only for current user */}
-                        {/* sessionStorage.getItem("credentials", parseInt()) */}
-                        {props.message.userId !== 1  ? null : 
-                        <button 
-                        className="chat__editBtn"
-                        id="darkBtn" 
-                        type="button"
-                        // onClick={} --need to send current message back to form on same or different page? and allow user to edit and submit again..
-                        >
-                        Edit
-                    </button>} 
+                <div className="chatEditButton">
+            {/* shows edit button only for current user */}
+             {props.message.userId !== 1 ? null : 
+            <button 
+                className="chat__editBtn" 
+                type="button"
+                onClick={() => props.history.push(`/messages/${props.message.id}/edit`)}>
+                Edit
+            </button>}
                     </div>
                 </div>  
             </div>

@@ -2,15 +2,19 @@ import React, { useState } from "react"
 import { Link } from "react-router-dom";
 
 const Login = props => {
-  const [credentials, setCredentials] = useState({ email: "", password: "", id:1 });
+  
+  const [credentials, setCredentials] = useState({email:"", password:"", id:1});
+  
 
   // Update state whenever an input field is edited
   const handleFieldChange = (evt) => {
-    const stateToChange = { ...credentials };
+    const stateToChange = { ...credentials};
     stateToChange[evt.target.id] = evt.target.value;
     setCredentials(stateToChange);
+    
   };
 
+  
   const handleLogin = (e) => {
     e.preventDefault();
     /*
@@ -23,6 +27,7 @@ const Login = props => {
     //   JSON.stringify(credentials)
     // );
     props.setUser(credentials);
+    console.log(credentials)
     props.history.push("/");
   }
 
