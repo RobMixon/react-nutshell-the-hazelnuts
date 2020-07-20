@@ -51,7 +51,7 @@ const MessageList = (props) => {
                 </section>
                 
                 <section className="mainFlex__friendList">
-                    <FriendList />
+                    <FriendList {...props} />
                 </section>
             </main>
         </>

@@ -49,7 +49,7 @@ const EventList = (props) => {
                 </div>
             </section>
                 <section className="mainFlex__friendList">
-                    <FriendList />
+                    <FriendList {...props} />
                 </section>
             </main>
         </>
