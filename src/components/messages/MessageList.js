@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import MessageManager from "../modules/MessageManager";
 import MessageCard from "./MessageCard";
 import MessageForm from "./MessageForm";
-import FriendList from "../friends/FriendList"
 
 
 const MessageList = (props) => {
@@ -19,15 +18,6 @@ const MessageList = (props) => {
         })
     };
 
-    const isAuthenticated = () => sessionStorage.getItem("credentials") !== null;
-
-    const clearUser = () => {
-        sessionStorage.clear()
-        setHasUser(isAuthenticated())
-    }
-
-    const [hasUser, setHasUser] = useState(isAuthenticated());
-
         useEffect(() => {
             getMessages();
         }, []);
@@ -37,8 +27,6 @@ const MessageList = (props) => {
             <section className="chatContainer">
                 <MessageForm {...props} />
                 <br />
-                <br />
-                <h3>Messages</h3>
                 <div className="chatLog__container">
                     <div className="chatLog">
                         {messages.map(message => 

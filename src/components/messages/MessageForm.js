@@ -43,7 +43,7 @@ const MessageForm = props => {
                 </div>
                 <div className="messageForm__container">
                     <div className="messageForm__profilePicture">
-                        <img className="messageForm__userImage" src="./userIcon-black.png" />
+                        <img className="messageForm__userImage" src="./userIcon-black.png" alt="userIcon" />
                     </div>
                     <div className="messageInput__compose">
                         <form className="messageForm__form">

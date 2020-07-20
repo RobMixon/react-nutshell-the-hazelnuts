@@ -1,0 +1,28 @@
+.linkCards {
+  display:grid;
+  grid-template-columns: 250px 250px;
+  grid-row: auto auto;
+  grid-column-gap: 20px;
+  grid-row-gap: 20px;
+}
+
+#link-contents {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.homeLink {
+  width: 180px;
+  height: auto;
+}
+
+.linkTitle {
+  color: #373737;
+  font-size: 17px;
+}
+
+.linkTitle:hover {
+  color: orangered;
+  font-size: 18px
+}

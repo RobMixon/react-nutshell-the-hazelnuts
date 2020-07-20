@@ -11,7 +11,7 @@ const UserCard = props => {
     UserManager.getUser(props.userId)
       .then(user => {
         setUser({
-            userName: user.userName
+            user: user.userName
         });
         setIsLoading(false);
       });
@@ -32,8 +32,7 @@ const UserCard = props => {
         <img className="mainUserImage" src="./userIcon-white.png" alt="userIcon" />
       </div>
       <div className="user__userName">
-        <p> UserName
-          {/* {user.userName}  */}
+        <p> UserName {user.userName}
           <sup> &#8226;</sup></p>
       </div>
       <div className="navBar">

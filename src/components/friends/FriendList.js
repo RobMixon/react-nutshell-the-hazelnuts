@@ -10,13 +10,7 @@ const FriendList = (props) => {
         </div>
       </div>
       <div className="friendsContainer">
-      <div className="searchFriendsField">
-          <input 
-            type="search" 
-            id="searchFriends" 
-            name="searchFriends" 
-            placeholder="Find A Friend..."/>
-        </div>        
+          
         <div className="friendOutput">
           {/* START SAMPLE HTML TO BE MOVED TO FRIEND CARD */}
           <div className="singleFriend">
@@ -31,7 +25,14 @@ const FriendList = (props) => {
             </div>
             {/* END SAMPLE HTML */}
           </div>
-        </div>
+          <div className="searchFriendsField">
+            <input 
+              type="search" 
+              id="searchFriends" 
+              name="searchFriends" 
+              placeholder="Find A Friend..."/>
+          </div> 
+        </div>   
       </div>
     </section>
   )};

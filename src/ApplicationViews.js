@@ -5,9 +5,7 @@ import { Route, Redirect } from "react-router-dom";
 import Home from "./components/home/Home";
 //login import
 import Login from "./components/auth/Login";
-//registration import
-
-//message imports
+import Register from "./components/auth/Register";
 import MessageList from "./components/messages/MessageList";
 
 //Article Imports
@@ -38,11 +36,11 @@ console.log(props)
         <Route path="/login" render={props => {
             return <Login setUser={setUser} {...props} />
         }} />
-        {/* registration route */}
-        {/* <Route exact path='/registration' render{props => {
-          return <Registration setUser{setUser} {...props} />
-        }} */}
-        {/* Home Route */}
+
+        <Route path="/register" render={props => {
+            return <Register setUser={setUser} {...props} />
+        }} />
+
         <Route exact path="/"
         render={props => {
           return <Home {...props} />
