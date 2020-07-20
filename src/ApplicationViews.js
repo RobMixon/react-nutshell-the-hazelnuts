@@ -29,7 +29,7 @@ import AddFriendFromMessage from "./components/messages/AddFriendFromMessage";
 
 const ApplicationViews = (props) => {
 
-console.log(props)
+console.log("app view" ,props)
     const hasUser = props.hasUser;
     const setUser = props.setUser;
 

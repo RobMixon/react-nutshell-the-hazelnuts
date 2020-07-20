@@ -1,18 +1,17 @@
 import React, { useState } from "react";
-import UserCard from "./components/auth/UserCard";
-import FriendList from "./components/friends/FriendList";
+// import UserCard from "./components/auth/UserCard";
+// import FriendList from "./components/friends/FriendList";
 import ApplicationViews from "./ApplicationViews";
 import "./Nutshell.css";
-import "./Main.css"
+import "./Main.css";
+
 
 const NutShell = () => {
 
-  const isAuthenticated = () => sessionStorage.getItem("credentials") !== null;
 
-  // const clearUser = () => {
-  //   sessionStorage.clear()
-  //   setHasUser(isAuthenticated())
-  // }
+  const isAuthenticated = () => sessionStorage.getItem("user") !== null;
+
+
 
   const [hasUser, setHasUser] = useState(isAuthenticated());
 

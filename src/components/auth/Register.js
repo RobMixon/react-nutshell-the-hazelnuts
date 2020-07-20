@@ -23,6 +23,7 @@ const constructNewUser = evt => {
   } else {
     console.log(user, "it works")
     setIsLoading(true);
+    sessionStorage.setItem("user", JSON.stringify(user))
     LoginManager.post(user)
     .then(()=>props.history.push("/"));
   }
