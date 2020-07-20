@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import EventCard from "./EventCard";
 import EventManager from "../modules/EventManager";
+import UserCard from "../auth/UserCard";
+import FriendList from "../friends/FriendList";
 
 
 const EventList = (props) => {
@@ -24,23 +26,27 @@ const EventList = (props) => {
     }, []);
 
     return(
-        <main className="mainEventContainer">
-            <section className="section-content">
-                <button 
-                    type="button" 
-                    className="wideBlueBtn" 
-                    onClick={() => {props.history.push("/events/new")}}>
-                    Add New Event
-                </button>
-            </section>
-            <div className="eventContainer-cards">
-                {events.map(event => <EventCard 
-                    key={event.id} 
-                    event={event}
-                    deleteEvent={deleteEvent} 
-                    {...props}/> )}
-            </div>
-        </main>
+        <>
+            <UserCard />
+            <main className="mainEventContainer">
+                <section className="section-content">
+                    <button 
+                        type="button" 
+                        className="wideBlueBtn" 
+                        onClick={() => {props.history.push("/events/new")}}>
+                        Add New Event
+                    </button>
+                </section>
+                <div className="eventContainer-cards">
+                    {events.map(event => <EventCard 
+                        key={event.id} 
+                        event={event}
+                        deleteEvent={deleteEvent} 
+                        {...props}/> )}
+                </div>
+            </main>
+            <FriendList />
+        </>
     )
 }
 

@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import ArticleCard from './ArticleCard';
 import ArticleManager from "../modules/ArticleManager";
+import UserCard from "../auth/UserCard";
+import FriendList from "../friends/FriendList";
 
 
 const ArticleList = (props) => {
@@ -24,6 +26,7 @@ const ArticleList = (props) => {
 
   return (
     <>
+    <UserCard />
     <main className="mainArticleContainer">
       <section className="postArticle__button">
         <button type="button"
@@ -41,6 +44,7 @@ const ArticleList = (props) => {
             {...props} />)}
       </div>
     </main>
+    <FriendList />
     </>
   );
 };

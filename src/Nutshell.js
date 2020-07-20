@@ -33,9 +33,7 @@ const NutShell = () => {
         </div>
       </header>
       <div className="mainFlex">
-        <UserCard />
         <ApplicationViews hasUser={hasUser} setUser={setUser} />
-        <FriendList />
       </div>
     </>
   );
