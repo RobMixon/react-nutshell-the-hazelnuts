@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import TaskManager from '../../components/modules/TaskManager'
+import UserCard from "../auth/UserCard";
+import FriendList from "../friends/FriendList";
 const userId = 2; 
 const TaskForm = (props) => {
 
@@ -15,7 +17,8 @@ const handleFieldChange = evt => {
 
 const constructNewTask = evt => {
     evt.preventDefault();
-    task.title === "" ? window.alert("Please make sure you fill in title"): task.completeBy === "" ? window.alert("please enter a completion date") :
+    if(task.title === "" || task.completeBy === "") { window.alert("please fill in the form") }
+    else {
     setIsLoading(true)
     let newTask = {
         userId: userId,
@@ -25,6 +28,7 @@ const constructNewTask = evt => {
     }
     console.log(newTask)
     TaskManager.post(newTask).then(() => props.history.push("/tasks"));
+}
 };
 // checkbox to mark complete as true
 
@@ -32,6 +36,7 @@ const constructNewTask = evt => {
 
 return (
     <>
+     <UserCard />
             <form>
                 <fieldset>
                     <div className="formgrid">
@@ -65,6 +70,9 @@ return (
                     </div>
                 </fieldset>
             </form>
+
+        <FriendList />
+
         </>
 )
 }

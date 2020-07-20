@@ -42,7 +42,7 @@ return (
             
             <section className="taskCard">{ task.map(element => 
                 <TaskCard key={element.id} task={element} {...props}/>
-                )};
+                )}
                 </section>
         </div>
         <FriendList />
