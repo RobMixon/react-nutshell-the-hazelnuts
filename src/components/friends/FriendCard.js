@@ -2,15 +2,6 @@ import React from "react";
 
 const FriendCard = (props) => {
 
-  // const showFriends = () => {
-  //   if (props.friend.user === undefined) {
-  //    null
-  //   } else if (props.friend.userId === 1) {
-  //     return null
-  //   }else {
-  //     return props.friend.user.username
-  //   }
-  // }
   
     return (
         <>
