@@ -10,34 +10,6 @@
                     <img src={`./userIcon-black.png`} alt="userIcon" />
                 </div>
             </div>
-<<<<<<< HEAD
-        </div>
-        <div className="chat__buttonContainer">
-
-        {/* added add friend button if not the current user */}
-            <div className="chatAddFriendButton">
-                {props.message.userId === 1 ? null : 
-                <button
-                className="chat__addFriendBtn"
-                type="button"
-                onClick={() => {props.history.push("/friends")}} 
-                >
-                Add Friend
-                </button>
-                }
-            </div>
-
-            <div className="chatEditButton">
-            {/* shows edit button only for current user */}
-             {props.message.userId !== 1 ? null : 
-            <button 
-                className="chat__editBtn" 
-                type="button"
-                onClick={() => props.history.push(`/messages/${props.message.id}/edit`)}>
-                Edit
-            </button>} 
-                
-=======
             <div className="chatCard__middle">
                 <div className="chatAbove__userName">
                     <h4>{props.message.user.username}</h4>
@@ -66,21 +38,17 @@
                     </div>
                 </div>
                 <div className="chat__buttonContainer">
-                    <div className="chatEditButton">
-                        {/* shows edit button only for current user */}
-                        {/* sessionStorage.getItem("credentials", parseInt()) */}
-                        {props.message.userId !== 1  ? null : 
-                        <button 
-                        className="chat__editBtn"
-                        id="darkBtn" 
-                        type="button"
-                        // onClick={} --need to send current message back to form on same or different page? and allow user to edit and submit again..
-                        >
-                        Edit
-                    </button>} 
+                <div className="chatEditButton">
+            {/* shows edit button only for current user */}
+             {props.message.userId !== 1 ? null : 
+            <button 
+                className="chat__editBtn" 
+                type="button"
+                onClick={() => props.history.push(`/messages/${props.message.id}/edit`)}>
+                Edit
+            </button>}
                     </div>
                 </div>  
->>>>>>> master
             </div>
         </div>
         </>

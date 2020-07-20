@@ -1,10 +1,7 @@
 import React, { useState } from "react";
 import MessageManager from "../modules/MessageManager";
-<<<<<<< HEAD
-=======
 import { currentDateTime } from "../modules/helperFunctions";
 
->>>>>>> master
 
 const MessageForm = props => { 
     //need to add userId: sessionStorage.getItem("credentials", parseInt(....))
@@ -34,12 +31,8 @@ const MessageForm = props => {
             window.location.reload(true)
            }   
         }
-<<<<<<< HEAD
-            
-=======
-    };
+   
 
->>>>>>> master
     return (
         <>
             <div className="messageForm">
@@ -85,9 +78,5 @@ const MessageForm = props => {
 
 }
 
-<<<<<<< HEAD
 export default MessageForm
 
-=======
-export default MessageForm
->>>>>>> master

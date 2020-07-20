@@ -2,19 +2,11 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./NavBar.css";
 
-<<<<<<< HEAD
-const NavBar = (props) => {
-  // const handleLogout = () => {
-  //   props.clearUser();
-  //   props.history.push('/');
-  // }
-=======
 const NavBar = props => {
   const handleLogout = () => {
     props.clearUser();
     props.history.push('/login');
   }
->>>>>>> master
 
   return (
     <nav>
