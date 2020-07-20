@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 
 const TaskCard = (props) => {
-    console.log(props.task, "hey")
+
     return (
         <div id={`task__${props.task.id}`} className="singleTask">
             <div className="taskBody__left">
@@ -26,7 +26,7 @@ const TaskCard = (props) => {
                         {props.userId == props.task.userId ?  <div className="clearfix"> <Link to={`/tasks/${props.task.id}/edit`}><button type="button" className="editbtn" id="darkBtn">Edit</button></Link></div>:null}
                     </div>
                     <div className="taskDeleteButton">
-                    {props.userId == props.task.userId ?  <div className="clearfix"> <button id={`deleteTask__${props.task.id}`} className="fullDeleteBtn" type="button">Delete</button></div>:null}
+                    {props.userId == props.task.userId ?  <div className="clearfix"> <button id={`deleteTask__${props.task.id}`} className="fullDeleteBtn" type="button" onClick={() => props.deleteTask(props.task.id)}>Delete</button></div>:null}
                         
                     </div>
                 </div>   

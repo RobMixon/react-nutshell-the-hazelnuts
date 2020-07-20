@@ -20,6 +20,12 @@ TaskManager.getAll().then((result) => {
 })
 }
 
+const deleteTask = (id) => {
+    TaskManager.delete(id).then(() => {
+        getTask()
+    })
+}
+
 // console.log(task)
 
 
@@ -42,7 +48,7 @@ return (
                     <button type="button" className="wideBlueBtn" onClick={() => {props.history.push("/tasks/new")}}>Add Task</button>
                 </div>
                 <div className="taskCard">{ task.map(element => 
-                    <TaskCard key={element.id} task={element} userId={userId}{...props}/>
+                    <TaskCard key={element.id} task={element} deleteTask={deleteTask} userId={userId}{...props}/>
                     )}
                 </div>
             </section>

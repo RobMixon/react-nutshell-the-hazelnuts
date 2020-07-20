@@ -24,6 +24,11 @@ const TaskManager = {
       },
       get(id) {
         return fetch(`${taskUrl}/tasks/${id}`).then(result => result.json())
+      },
+      delete(id) {
+        return fetch(`${taskUrl}/tasks/${id}`, {
+          method: "DELETE"
+        }).then(result => result.json())
       }
 }
 
