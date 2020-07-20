@@ -4,12 +4,11 @@ import ArticleManager from "../modules/ArticleManager";
 
 
 const ArticleList = (props) => {
-  // The initial state is an empty array
+
   const [articles, setArticles] = useState([]);
 
   const getArticles = () => {
-    // After the data comes back from the API, we
-    //  use the setarticles function to update state
+
     return ArticleManager.getWithUser().then(articlesFromAPI => {
       setArticles(articlesFromAPI)
     });
@@ -19,19 +18,16 @@ const ArticleList = (props) => {
     ArticleManager.deleteArticle(id)
       .then(() => ArticleManager.getWithUser().then(setArticles));
   };
-
-  // got the articles from the API on the component's first render
   useEffect(() => {
     getArticles();
   }, []);
 
-  // Finally we use map() to "loop over" the articles array to show a list of article cards
   return (
     <>
-    
-      <section className="section-content">
+    <main className="mainArticleContainer">
+      <section className="postArticle__button">
         <button type="button"
-            className="admitbtn"
+            className="wideBlueBtn"
             onClick={() => {props.history.push("/articles/new")}}>
             Post New Article
         </button>
@@ -44,6 +40,7 @@ const ArticleList = (props) => {
             deleteArticle={deleteArticle} 
             {...props} />)}
       </div>
+    </main>
     </>
   );
 };

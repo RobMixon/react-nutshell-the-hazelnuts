@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React from "react";
 
 const FriendCard = (props) => {
@@ -24,3 +25,5 @@ export default FriendCard;
 
 
 
+=======
+>>>>>>> master

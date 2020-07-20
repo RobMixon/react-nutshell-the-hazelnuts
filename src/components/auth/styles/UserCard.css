@@ -1,0 +1,43 @@
+.userContainer {
+  /* border: 1px dashed black; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+  background-color: #373737;
+  box-shadow: 3px 3px 8px #302e2ece;
+  width: 12%;
+  margin: 10px 5px 5px 10px;
+  height: 100%
+}
+
+.user__profilePicture {
+  text-align: center;
+  align-items: center;
+}
+
+.mainUserImage {
+  width: 135px;
+  height: 135px;
+  border-radius: 50%;
+}
+
+.user__userName {
+  font-weight: bold;
+  text-align: center;
+  margin-top: 10px;
+  color: white;
+  font-family: 'open sans', sans-serif
+}
+
+sup {
+  color: limegreen;
+  font-size: 18px;
+}
+
+.user__userName > p {
+  font-size: 16px;
+  color: whitesmoke;
+  margin: 0;
+}

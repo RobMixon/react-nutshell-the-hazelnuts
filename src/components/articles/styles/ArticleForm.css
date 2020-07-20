@@ -1,14 +1,21 @@
-fieldset {
-  max-width: 40em;
+.articleForm__form {
+  width: 45%;
+}
+
+.articleForm__fieldset {
   padding: 4px;
   margin: 2em auto;
+  padding: 20px;
   border: 0 none;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   border-radius: 5px;
-  background: aliceblue;
+  background: #cfcfcf;
+  width: 100%;
 }
 
-fieldset input, fieldset button, fieldset select{
+.articleForm__fieldset input, 
+.articleForm__fieldset button, 
+.articleForm__fieldset select {
   box-sizing: border-box;
   padding: .2em .4em;
   margin: .2em 0;
@@ -16,8 +23,8 @@ fieldset input, fieldset button, fieldset select{
   box-shadow: none;
 }
 
-fieldset button {
-  max-width: 9em;
+
+.articleForm__fieldset button {
   padding: .5em;
   margin: .3em auto;
   background-color: cornflowerblue;
@@ -32,30 +39,35 @@ fieldset button {
   cursor: pointer;
 }
 
-fieldset label {
+.articleForm__fieldset label {
   box-sizing: border-box;
   user-select: none;
   cursor: pointer;
   text-align: right;
+  color: black;
 }
-fieldset input:focus + label {
-  color: #933;
+.articleForm__fieldset input:focus + label {
+  color: orangered;
 }
 
-fieldset .formgrid {
+.articleForm__fieldset .article__formgrid {
   display: grid;
-  grid-template-columns: 1fr 1em 2fr;
+  grid-template-columns: 1fr 1em 7fr;
   grid-gap: .3em .6em;
   grid-auto-flow: dense;
   align-items: center;
+  width: 100%
 }
 
-fieldset input, fieldset button, fieldset select {
+.articleForm__fieldset input, 
+
+.articleForm__fieldset select {
   grid-column: 2 /4;
   width: auto;
   margin: 0
 }
-
-fieldset .alignRight {
-  text-align: right;
+.submitBtn {
+  width: 100%;
+  text-align: center;
+  margin-top: 10px;
 }

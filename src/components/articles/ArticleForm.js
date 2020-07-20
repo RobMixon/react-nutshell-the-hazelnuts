@@ -33,9 +33,10 @@ const ArticleForm = props => {
 
   return (
     <>
-      <form>
-        <fieldset>
-          <div className="formgrid">
+      
+      <form className="articleForm__form">
+        <fieldset className="articleForm__fieldset">
+          <div className="article__formgrid">
             <input
               type="text"
               required
@@ -45,7 +46,7 @@ const ArticleForm = props => {
             />
             <label htmlFor="title">Headline</label>
             <input
-              type="text"
+              type="textarea"
               required
               onChange={handleFieldChange}
               id="description"
@@ -60,9 +61,10 @@ const ArticleForm = props => {
             />
             <label htmlFor="url">Link</label>
           </div>
-          <div className="alignRight">
+          <div className="submitBtn">
             <button
               type="button"
+              className="wideBlueBtn"
               disabled={isLoading}
               onClick={constructNewArticle}
             >Post</button>
