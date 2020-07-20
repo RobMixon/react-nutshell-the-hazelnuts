@@ -25,7 +25,6 @@ export default {
    
     getUserFriends() {
         return fetch(`${remoteURL}/friends/?_expand=user`).then(result => result.json())
-        .then((friend) => console.log(friend))
     },
 
     // getUserFriendsById(userId) {
