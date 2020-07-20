@@ -23,9 +23,10 @@ const FriendList = (props) => {
      }, []);
 
     const deleteFriend = (id) => {
-        FriendManager.deleteFriend()
+        FriendManager.deleteFriend(id)
         .then(() => {
             FriendManager.getAllFriends().then((friendsFromAPI) => {
+              console.log(friendsFromAPI)
                  setFriends(friendsFromAPI)
             });
         });
@@ -40,9 +41,9 @@ const FriendList = (props) => {
       </div>
       <div className="friendsContainer">
       {friends && friends.map(friend => <FriendCard key={friend.id}
-                                                  friend={friend}
-                                                  deleteFriend={deleteFriend}
-                                                  {...props} 
+                                                    friend={friend}
+                                                    deleteFriend={deleteFriend}
+                                                    {...props} 
                                                   />)}  
           
         <div className="friendOutput">
