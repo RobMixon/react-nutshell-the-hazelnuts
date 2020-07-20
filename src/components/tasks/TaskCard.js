@@ -3,13 +3,13 @@ import React from 'react';
 import "./TaskCard.css"
 
 const TaskCard = (props) => {
-    console.log(props, "hey")
+    
  return (
      <div id={`task__${props.task.id}`} className="singleTask">
      <div className="task__header">
-     <div className="taskDeleteButton">
+     {props.userId == props.task.userId ? <div className="taskDeleteButton">
              <button id={`deleteTask__${props.task.id}`} className="deleteBtn" type="button">&times;</button>
-         </div>
+         </div>: null}
          <div className="completeBy">
              <p>Complete by: {props.task.completeBy}</p>
          </div>
@@ -22,10 +22,11 @@ const TaskCard = (props) => {
          <div className="task__description">
              <h3>{props.task.title}</h3>
          </div>   
-         <div className="clearfix">
-        <button type="button" className="editbtn">edit</button>
         
-      </div>
+         {props.userId == props.task.userId ?  <div className="clearfix">
+             <button type="button" className="editbtn">edit</button></div>:null}
+        
+      
      </div>
  </div>
 

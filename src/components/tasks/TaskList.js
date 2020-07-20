@@ -3,7 +3,9 @@ import { Link } from "react-router-dom";
 import TaskCard from "./TaskCard"
 import React, { useState, useEffect } from 'react';
 
+
 const TaskList = (props) => {
+    const userId = 1;
     
     const [task, setTask] = useState([])
    
@@ -31,10 +33,10 @@ return (
         <div className="container">
       <h1>Add Task</h1>
 
-      <button type="button" className="addbtn">Add</button>
+      <button type="button" className="addbtn" onClick={() => {props.history.push("/tasks/new")}} >Add Task</button>
       
       <section className="taskCard">{ task.map(element => 
-        <TaskCard key={element.id} task={element} {...props}/>
+        <TaskCard key={element.id} userId={userId} task={element} {...props}/>
         )};
         </section>
     </div>
