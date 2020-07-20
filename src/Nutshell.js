@@ -32,9 +32,9 @@ const NutShell = () => {
           <h2>A Website for Chit Chat and Pictures of What You Ate Last Night.</h2>
         </div>
       </header>
-      <div className="mainFlex">
+      
         <ApplicationViews hasUser={hasUser} setUser={setUser} />
-      </div>
+
     </>
   );
 };

@@ -68,12 +68,9 @@ const Login = props => {
               <span className="registerAcct__text">
                 Don’t have an account?
               </span>
-
-              <a className="registerAcct__link">
                 <Link to="/register">
-                  Sign Up
+                Sign Up
                 </Link>
-              </a>
             </div>
           </form>
         </div>

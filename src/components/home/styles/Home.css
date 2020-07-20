@@ -1,3 +1,10 @@
+.homeContainer {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  text-align: center;
+}
+
 .linkCards {
   display:grid;
   grid-template-columns: 250px 250px;

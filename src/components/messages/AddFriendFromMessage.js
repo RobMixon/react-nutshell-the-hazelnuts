@@ -1,7 +1,6 @@
 import React, { useState, useEffect} from "react";
 import FriendManager from "../modules/FriendManager";
 import MessageManager from "../modules/MessageManager";
-import "../friends/friend.css"
 
 const AddFriendFromMessage = (props) => {
     const [friend, setFriend] = useState({userId: 1, activeUserId:""})

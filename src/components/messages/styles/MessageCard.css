@@ -5,42 +5,14 @@
   margin-top: 20px;
   border-radius: 3px;
   box-shadow: 1px 1px 4px #302e2ece;
-}
-
-.chatContainer > h3 {
-  margin: 0 0 5px 0;
-  color: #373737;
-  border-bottom: #373737 solid 2px;
-  font-size: 20px;
+  background-color: silver;
 }
 
 .chatLog {
   margin-left: 0;
-  padding: 0 10px 0 0;
-  height: 350px;
-  overflow-y: scroll;
-  overflow-x: hidden;
-}
-
-/* SCROLLBAR */
-/* width */
-.chatLog::-webkit-scrollbar {
-  width: 8px;
-}
-
-/* Track */
-.chatLog::-webkit-scrollbar-track {
-  background: #f1f1f1; 
-}
- 
-/* Handle */
-.chatLog::-webkit-scrollbar-thumb {
-  background: #888; 
-}
-
-/* Handle on hover */
-.chatLog::-webkit-scrollbar-thumb:hover {
-  background: #555; 
+  padding: 0;
+  height: 100%;
+  background-color: silver;
 }
 
 .chatCard {
@@ -87,7 +59,7 @@
 .chat__text {
   margin: 0 5px 5px 10px;
   padding-top: 0px;
-  font-size: 14px;
+  font-size: 18px;
 }
 
 .chatCard__right {
