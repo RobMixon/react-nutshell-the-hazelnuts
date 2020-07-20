@@ -4,6 +4,7 @@ import Home from "./components/home/Home";
 import Login from "./components/auth/Login";
 import Register from "./components/auth/Register";
 import MessageList from "./components/messages/MessageList";
+import MessageEditForm from "./components/messages/MessageEditForm";
 
 //Article Imports
 import ArticleList from './components/articles/ArticleList';
@@ -18,8 +19,8 @@ import EventEditForm from "./components/events/EventEditForm";
 //Task Imports
 import TaskList from './components/tasks/TaskList';
 
-//Friends Imports
-// import FriendList from './components/friends/FriendList';
+// Friends Imports
+import FriendList from './components/friends/FriendList';
 
 
 const ApplicationViews = (props) => {
@@ -51,11 +52,18 @@ console.log(props)
           exact path="/messages"
           render={props => {
             if (hasUser) {
-              return <MessageList {...props} />
+              return <MessageList {...props} hasUser={hasUser} setUser={setUser} />
             } else {
               return <Redirect to="/login" />  
             }
           }} />
+
+          <Route
+            path="/messages/:messageId(\d+)/edit"
+            render={props => {
+              return <MessageEditForm {...props} messageId={props.match.params.messageId} />
+            }}
+            />
 
         {/* ARTICLE ROUTES */}
         <Route
@@ -104,15 +112,14 @@ console.log(props)
               return <TaskList {...props} />
         }}
         />
-
-        {/* FRIEND ROUTE */}
-        {/* <Route
+        {/* FRIEND ROUTES */}
+        <Route
           exact
           path="/friends"
           render={props => {
-              return <FriendList {...props} />
+              return <FriendList {...props} userId={props.match.params.userId}/>
         }}
-        /> */}
+        />
       </React.Fragment>
     )
 };
