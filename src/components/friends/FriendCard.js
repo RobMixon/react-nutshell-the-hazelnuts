@@ -1,1 +1,0 @@
-// returns indiviudal friend cards

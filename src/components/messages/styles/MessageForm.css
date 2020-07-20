@@ -1,0 +1,73 @@
+.messageForm {
+  display: flex;
+  flex-direction: column;
+  background-color: #373737;
+  margin-top: 10px;
+  border-radius: 3px;
+}
+
+.messageForm__title > h3 {
+  margin: 5px 0 5px 10px;
+  color: whitesmoke;
+}
+
+.messageForm__container {
+  display: flex;
+  flex-direction: row;
+  background-color: white;
+  margin: 0 5px 5px;
+  padding: 5px;
+  border-radius: 3px;
+  -moz-box-shadow:    inset 0 2px 2px #302e2e77;
+  -webkit-box-shadow: inset 0 2px 2px #302e2e77;
+  box-shadow:         inset 0 2px 2px #302e2e77;
+}
+
+.messageForm__userImage {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  padding: 10px;
+}
+
+.messageInput__compose {
+  width: 75%;
+  background-color: none;
+}
+
+.messageForm__form {
+  background-color: none;
+  height: 100%;
+}
+
+.messageForm__fieldset {
+  background-color: none;
+  border: none;
+}
+
+.messageForm__content {
+  width: 100%;
+  height: 60px;
+  padding: none;
+  margin: none;
+  resize: none;
+  border: none;
+  border-radius: 3px;
+  font-size: 14px;
+  font-family: sans-serif;
+  outline: none;
+}
+
+.messageForm__content:active {
+  border: none;
+}
+
+.messageForm__button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 15%;
+  height: auto;
+  padding-right: 10px;
+}

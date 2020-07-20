@@ -1,24 +1,23 @@
 import React from "react";
-import { currentDateTime } from "../modules/helperFunctions";
 
 const ArticleCard = (props) => {
   return (
-    <div id="article__{props.article.id}" className="singleArticle">
+    <div id="article__{props.article.id}" className="userArticle">
       <div className="article__header">
           <div className="nameDate">
               <div className="article__user">
               {props.article.user.username}
               </div>
               <div className="article__date">
-              {currentDateTime(props.article.date)}
+              {props.article.date}
               </div>
           </div>        
           <div className="article__deleteButton">
               <button 
                 type="button" 
-                className="deleteBtn"
+                className="fullDeleteBtn"
                 onClick={() => props.deleteArticle(props.article.id)}>
-                  &times;
+                  Delete
               </button>
           </div>
       </div>

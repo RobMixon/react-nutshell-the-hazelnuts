@@ -1,0 +1,9 @@
+@import "./ArticleCard.css";
+@import "./ArticleForm.css";
+
+.mainArticleContainer {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+  width: 50%;
+}

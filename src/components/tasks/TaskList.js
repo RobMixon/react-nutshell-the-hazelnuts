@@ -1,5 +1,5 @@
 import TaskManager from "../modules/TaskManager"
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import TaskCard from "./TaskCard"
 import React, { useState, useEffect } from 'react';
 
@@ -27,9 +27,10 @@ TaskManager.getAll().then((result) => {
 useEffect(() => {
 getTask()
 }, []) 
+  
 // return : open form button + ArticleCard function
 return (
-    
+    <>
         <div className="container">
       <h1>Add Task</h1>
 
@@ -40,6 +41,7 @@ return (
         )};
         </section>
     </div>
+    </>
     )
 
 }
