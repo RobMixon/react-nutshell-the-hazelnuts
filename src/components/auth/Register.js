@@ -1,30 +1,32 @@
-import React, { useState } from "react"
+import React, {useState} from "react";
 import { Link } from "react-router-dom";
+import LoginManager from "../modules/LoginManager";
+
 
 const Register = props => {
-  const [credentials, setCredentials] = useState({ email: "", password: "", id:1 });
+const [user, setUser] = useState({username: "", email:"", password:""})
+const [isLoading, setIsLoading]= useState(false);
 
-  // Update state whenever an input field is edited
-  const handleFieldChange = (evt) => {
-    const stateToChange = { ...credentials };
-    stateToChange[evt.target.id] = evt.target.value;
-    setCredentials(stateToChange);
-  };
+const handleFieldChange = evt => {
+  const stateToChange = { ...user };
+  stateToChange[evt.target.id] = evt.target.value;
+  setUser(stateToChange);
+};
 
-  const handleLogin = (e) => {
-    e.preventDefault();
-    /*
-        For now, just store the email and password that
-        the customer enters into session storage.
-        ...Let's just trust the user... That's a good idea, right????
-    */
-    // sessionStorage.setItem(
-    //   "credentials",
-    //   JSON.stringify(credentials)
-    // );
-    props.setUser(credentials);
-    props.history.push("/");
+const constructNewUser = evt => {
+  evt.preventDefault();
+  let password2= document.querySelector("#password2").value
+  if(user.username===""||user.email===""||user.password===""){
+    window.alert("Please fill all fields out before creating a new account")
+  } else if (user.password!== password2) {
+    window.alert("Your password does not match")
+  } else {
+    console.log(user, "it works")
+    setIsLoading(true);
+    LoginManager.post(user)
+    .then(()=>props.history.push("/"));
   }
+};
 
   return (
     <div className="limiter">
@@ -35,35 +37,36 @@ const Register = props => {
           </div>
 
 
-          <form onSubmit={handleLogin}>
+          <form>
             <span className="loginHeader">
               New Account
             </span>
 
             <div className="form-input">
-              <input onChange={handleFieldChange} className="inputField" type="text" name="userName"/>
+              <input className="inputField" type="text" required onChange={handleFieldChange} id="username"/>
               <span className="focus-inputField" data-placeholder="Username"></span>
             </div>
 
             <div className="form-input">
-              <input onChange={handleFieldChange} className="inputField" type="text" name="email"/>
+              <input className="inputField" type="text" required onChange={handleFieldChange} id="email"/>
               <span className="focus-inputField" data-placeholder="Email"></span>
             </div>
 
             <div className="form-input">
-              <input onChange={handleFieldChange} className="inputField" type="password" name="pass"/>
+              <input className="inputField" type="password" required onChange={handleFieldChange} id="password"/>
               <span className="focus-inputField" data-placeholder="Password"></span>
             </div>
 
             <div className="form-input">
-              <input onChange={handleFieldChange} className="inputField" type="password" name="pass"/>
+              <input className="inputField" type="password" id="password2"/>
               <span className="focus-inputField" data-placeholder="Password Confirm"></span>
             </div>
 
             <div className="container-login-form-btn">
               <div className="wrap-login-form-btn">
                 <div className="login-form-bgbtn"></div>
-                <button type="submit" className="login-form-btn">
+                <button type="submit" className="login-form-btn" disabled={isLoading}
+                onClick={constructNewUser}>
                   Create Account
                 </button>
               </div>

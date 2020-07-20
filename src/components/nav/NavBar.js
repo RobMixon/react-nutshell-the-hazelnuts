@@ -1,11 +1,12 @@
 import React from "react";
-import { Link } from "react-router-dom";
+// import { withRouter } from 'react-router-dom';
+import { Link, Redirect } from "react-router-dom";
 import "./NavBar.css";
 
 const NavBar = props => {
   const handleLogout = () => {
     props.clearUser();
-    props.history.push('/login');
+    return <Redirect to ="/"></Redirect>
   }
 
   return (
