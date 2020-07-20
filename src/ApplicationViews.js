@@ -2,6 +2,7 @@ import React from "react";
 import { Route, Redirect } from "react-router-dom";
 import Home from "./components/home/Home";
 import Login from "./components/auth/Login";
+import Register from "./components/auth/Register";
 import MessageList from "./components/messages/MessageList";
 
 //Article Imports
@@ -31,6 +32,10 @@ console.log(props)
       <React.Fragment>
         <Route path="/login" render={props => {
             return <Login setUser={setUser} {...props} />
+        }} />
+
+        <Route path="/register" render={props => {
+            return <Register setUser={setUser} {...props} />
         }} />
 
         <Route exact path="/"
