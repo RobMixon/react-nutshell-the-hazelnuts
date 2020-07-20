@@ -2,7 +2,7 @@ const remoteURL = "http://localhost:5002"
 
 export default {
     getAllFriends() {
-       return fetch(`${remoteURL}/friends`).then(result => { result.json() })
+       return fetch(`${remoteURL}/friends`).then(result => result.json())
     },
 
     deleteFriend(id) {
@@ -22,10 +22,19 @@ export default {
 
     },
 
+   
     getUserFriends() {
         return fetch(`${remoteURL}/friends/?_expand=user`).then(result => result.json())
         .then((friend) => console.log(friend))
-    }
+    },
+
+    // getUserFriendsById(userId) {
+    //     return fetch(`${remoteURL}/users/${userId}?_embed=friends`).then(result => result.json())
+    // },
+
+    // getUserFriends() {
+    //     return fetch(`${remoteURL}/users/?_embed=friends`).then(result => result.json())
+    // }
 
     
 }

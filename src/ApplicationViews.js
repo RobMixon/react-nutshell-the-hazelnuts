@@ -55,7 +55,7 @@ console.log(props)
           <Route
             path="/messages/:messageId(\d+)/edit"
             render={props => {
-              return <MessageEditForm {...props} />
+              return <MessageEditForm {...props} messageId={props.match.params.messageId} />
             }}
             />
 
@@ -111,7 +111,7 @@ console.log(props)
           exact
           path="/friends"
           render={props => {
-              return <FriendList {...props} />
+              return <FriendList {...props} userId={props.match.params.userId}/>
         }}
         />
       </React.Fragment>

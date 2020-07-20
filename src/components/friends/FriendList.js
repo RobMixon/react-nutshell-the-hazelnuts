@@ -8,11 +8,14 @@ const FriendList = (props) => {
     //declaring initial state as empty array
     const [friends, setFriends] = useState([])
     
+    
+    
     // get all user's friends
     const getFriends = () => {
-        return FriendManager.getAllFriends().then(friendsFromAPI=> {
+        return FriendManager.getUserFriends().then(friendsFromAPI=> {
+            console.log(friendsFromAPI)
             setFriends(friendsFromAPI)
-           
+
         })
     };
 
@@ -20,8 +23,9 @@ const FriendList = (props) => {
         getFriends();
     }, []);
 
+
     const deleteFriend = (id) => {
-        FriendManager.deleteFriend(id)
+        FriendManager.deleteFriend()
         .then(() => {
             FriendManager.getAllFriends().then((friendsFromAPI) => {
                  setFriends(friendsFromAPI)
@@ -32,17 +36,14 @@ const FriendList = (props) => {
 
     return (
         <>
-        {/* style={{ display:  ? "none" : "block" }} */}
-        <div className="addFriend" >
-       <AddFriendFromMessage {...props}/>
-       </div>
-       
+    
         <div className="container-cards">
-             {/* {friends.map(friend => <FriendCard key={friend.id}
+       
+             {friends && friends.map(friend => <FriendCard key={friend.id}
                                                   friend={friend}
                                                   deleteFriend={deleteFriend}
                                                   {...props} 
-                                                  />)}   */}
+                                                  />)}  
         </div>
         </>
     );

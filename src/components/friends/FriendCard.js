@@ -9,8 +9,7 @@ const FriendCard = (props) => {
             {/* <img class="friend__userImage" src="/images/userIcon.png"> */}
             <div className="friend__name">
             {/* what should this be? */}
-            User: {props.friend.user.username}
-                Friend: {props.friend.followingId}
+                Friend: {props.friend.activeUserId}
             </div>
         </div>
         <div className="friendsList__deleteBtn">
