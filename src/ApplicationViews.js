@@ -40,8 +40,11 @@ console.log(props)
 
         <Route exact path="/"
         render={props => {
-          return <Home {...props} />
-        }} />
+          if (hasUser) {
+            return <Home {...props} />
+          } else {
+            return <Redirect to="/login" />
+          }}} />
 
         {/* MESSAGE ROUTES */}
         <Route

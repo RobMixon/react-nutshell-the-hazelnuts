@@ -2,6 +2,8 @@ import TaskManager from "../modules/TaskManager"
 // import { Link } from "react-router-dom";
 import TaskCard from "./TaskCard"
 import React, { useState, useEffect } from 'react';
+import UserCard from "../auth/UserCard";
+import FriendList from "../friends/FriendList";
 
 const TaskList = (props) => {
     
@@ -29,6 +31,7 @@ getTask()
 // return : open form button + ArticleCard function
 return (
     <>
+        <UserCard />
         <div className="container">
             <h1>Add Task</h1>
 
@@ -39,6 +42,7 @@ return (
                 )};
                 </section>
         </div>
+        <FriendList />
     </>
     )
 
