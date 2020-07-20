@@ -1,9 +1,21 @@
-
-.articleForm__form {
-  width: 45%;
+.messageEditEditForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+  width: 100%
 }
 
-.articleForm__fieldset {
+.messageEditEditFormContainer {
+  width: 50%;
+}
+
+.messageEditForm__form {
+  width: 100%;
+}
+
+.messageEditForm__fieldset {
   padding: 4px;
   margin: 2em auto;
   padding: 20px;
@@ -14,9 +26,9 @@
   width: 100%;
 }
 
-.articleForm__fieldset input, 
-.articleForm__fieldset button, 
-.articleForm__fieldset select {
+.messageEditForm__fieldset input, 
+.messageEditForm__fieldset button, 
+.messageEditForm__fieldset select {
   box-sizing: border-box;
   padding: .2em .4em;
   margin: .2em 0;
@@ -24,34 +36,23 @@
   box-shadow: none;
 }
 
-
-.articleForm__fieldset button {
-  padding: .5em;
-  margin: .3em auto;
-  background-color: cornflowerblue;
-  border: none;
-  color: cornsilk;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 14px;
-  border-radius: 2px;
-  width: 100%;
-  cursor: pointer;
+#content {
+  width: 99%;
+  height: 100px;
 }
 
-.articleForm__fieldset label {
+.messageEditForm__fieldset label {
   box-sizing: border-box;
   user-select: none;
   cursor: pointer;
   text-align: right;
   color: black;
 }
-.articleForm__fieldset input:focus + label {
+.messageEditForm__fieldset input:focus + label {
   color: orangered;
 }
 
-.articleForm__fieldset .article__formgrid {
+.messageEditForm__fieldset .messageEdit__formgrid {
   display: grid;
   grid-template-columns: 1fr 1em 7fr;
   grid-gap: .3em .6em;
@@ -60,14 +61,14 @@
   width: 100%
 }
 
-.articleForm__fieldset input, 
+.messageEditForm__fieldset input, 
 
-.articleForm__fieldset select {
+.messageEditForm__fieldset select {
   grid-column: 2 /4;
   width: auto;
   margin: 0
 }
-.submitBtn {
+#submitBtn {
   width: 100%;
   text-align: center;
   margin-top: 10px;

@@ -1,0 +1,122 @@
+#taskContainer {
+    margin-top: 20px;
+    background-color: #373737;
+    height: 100%;
+    width: 100%;
+    box-shadow: 2px 2px 4px #302e2ece;
+}
+
+.taskLabel {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    color: whitesmoke;
+}
+
+.taskTitle > h3 {
+    margin: 5px 0 0 10px;
+    color: whitesmoke;
+}
+
+.createTask {
+    padding: 10px;
+}
+
+.fieldLabel {
+    color: whitesmoke;
+    margin-bottom: 0;
+}
+
+.taskValue2 {
+    margin-top: 0;
+}
+
+#taskDate {
+    margin-bottom: 10px;
+}
+
+.taskField {
+    margin-top: 0;
+    padding-top: 0;
+
+}
+
+.createTask__saveBtn {
+    text-align: right;
+}
+
+.singleTask {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: whitesmoke;
+    margin: 10px;
+    text-align: left;
+    overflow: wrap;
+    height: auto;
+    border-radius: 3px;
+    box-shadow: 1px 1px 4px #302e2ece;
+}
+
+.completeBy > p {
+    font-size: 13px;
+    color: red;
+    font-style: italic;
+    margin-top: 10px;
+    width: 60%;
+}
+
+.completeBy > p > span {
+    font-size: 14px;
+    color: black;
+}
+
+.taskDeleteButton {
+    color: grey;
+    font-style: bold;
+    text-align: right;
+    margin-top: 5px;
+}
+
+.taskBody__left {
+    display: flex;
+    flex-direction: row;
+    padding: 3px 10px;
+    width: 50%;
+    padding-top: 10px;
+}
+
+.taskBody__right {
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+}
+
+.taskButtonContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+}
+
+.task__checkbox {
+    margin-right: 5px;
+    margin-top: 3px;
+}
+
+.task__description {
+    text-align: left;
+    padding-bottom: 5px;
+}
+
+.task__description > h3 {
+    margin: 3px 5px 3px 0;
+    font-size: 13px;
+}
+
+.logout {
+    font-size: 12px;
+    margin: 0;
+    padding: 0;
+    color: #a86628;
+}
+
