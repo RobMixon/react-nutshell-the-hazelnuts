@@ -2,9 +2,7 @@ import React, { useState } from "react"
 import { Link } from "react-router-dom";
 
 const Login = props => {
-  
-  const [credentials, setCredentials] = useState({email:"", password:"", id:1});
-  
+  const [credentials, setCredentials] = useState({ username:"", email: "", password: "", id:1 });
 
   // Update state whenever an input field is edited
   const handleFieldChange = (evt) => {
@@ -17,6 +15,7 @@ const Login = props => {
   
   const handleLogin = (e) => {
     e.preventDefault();
+
     /*
         For now, just store the email and password that
         the customer enters into session storage.
@@ -68,12 +67,9 @@ const Login = props => {
               <span className="registerAcct__text">
                 Don’t have an account?
               </span>
-
-              <a className="registerAcct__link">
                 <Link to="/register">
-                  Sign Up
+                Sign Up
                 </Link>
-              </a>
             </div>
           </form>
         </div>

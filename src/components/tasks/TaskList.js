@@ -33,19 +33,23 @@ getTask()
 // return : open form button + ArticleCard function
 return (
     <>
-        <UserCard />
-        <div className="container">
-            <h1>Add Task</h1>
-
-            <button type="button" className="addbtn" onClick={() => {props.history.push("/tasks/new")}} >Add Task</button>
-
-            
-            <section className="taskCard">{ task.map(element => 
-                <TaskCard key={element.id} task={element} userId={userId} {...props}/>
-                )}
-                </section>
-        </div>
-        <FriendList />
+        <main className="mainFlex">
+            <section className="mainFlex__userCard">
+                <UserCard />
+            </section>
+            <section className="mainFlex__subpage ">
+                <div className="postTask__button">
+                    <button type="button" className="wideBlueBtn" onClick={() => {props.history.push("/tasks/new")}}>Add Task</button>
+                </div>
+                <div className="taskCard">{ task.map(element => 
+                    <TaskCard key={element.id} task={element} userId={userId}{...props}/>
+                    )}
+                </div>
+            </section>
+            <section className="mainFlex__friendList">
+                <FriendList />
+            </section>
+        </main>
     </>
     )
 

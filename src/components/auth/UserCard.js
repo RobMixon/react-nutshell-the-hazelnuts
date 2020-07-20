@@ -36,7 +36,7 @@ const UserCard = props => {
           <sup> &#8226;</sup></p>
       </div>
       <div className="navBar">
-        <NavBar hasUser={hasUser} clearUser={clearUser} />
+        <NavBar hasUser={hasUser} disabled={isLoading} clearUser={clearUser} />
       </div>
     </div>
 )}

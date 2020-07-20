@@ -1,6 +1,9 @@
 import React from "react";
 import { Route, Redirect } from "react-router-dom";
+
+//home import
 import Home from "./components/home/Home";
+//login import
 import Login from "./components/auth/Login";
 import Register from "./components/auth/Register";
 import MessageList from "./components/messages/MessageList";
@@ -37,6 +40,7 @@ console.log(props)
             return <Login setUser={setUser} {...props} />
         }} />
 
+        {/* login paths */}
         <Route path="/register" render={props => {
             return <Register setUser={setUser} {...props} />
         }} />

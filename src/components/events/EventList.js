@@ -27,8 +27,11 @@ const EventList = (props) => {
 
     return(
         <>
-            <UserCard />
-            <main className="mainEventContainer">
+            <main className="mainFlex">
+                <section className="mainFlex__userCard">
+                    <UserCard />
+                </section>
+            <section className="mainFlex__subpage">
                 <section className="section-content">
                     <button 
                         type="button" 
@@ -44,8 +47,11 @@ const EventList = (props) => {
                         deleteEvent={deleteEvent} 
                         {...props}/> )}
                 </div>
+            </section>
+                <section className="mainFlex__friendList">
+                    <FriendList />
+                </section>
             </main>
-            <FriendList />
         </>
     )
 }

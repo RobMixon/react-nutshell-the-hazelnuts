@@ -12,6 +12,18 @@ const TaskManager = {
           },
           body: JSON.stringify(newTask)
         }).then(data => data.json())
+      },
+      update(task) {
+        return fetch(`${taskUrl}/tasks/${task.id}`, {
+          method: "PUT",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify(task)
+        }).then(data => data.json());
+      },
+      get(id) {
+        return fetch(`${taskUrl}/tasks/${id}`).then(result => result.json())
       }
 }
 
