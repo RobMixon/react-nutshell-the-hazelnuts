@@ -1,0 +1,72 @@
+.taskForm__form,
+.taskEdit___form {
+  width: 100%;
+}
+
+.taskForm__fieldset {
+  padding: 4px;
+  margin: 2em auto;
+  padding: 20px;
+  border: 0 none;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  border-radius: 5px;
+  background: #cfcfcf;
+  width: 50%;
+}
+
+.taskForm__fieldset input, 
+.taskForm__fieldset button, 
+.taskForm__fieldset select {
+  box-sizing: border-box;
+  padding: .2em .4em;
+  margin: .2em 0;
+  outline: none;
+  box-shadow: none;
+}
+
+.task__formgrid > #description {
+  height: 100px;
+}
+
+
+.taskForm__fieldset button {
+  padding: .5em;
+  margin: .3em auto;
+  background-color: cornflowerblue;
+  border: none;
+  color: cornsilk;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  border-radius: 2px;
+  width: 100%;
+  cursor: pointer;
+}
+
+.taskForm__fieldset label {
+  box-sizing: border-box;
+  user-select: none;
+  cursor: pointer;
+  text-align: right;
+  color: black;
+}
+.taskForm__fieldset input:focus + label {
+  color: orangered;
+}
+
+.taskForm__fieldset .task__formgrid {
+  display: grid;
+  grid-template-columns: 1fr 1em 7fr;
+  grid-gap: .3em .6em;
+  grid-auto-flow: dense;
+  align-items: center;
+  width: 100%
+}
+
+.taskForm__fieldset input, 
+.taskForm__fieldset select {
+  grid-column: 2 /4;
+  width: auto;
+margin: 0
+}

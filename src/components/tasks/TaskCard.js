@@ -18,6 +18,9 @@ const TaskCard = (props) => {
                     <h3>{props.task.title}</h3>
                 </div>
             </div>  
+            <div className="taskBody__middle">
+                
+            </div>
             <div className="taskBody__right">
                 <div className="completeBy">
                     <p>Complete by: <span>{props.task.completeBy}</span></p>
