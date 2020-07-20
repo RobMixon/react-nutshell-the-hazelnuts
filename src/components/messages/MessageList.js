@@ -5,7 +5,7 @@ import MessageForm from "./MessageForm";
 import UserCard from "../auth/UserCard";
 import FriendList from "../friends/FriendList";
 
-import AddFriendFromMessage from "./AddFriendFromMessage";
+
 
 const MessageList = (props) => {
     
