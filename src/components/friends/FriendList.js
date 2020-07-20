@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import FriendManager from "../modules/FriendManager";
 import FriendCard from "./FriendCard";
-import AddFriendFromMessage from "../messages/AddFriendFromMessage";
 
 
 const FriendList = (props) => {
@@ -9,8 +8,7 @@ const FriendList = (props) => {
      //declaring initial state as empty array
      const [friends, setFriends] = useState([])
     
-    
-    
+
      // get all user's friends
      const getFriends = () => {
          return FriendManager.getUserFriends().then(friendsFromAPI=> {

@@ -21,6 +21,7 @@ import TaskList from './components/tasks/TaskList';
 
 // Friends Imports
 import FriendList from './components/friends/FriendList';
+import AddFriendFromMessage from "./components/messages/AddFriendFromMessage";
 
 
 const ApplicationViews = (props) => {
@@ -56,12 +57,21 @@ console.log(props)
           }} />
 
           <Route
+          exact
             path="/messages/:messageId(\d+)/edit"
             render={props => {
               return <MessageEditForm {...props} messageId={props.match.params.messageId} />
             }}
             />
 
+          <Route
+          path="/messages/addFriend"
+          render={props => {
+              return <AddFriendFromMessage {...props} />
+                 
+          }}
+         
+          />
         {/* ARTICLE ROUTES */}
         <Route
           exact
@@ -107,14 +117,6 @@ console.log(props)
           path="/tasks"
           render={props => {
               return <TaskList {...props} />
-        }}
-        />
-        {/* FRIEND ROUTES */}
-        <Route
-          exact
-          path="/friends"
-          render={props => {
-              return <FriendList {...props} userId={props.match.params.userId}/>
         }}
         />
       </React.Fragment>

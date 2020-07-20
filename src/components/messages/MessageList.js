@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import MessageManager from "../modules/MessageManager";
 import MessageCard from "./MessageCard";
 import MessageForm from "./MessageForm";
-import AddFriendFromMessage from "./AddFriendFromMessage";
+
 
 const MessageList = (props) => {
     

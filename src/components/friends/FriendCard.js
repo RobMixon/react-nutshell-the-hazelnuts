@@ -8,7 +8,7 @@ const FriendCard = (props) => {
             <div className="friend__userDetails">
               <img className="friend__userImage" src="./userIcon-black.png" alt="userIcon" />
               <div className="friend__name">
-                FriendUserName
+               {props.friend.username}
               </div>
             </div>
             <div className="friendsList__deleteBtn">
