@@ -1,4 +1,5 @@
   import React from "react";
+  import {Link} from "react-router-dom"
 
   const MessageCard = props => {
     
@@ -13,17 +14,19 @@
             <div className="chatCard__middle">
                 <div className="chatAbove__userName">
                     <h4>{props.message.user.username}</h4>
-                    {/* added add friend button if not the current user (should this be username?) */}
+                    {/* added add friend button if not the current user */}
                     {props.message.userId === 1 ? null : 
+                    <Link to="/messages/addFriend">
                         <button
                         className="chat__addFriendBtn"
                         type="button"
                         id="addFriendBtn"
-                        // onClick={} --need to present user with message asking to verify if want to add friend to friend list
+                        // onClick={props.history.push("/messages/addFriend")} 
                         >
                             <img src="./addFriend-black.png" className="addFriendIcon" alt="addFriend" />
                         </button>
-                        }
+                       
+                        </Link> }
                 </div>
                 <div className="chatBelow__message">
                     <p className="chat__text">
@@ -41,12 +44,15 @@
                 <div className="chatEditButton">
             {/* shows edit button only for current user */}
              {props.message.userId !== 1 ? null : 
+            <Link to={`/messages/${props.message.id}/edit`}>
             <button 
                 className="chat__editBtn" 
                 type="button"
-                onClick={() => props.history.push(`/messages/${props.message.id}/edit`)}>
+                // onClick={() => props.history.push(`/messages/${props.message.id}/edit`)}
+                >
                 Edit
-            </button>}
+            </button>
+            </Link>}
                     </div>
                 </div>  
             </div>
