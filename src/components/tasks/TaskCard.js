@@ -23,7 +23,7 @@ const TaskCard = (props) => {
                 <div className="taskButtonContainer">
                     <div className="clearfix">
                         
-                        {props.userId == props.task.userId ?  <div className="clearfix"> <Link to={`/tasks/${props.task.userId}/edit`}><button type="button" className="editbtn" id="darkBtn">Edit</button></Link></div>:null}
+                        {props.userId == props.task.userId ?  <div className="clearfix"> <Link to={`/tasks/${props.task.id}/edit`}><button type="button" className="editbtn" id="darkBtn">Edit</button></Link></div>:null}
                     </div>
                     <div className="taskDeleteButton">
                     {props.userId == props.task.userId ?  <div className="clearfix"> <button id={`deleteTask__${props.task.id}`} className="fullDeleteBtn" type="button">Delete</button></div>:null}

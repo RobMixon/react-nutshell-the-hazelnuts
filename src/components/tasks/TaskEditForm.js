@@ -22,7 +22,7 @@ const TaskFormEdit = props => {
         // This is an edit, so we need the id
         const editTask = {
             id: props.match.params.tasksId,
-            userId: props.match.params.task.userId,
+            userId: task.userId,
             title: task.title,
             completeBy: task.completeBy,
         };
