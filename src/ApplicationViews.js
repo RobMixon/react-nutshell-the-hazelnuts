@@ -110,6 +110,13 @@ console.log(props)
               return <TaskList {...props} />
         }}
         />
+        <Route
+          exact
+          path="/tasks/new"
+          render={props => {
+              return <TaskForm {...props} />
+        }}
+        />
         {/* FRIEND ROUTES */}
         <Route
           exact

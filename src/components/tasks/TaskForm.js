@@ -17,8 +17,15 @@ const constructNewTask = evt => {
     evt.preventDefault();
     task.title === "" ? window.alert("Please make sure you fill in title"): task.completeBy === "" ? window.alert("please enter a completion date") :
     setIsLoading(true)
-    TaskManager.post(task).then(() => props.history.push("/tasks"))
-}
+    let newTask = {
+        userId: userId,
+        title: task.title,
+        completeBy: task.completeBy,
+        status: task.status
+    }
+    console.log(newTask)
+    TaskManager.post(newTask).then(() => props.history.push("/tasks"));
+};
 // checkbox to mark complete as true
 
 // save button
@@ -28,6 +35,7 @@ return (
             <form>
                 <fieldset>
                     <div className="formgrid">
+                    <label htmlFor="title">Title: </label>
                         <input
                             type="text"
                             required
@@ -35,15 +43,17 @@ return (
                             id="title"
                             placeholder="Enter a Title"
                         />
-                        <label htmlFor="title">Title: </label>
+
+
+                        <label htmlFor="completeBy">Complete By: </label>
                         <input
-                            type="text"
+                            type="date"
                             required
                             onChange={handleFieldChange}
                             id="completeBy"
                             placeholder="Enter a completion data"
                         />
-                        <label htmlFor="completeBy">Complete By: </label>
+                        
 
                     </div>
                     <div className="alignRight">
