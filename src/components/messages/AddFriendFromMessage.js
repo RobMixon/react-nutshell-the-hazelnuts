@@ -16,7 +16,7 @@ const AddFriendFromMessage = (props) => {
         
         event.preventDefault();
        FriendManager.postNewFriend(friend)
-        .then(() => props.history.push("/friends"))
+        // .then(() => props.history.push("/"))
         window.location.reload(true)
         
         
