@@ -35,6 +35,10 @@
   border-radius: 50px;
 }
 
+.chat__userImage > img {
+  border-radius: 50px;
+}
+
 .chatCard__middle {
   display: flex;
   width: 70%;
