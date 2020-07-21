@@ -2,6 +2,8 @@ import React, { useState } from "react"
 import { Link } from "react-router-dom";
 import LoginManager from "../modules/LoginManager";
 
+let activeSession = {}
+
 const Login = props => {
   const [user, setUser] = useState({email: "", password: ""});
 
@@ -15,16 +17,17 @@ const Login = props => {
 
     const handleLogin = (e) => {
       e.preventDefault();
-      let email = document.querySelector("#email").value
+      let username = document.querySelector("#username").value
       let password = document.querySelector("#password").value
       LoginManager.getAll()
       .then(users => {
         users.find(user => {
-        if(user.email===email&&user.password===password) {
+        if(user.username===username&&user.password===password) {
           // sessionStorage.removeItem('user');
           sessionStorage.setItem('user', JSON.stringify(user))
           console.log(sessionStorage.getItem('user', user))
           props.setUser(user);
+          activeSession = user
           props.history.push("/");
         }
         })
@@ -46,8 +49,8 @@ const Login = props => {
             </span>
 
             <div className="form-input">
-              <input onChange={handleFieldChange} className="inputField" type="text" id="email"/>
-              <span className="focus-inputField" data-placeholder="Email"></span>
+              <input onChange={handleFieldChange} className="inputField" type="text" id="username"/>
+              <span className="focus-inputField" data-placeholder="Username"></span>
             </div>
 
             <div className="form-input">

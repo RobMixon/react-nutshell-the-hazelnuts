@@ -33,3 +33,23 @@ export function currentDateTime(currentDate) {
     console.log(generateCurrentDateTime)
     return generateCurrentDateTime
 }
+
+export function onTimeChange(time) {
+    var timeSplit = time.value.split(':'),
+      hours,
+      minutes,
+      meridian;
+    hours = timeSplit[0];
+    minutes = timeSplit[1];
+    if (hours > 12) {
+      meridian = 'PM';
+      hours -= 12;
+    } else if (hours < 12) {
+      meridian = 'AM';
+      if (hours == 0) {
+        hours = 12;
+      }
+    } else {
+      meridian = 'PM';
+    }
+}

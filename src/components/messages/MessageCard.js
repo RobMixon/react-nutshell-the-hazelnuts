@@ -2,14 +2,15 @@
   import {Link} from "react-router-dom"
 
   const MessageCard = props => {
-      let currentUser = JSON.parse(sessionStorage.getItem("user",))
-    
+     
+    const sessionUser = JSON.parse(sessionStorage.getItem("user"))
+
     return (
         <>
             <div className="chatCard">
                 <div className="chatCard__left">
                     <div className="chat__userImage">
-                        <img src={`./userIcon-black.png`} alt="userIcon" />
+                        <img src={(`./images/${props.message.user.image}`)} alt={props.message.user.name} />
                     </div>
                 </div>
                 <div className="chatCard__middle">
@@ -33,7 +34,7 @@
                 
                 <div className="chat__buttonContainer">
                     <div className="chatEditButton">
-                        {props.message.userId !== currentUser.id ? null : 
+                        {props.message.userId !== sessionUser.id ? null : 
                         <Link to={`/messages/${props.message.id}/edit`}>
                             <button 
                                 className="chat__editBtn" 
@@ -45,7 +46,7 @@
                         </Link>}
                     </div>
                     <div className="chatAddFriendButton">
-                        {props.message.userId === currentUser.id ? null : 
+                        {props.message.userId === sessionUser.id ? null : 
                         <Link to="/messages/addFriend">
                             <button
                             className="chat__addFriendBtn"

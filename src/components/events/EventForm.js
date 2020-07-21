@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import EventManager from '../modules/EventManager';
+import onTimeChange from '../modules/helperFunctions';
 
 
 const EventForm = props => {
@@ -12,8 +13,6 @@ const EventForm = props => {
     setEvent(stateToChange);
   };
 
-  /*  Local method for validation, set loadingStatus, create animal      object, invoke the AnimalManager post method, and redirect to the full animal list
-  */
   const constructNewEvent = evt => {
     evt.preventDefault();
     if (event.title === "" || event.location === ""|| event.date === "") {
@@ -37,16 +36,22 @@ const EventForm = props => {
             <input type="text" required onChange={handleFieldChange}
               id="location" placeholder="location" />
             <label htmlFor="location">Event's location</label>
-            <input type="text" required onChange={handleFieldChange}
+            <input type="date" required onChange={handleFieldChange}
               id="date" placeholder="date" />
             <label htmlFor="date">Event's date</label>
+            <input type="time" required onChange={handleFieldChange}
+              id="startTime" placeholder="Starts" />
+            <label htmlFor="startTime">Start Time</label>
+            <input type="time" required onChange={handleFieldChange}
+              id="endTime" placeholder="Ends" />
+            <label htmlFor="endTime">End Time</label>
           </div>
           <div className="submitBtn">
             <button 
               type="button" 
               className="wideBlueBtn"
               disabled={isLoading} 
-              onClick={constructNewEvent} >Submit</button>
+              onClick={constructNewEvent}>Submit</button>
           </div>
         </fieldset>
       </form>

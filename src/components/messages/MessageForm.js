@@ -4,10 +4,11 @@ import { currentDateTime } from "../modules/helperFunctions";
 
 
 const MessageForm = props => { 
-    let currentUser = JSON.parse(sessionStorage.getItem("user",))
+     //date will be converted in MessageCard
+    const sessionUser = JSON.parse(sessionStorage.getItem("user"))
     
-    //date will be converted in MessageCard
-    const [message, setMessage] = useState({userId: currentUser.id, date: new Date() , content:""});
+    const [message, setMessage] = useState({userId: sessionUser.id, date: new Date() , content:""});
+
 
     //initally button will not be disabled because nothing will be loading
     const [isLoading, setIsLoading] = useState(false)
@@ -41,7 +42,7 @@ const MessageForm = props => {
                 </div>
                 <div className="messageForm__container">
                     <div className="messageForm__profilePicture">
-                        <img className="messageForm__userImage" src="./userIcon-black.png" alt="userIcon" />
+                        <img className="messageForm__userImage" src={(`./images/${sessionUser.image}`)} alt="userIcon" />
                     </div>
                     <div className="messageInput__compose">
                         <form className="messageForm__form">

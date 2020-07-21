@@ -1,24 +1,89 @@
 {
   "users": [
     {
-      "username": "",
-      "email": "",
-      "password": "",
+      "username": "WyattDirte",
+      "image": "wyatt.png",
+      "email": "wyatt@dog.com",
+      "password": "barfdog",
       "id": 1
     },
     {
-      "username": "",
-      "email": "",
-      "password": "",
+      "username": "BoscoStix",
+      "image": "bosco.png",
+      "email": "bosco@dog.com",
+      "password": "barfdog",
       "id": 2
     },
     {
-      "username": "",
-      "email": "",
-      "password": "",
+      "username": "Barfdog",
+      "image": "dog2.jpg",
+      "email": "barfdog@dog.com",
+      "password": "barfdog",
       "id": 3
+    },
+    {
+      "email": "dog@dog.com",
+      "image": "dog1.jpg",
+      "username": "dog",
+      "password": "dog",
+      "id": 4
+    },
+    {
+      "username": "ChollieKelly",
+      "email": "chollie@dog.com",
+      "password": "dog",
+      "image": "chollie.jpeg",
+      "id": 5
+    },
+    {
+      "username": "RicketyCricket",
+      "email": "cricket@dog.com",
+      "password": "dog",
+      "image": "cricket.png",
+      "id": 6
+    },
+    {
+      "username": "BigChungus",
+      "email": "bigChungus@dog.com",
+      "password": "dog",
+      "image": "bigChungus.jpg",
+      "id": 7
+    },
+    {
+      "username": "RoverCleveland",
+      "email": "rover@dog.com",
+      "password": "dog",
+      "image": "dog2.jpg",
+      "id": 8
+    },
+    {
+      "username": "KaynoMan",
+      "email": "kayno@dog.com",
+      "password": "dog",
+      "image": "kayno.png",
+      "id": 9
+    },
+    {
+      "username": "BobMixon",
+      "email": "bob@dog.com",
+      "password": "dog",
+      "image": "headtransparent.png",
+      "id": 10
+    },
+    {
+      "username": "TedLeBaunge",
+      "email": "ted@dog.com",
+      "password": "dog",
+      "image": "lebaunge.jpg",
+      "id": 11
+    },
+    {
+      "username": "TrigDaddy",
+      "email": "chollieg@dog.com",
+      "password": "dog",
+      "image": "trigDrool.png",
+      "id": 12
     }
-    
   ],
   "friends": [
     {

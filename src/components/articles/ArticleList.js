@@ -12,14 +12,19 @@ const ArticleList = (props) => {
   const getArticles = () => {
 
     return ArticleManager.getWithUser().then(articlesFromAPI => {
-      setArticles(articlesFromAPI)
+      const articlesByDate = articlesFromAPI.sort((date2, date1) => new Date(date1.date) - new Date(date2.date))
+      setArticles(articlesByDate)
     });
   };
 
   const deleteArticle = id => {
     ArticleManager.deleteArticle(id)
-      .then(() => ArticleManager.getWithUser().then(setArticles));
-  };
+      .then(() => ArticleManager.getWithUser().then(articlesFromAPI => {
+        const articlesByDate = articlesFromAPI.sort((date2, date1) => new Date(date1.date) - new Date(date2.date))
+        setArticles(articlesByDate)
+      })
+    )};
+
   useEffect(() => {
     getArticles();
   }, []);
