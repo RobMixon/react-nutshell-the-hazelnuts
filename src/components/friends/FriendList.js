@@ -3,19 +3,13 @@ import FriendManager from "../modules/FriendManager";
 import FriendCard from "./FriendCard";
 import NewFriendSearch from "./NewFriendSearch";
 
-
-
 const FriendList = (props) => {
 
-     //declaring initial state as empty array
      const [friends, setFriends] = useState([])
     
-     // get all user's friends
      const getFriends = () => {
          return FriendManager.getUserFriends().then(friendsFromAPI=> {
-             console.log(friendsFromAPI)
              setFriends(friendsFromAPI)
- 
          })
      };
  
@@ -51,7 +45,9 @@ const FriendList = (props) => {
         
           </div>
         </div>
+        {/* take this out if cannot get working */}
        <NewFriendSearch {...props}/>
+       {/* and replace back with following */}
         {/* <div className="searchFriendsField">
           <input 
             type="search" 

@@ -41,12 +41,9 @@ export default {
     getMessageWithId(id, userId) {
         return fetch(`${remoteURL}/messages/${id}?userId=${userId}`)
         .then(result => result.json())
-    },
-
-    getUsers() {
-        return fetch(`${remoteURL}/users`).then(result => result.json())
-        
     }
+
+    
    
         
 }

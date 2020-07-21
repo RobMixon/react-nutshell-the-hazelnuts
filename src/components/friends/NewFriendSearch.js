@@ -2,43 +2,52 @@ import React, { useEffect, useState} from "react";
 import FriendManager from "../modules/FriendManager";
 
 const NewFriendSearch = (props) => {
-    let searchFieldValue;
+    let currentUser = JSON.parse(sessionStorage.getItem("user",))
+  
     //set search term into state
     const [friendSearch, setFriendSearch] = useState({
         search: "",
         friendsArray: []
     })
    
-   
     const handleFieldChange = event => {
         let target = event.target
         let {name, value} = target
         setFriendSearch({...friendSearch, [name]: value});
         console.log(name, value)
-        console.log(searchFieldValue)
     }
 
    const getUserFriends = () => {
-    FriendManager.getUserFriends().then(friends => {
-        const findFriend = friends.find(friend => {
-            console.log(friend)
-            return friend.user.username.includes(friendSearch.search)
-        })
-        setFriendSearch({...friendSearch, friendsArray: findFriend})
-        console.log(findFriend)
+       FriendManager.getUserFriends().then(friends => {
         
-   })
-}
+        //    const findFriend = friends.find((friend) => {  
+        //       if (friend.user.username.includes(friendSearch.search)) {
+        //           return friend
+        //       }
+        //    })
+          setFriendSearch({...friendSearch, friendsArray: friends})
+        
+           
+      })
+   }
 
         useEffect(() => {
            getUserFriends();
         }, [])
+
         
-  
     const postFriend = () => {
+       let match = friendSearch.friendsArray.find(friend => {
+          
+            if(friend.user.username.includes(friendSearch.search.value)) {
+              
+                return friend
+            }
+        })
+        console.log(match)
         const postFriendObject = {
-            userId: friendSearch.friendsArray.userId,
-            activeUserId: 1
+            userId: match.userId,
+            activeUserId: currentUser.id
         }
         
         FriendManager.postNewFriend(postFriendObject)

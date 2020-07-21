@@ -4,8 +4,9 @@ import MessageWithUser from "./MessageWithUser";
 import { currentDateTime } from "../modules/helperFunctions";
 
 const MessageEditForm = (props) => {
+    let currentUser = JSON.parse(sessionStorage.getItem("user",))
+
     
-    //change userId value to session storage (see MessageForm)
     const [message, setMessage] = useState({userId: 1, date: new Date() , content:""});
     const [isLoading, setIsLoading] = useState(false);
 
@@ -23,8 +24,7 @@ const MessageEditForm = (props) => {
 
     const editedMessage = {
         id: props.match.params.messageId,
-       //
-        userId: 1,
+        userId: currentUser.id,
         content: message.content,
         date: currentDateTime(timestamp),
     }

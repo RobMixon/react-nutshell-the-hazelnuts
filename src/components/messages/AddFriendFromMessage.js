@@ -1,18 +1,20 @@
-import React, { useState, useEffect} from "react";
+import React, { useState } from "react";
 import FriendManager from "../modules/FriendManager";
-import {Link} from "react-router-dom"
-import MessageManager from "../modules/MessageManager";
+import {Link} from "react-router-dom";
+import UserCard from "../auth/UserCard";
+import FriendList from "../friends/FriendList";
+
 
 const AddFriendFromMessage = (props) => {
-    
-    //active user needs to be current logged in user from session storage?
+    let currentUser = JSON.parse(sessionStorage.getItem("user",))
+
     const [friend, setFriend] = useState({userId: "", activeUserId: 1})
     const [isLoading, setIsLoading] = useState(false)
     
     const postNewFriend = (event) => {
         event.preventDefault();
         setIsLoading(true)
-        const stateToChange = {userId:"", activeUserId: 1}
+        const stateToChange = {userId: "" , activeUserId: currentUser.id}
         setFriend(stateToChange)
         
        FriendManager.postNewFriend(stateToChange)
@@ -22,6 +24,10 @@ const AddFriendFromMessage = (props) => {
           
     return (
         <>
+        <main className="mainFlex">
+                <section className="mainFlex__userCard">
+                    <UserCard />
+                </section>
         <div className="container">
             <h1>Add Friend?</h1>
         <div className="clearfix">
@@ -42,10 +48,13 @@ const AddFriendFromMessage = (props) => {
       </div>
     </div>
 
-      
+    <section className="mainFlex__friendList">
+                    <FriendList {...props} />
+                </section>
+            </main>
 
 
-        </>
+</>
 
     )
 }

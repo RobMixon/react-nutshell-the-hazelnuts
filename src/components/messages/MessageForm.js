@@ -4,9 +4,10 @@ import { currentDateTime } from "../modules/helperFunctions";
 
 
 const MessageForm = props => { 
-    //need to add userId: sessionStorage.getItem("user", parseInt(....))
+    let currentUser = JSON.parse(sessionStorage.getItem("user",))
+    
     //date will be converted in MessageCard
-    const [message, setMessage] = useState({userId: 1, date: new Date() , content:""});
+    const [message, setMessage] = useState({userId: currentUser.id, date: new Date() , content:""});
 
     //initally button will not be disabled because nothing will be loading
     const [isLoading, setIsLoading] = useState(false)
@@ -32,7 +33,6 @@ const MessageForm = props => {
            }   
         }
    
-
     return (
         <>
             <div className="messageForm">

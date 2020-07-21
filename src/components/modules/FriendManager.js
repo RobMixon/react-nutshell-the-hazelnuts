@@ -24,7 +24,18 @@ export default {
 
     getUserFriends() {
         return fetch(`${remoteURL}/friends/?_expand=user`).then(result => result.json())
+    },
+
+    getUsers() {
+        return fetch(`${remoteURL}/users`).then(result => result.json())
+        
+    },
+
+    getFriendsWithUsers() {
+        return fetch(`${remoteURL}/users/?_embed=friends`).then(result => result.json())
     }
+
+    
 
 
 
