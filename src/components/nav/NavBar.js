@@ -1,12 +1,12 @@
 import React from "react";
 // import { withRouter } from 'react-router-dom';
-import { Link, Redirect } from "react-router-dom";
+import { Link} from "react-router-dom";
 import "./NavBar.css";
 
 const NavBar = props => {
   const handleLogout = () => {
-    props.clearUser();
-    return <Redirect to ="/"></Redirect>
+    props.clearUser()
+    window.location.reload(false);
   }
 
   return (
@@ -54,10 +54,10 @@ const NavBar = props => {
           : null}
         {props.hasUser
             ? <li>
-                <span className="nav-link" onClick={handleLogout}> 
+                <Link className="nav-link" onClick={handleLogout} to="/login"> 
                 <span role="img" aria-label="logout">&#x1F52A; </span> 
                 Logout 
-                </span>
+                </Link>
               </li>
             : <li>
                 <Link className="nav-link" to="/login">Login</Link>

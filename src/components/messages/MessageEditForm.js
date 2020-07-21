@@ -51,36 +51,34 @@ const MessageEditForm = (props) => {
    return (
      <> 
         <main className="messageEditForm">
-            <section className="messageEditFormContainer">
-                <form className="messageEditForm__form">
-                    <fieldset className="messageEditForm__fieldSet">
-                        <label htmlFor="content">Edit Your Message</label>
-                        <input name="content"  
-                            type="textarea"
-                            required
-                            onChange={handleFieldChange}
-                            id="content"
-                            autoFocus
-                            value={message.content}
-                            spellCheck={true}
-                            >
-                        </input> 
-                        <button
-                            type="button"
-                            className="wideBlueBtn"
-                            id="submitBtn"
-                            disabled={isLoading}
-                            onClick={updateExistingMessage}>
-                                Enter
-                        </button>  
-                    </fieldset>
-                </form>
-            </section>
-            <section classname="messsageToBeEdited">
+            <form className="messageEditForm__form">
+                <fieldset className="messageEditForm__fieldset">
+                    <label htmlFor="content">Edit Your Message</label>
+                    <input name="content"  
+                        type="textarea"
+                        required
+                        onChange={handleFieldChange}
+                        id="content"
+                        autoFocus
+                        value={message.content}
+                        spellCheck={true}
+                        >
+                    </input> 
+                    <button
+                        type="button"
+                        className="wideBlueBtn"
+                        id="submitBtn"
+                        disabled={isLoading}
+                        onClick={updateExistingMessage}>
+                            Enter
+                    </button>  
+                </fieldset>
+            </form>
+            
+            <section classname="messageToBeEdited">
                 <MessageWithUser {...props} /> 
             </section> 
         </main>
-
     </>  
  
    )

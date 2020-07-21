@@ -23,6 +23,9 @@ const constructNewUser = evt => {
   } else {
     console.log(user, "it works")
     setIsLoading(true);
+    sessionStorage.setItem("user", JSON.stringify(user))
+    window.alert("Your account has been created, please login")
+    // props.setUser(user)
     LoginManager.post(user)
     .then(()=>props.history.push("/"));
   }
@@ -33,7 +36,7 @@ const constructNewUser = evt => {
       <div className="loginBoxContainer">
         <div className="loginBox">
           <div className="loginLogo">
-            <img src="./nutshell2logo.png" alt="logo" />
+            <img src="./nutshellLogoBlack.png" alt="logo" />
           </div>
 
 

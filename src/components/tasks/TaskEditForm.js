@@ -3,9 +3,6 @@
 
 import React, { useState, useEffect } from "react"
 import TaskManager from "../modules/TaskManager"
-import TaskForm from "./TaskForm"
-import UserCard from "../auth/UserCard";
-import FriendList from "../friends/FriendList";
 
 
 const TaskFormEdit = props => {
@@ -48,44 +45,40 @@ const TaskFormEdit = props => {
 
 return(
     <>
-        <UserCard />
-
-        <form>
-                <fieldset>
-                    <div className="formgrid">
+        <form className="taskForm__form">
+            <fieldset className="taskForm__fieldset">
+                <div className="taskForm__formgrid">
                     <label htmlFor="title">Title: </label>
-                        <input
-                            type="text"
-                            required
-                            onChange={handleFieldChange}
-                            id="title"
-                           value={task.title}
-                        />
+                    <input
+                        type="text"
+                        required
+                        onChange={handleFieldChange}
+                        id="title"
+                        value={task.title}
+                    />
 
 
-                        <label htmlFor="completeBy">Complete By: </label>
-                        <input
-                            type="date"
-                            required
-                            onChange={handleFieldChange}
-                            id="completeBy"
-                            value={task.completeBy}
+                    <label htmlFor="completeBy">Complete By: </label>
+                    <input
+                        type="date"
+                        required
+                        onChange={handleFieldChange}
+                        id="completeBy"
+                        value={task.completeBy}
 
-                        />
-                        
+                    />
+                    
 
-                    </div>
-                    <div className="alignRight">
-                        <button
-                            type="button"
-                            disabled={isLoading}
-                            onClick={updateExistingTask}
-                        >Submit</button>
-                    </div>
-                </fieldset>
-            </form>
-        <FriendList />
-
+                </div>
+                <div className="alignRight">
+                    <button
+                        type="button"
+                        disabled={isLoading}
+                        onClick={updateExistingTask}
+                    >Submit</button>
+                </div>
+            </fieldset>
+        </form>
     </>
 )
 }

@@ -37,7 +37,7 @@ const NewFriendSearch = (props) => {
   
     const postFriend = () => {
         const postFriendObject = {
-            userId: friendSearch.friendsArray.id,
+            userId: friendSearch.friendsArray.userId,
             activeUserId: 1
         }
         

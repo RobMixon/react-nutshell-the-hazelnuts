@@ -4,7 +4,7 @@ import { currentDateTime } from "../modules/helperFunctions";
 
 
 const MessageForm = props => { 
-    //need to add userId: sessionStorage.getItem("credentials", parseInt(....))
+    //need to add userId: sessionStorage.getItem("user", parseInt(....))
     //date will be converted in MessageCard
     const [message, setMessage] = useState({userId: 1, date: new Date() , content:""});
 

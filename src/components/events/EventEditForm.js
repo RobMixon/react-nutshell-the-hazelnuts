@@ -38,9 +38,16 @@ const EventEditForm = props => {
 
   return (
     <>
-      <form>
-        <fieldset>
-          <div className="formgrid">
+      <div className="eventFormTitle">
+        <div className="eventFormContainer">
+          <h3>Edit Your Event</h3>
+          <p>Plans change? Not enough RSVP's? Decided social gatherings aren't for you? No worries! You can make changes to your event here. </p>
+        </div>
+      </div>
+      
+      <form className="eventForm__form">
+        <fieldset className="eventForm__fieldset">
+          <div className="event__formgrid">
             <input type="text" required className="form-control" 
                 onChange={handleFieldChange} id="title" value={event.title}/>
                 <label htmlFor="title">Event Title</label>
