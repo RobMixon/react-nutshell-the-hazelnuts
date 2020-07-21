@@ -29,6 +29,7 @@ const TaskList = (props) => {
 
        
         TaskManager.update(newTask).then(() => {
+            //must call getTask to refresh the components
             getTask()
         })
     }
