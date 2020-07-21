@@ -1,18 +1,24 @@
 // renders individual task card
 //Gavin Swofford 7/20/2020
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from "react-router-dom";
+import TaskManager from '../../components/modules/TaskManager'
 
 
 
 const TaskCard = (props) => {
 
-    return (
+
+
+
+    return (props.userId == props.task.userId && !props.task.status ?
         <div id={`task__${props.task.id}`} className="singleTask">
             <div className="taskBody__left">
                 <div className="task__checkbox">
-                    <input type="checkbox" className="checkbox"/>
+                    <input type="checkbox" className="checkbox" value={props.task} onClick={()=> {
+                        props.checkBox(props.task)
+                    }}/>
                 </div>
                 <div className="task__description">
                     <h3>{props.task.title}</h3>
@@ -36,7 +42,7 @@ const TaskCard = (props) => {
                     </div>
                 </div>   
             </div>
-        </div>
+        </div> : null
     )}
 
 export default TaskCard

@@ -139,11 +139,21 @@ const ApplicationViews = (props) => {
           exact
           path="/tasks/new"
           render={props => {
+            if (hasUser) {
               return <TaskForm {...props} />
+            } else {
+                return <Redirect to="/login" /> 
+            } 
+              
         }}
         />
         <Route path="/tasks/:tasksId(\d+)/edit" render={props => {
-              return <TaskFormEdit {...props} />
+          if (hasUser) {
+            return <TaskFormEdit {...props} />
+          } else {
+              return <Redirect to="/login" /> 
+          } 
+             
             }} />
 
 
