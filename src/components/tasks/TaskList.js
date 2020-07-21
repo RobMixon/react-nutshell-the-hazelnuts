@@ -10,14 +10,14 @@ import FriendList from "../friends/FriendList";
 
 
 const TaskList = (props) => {
-    
-   //below gets the userID from session storage
+
+    //below gets the userID from session storage
     let user = sessionStorage.getItem('user')
     const UserId = user.slice(user.search("id"))
     const myId = UserId.split(":")[1]
-   let userId = (myId.split("}")[0])
+    let userId = (myId.split("}")[0])
 
-   //below handles the logic for when a check box is marked
+    //below handles the logic for when a check box is marked
     const checkBox = (tim) => {
         let newTask = {
             userId: userId,
@@ -26,59 +26,59 @@ const TaskList = (props) => {
             status: true,
             id: tim.id
         }
+
        
-       console.log(tim)
-         TaskManager.update(newTask).then(() => {
-getTask()
-         })
+        TaskManager.update(newTask).then(() => {
+            getTask()
+        })
     }
 
     const [task, setTask] = useState([])
-   
-
-// get tasks function
-const getTask = () => {
-TaskManager.getAll().then((result) => {
-    setTask(result)
-    
-})
-}
 
 
+    // get tasks function
+    const getTask = () => {
+        TaskManager.getAll().then((result) => {
+            setTask(result)
 
-// delete task function
-const deleteTask = (id) => {
-    TaskManager.delete(id).then(() => {
+        })
+    }
+
+
+
+    // delete task function
+    const deleteTask = (id) => {
+        TaskManager.delete(id).then(() => {
+            getTask()
+        })
+    }
+
+    // useEffect
+    useEffect(() => {
         getTask()
-    })
-}
+    }, [])
 
-// useEffect
-useEffect(() => {
-getTask()
-}, []) 
-  
-// return : open form button + ArticleCard function
-return (
-    <>
-        <main className="mainFlex">
-            <section className="mainFlex__userCard">
-                <UserCard />
-            </section>
-            <section className="mainFlex__subpage ">
-                <div className="postTask__button">
-                    <button type="button" className="wideBlueBtn" onClick={() => {props.history.push("/tasks/new")}}>Add Task</button>
-                </div>
-                <div className="taskCard">{task.map(element => 
-                    <TaskCard key={element.id} task={element} userId={userId} checkBox={checkBox}deleteTask={deleteTask} {...props}/>
-                    ) }
-                </div>
-            </section>
-            <section className="mainFlex__friendList">
-                <FriendList {...props} />
-            </section>
-        </main>
-    </>
+    // return : open form button + ArticleCard function
+    return (
+        <>
+            <main className="mainFlex">
+                <section className="mainFlex__userCard">
+                    <UserCard />
+                </section>
+                <section className="mainFlex__subpage ">
+                    <div className="postTask__button">
+                        <button type="button" className="wideBlueBtn" onClick={() => { props.history.push("/tasks/new") }}>Add Task</button>
+                    </div>
+                    <div className="taskCard">{task.map(element =>
+                        <TaskCard key={element.id} task={element} userId={userId} checkBox={checkBox} deleteTask={deleteTask} {...props} />
+                    )}
+                    </div>
+                </section>
+                <section className="mainFlex__friendList">
+                    <FriendList {...props} />
+                </section>
+            </main>
+        </>
     )
 
 }
