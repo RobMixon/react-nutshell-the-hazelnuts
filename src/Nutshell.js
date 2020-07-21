@@ -1,6 +1,4 @@
 import React, { useState } from "react";
-import UserCard from "./components/auth/UserCard";
-import FriendList from "./components/friends/FriendList";
 import ApplicationViews from "./ApplicationViews";
 import "./Nutshell.css";
 import "./Main.css"

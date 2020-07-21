@@ -34,7 +34,6 @@ const ArticleCard = (props) => {
               <p>{props.article.description}</p>
           </div>
         </div>
-        <div class="speech-bubble-ds__arrow"></div>
       </div>
     );
   }
