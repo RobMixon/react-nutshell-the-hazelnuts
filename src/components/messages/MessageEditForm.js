@@ -7,7 +7,7 @@ const MessageEditForm = (props) => {
     let currentUser = JSON.parse(sessionStorage.getItem("user",))
 
     
-    const [message, setMessage] = useState({userId: 1, date: new Date() , content:""});
+    const [message, setMessage] = useState({userId: currentUser.id, date: new Date() , content:""});
     const [isLoading, setIsLoading] = useState(false);
 
     const handleFieldChange = event => {

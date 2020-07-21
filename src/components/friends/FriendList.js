@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import FriendManager from "../modules/FriendManager";
 import FriendCard from "./FriendCard";
-import NewFriendSearch from "./NewFriendSearch";
 
 const FriendList = (props) => {
 
@@ -45,17 +44,14 @@ const FriendList = (props) => {
         
           </div>
         </div>
-        {/* take this out if cannot get working */}
-       <NewFriendSearch {...props}/>
-       {/* and replace back with following */}
-        {/* <div className="searchFriendsField">
+       <div className="searchFriendsField">
           <input 
             type="search" 
             id="searchFriends" 
             name="searchFriends" 
             placeholder="Find A Friend..."/>
 
-      </div>    */}
+      </div>   
       
     </section>
   )};

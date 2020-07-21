@@ -10,7 +10,6 @@ const MessageForm = props => {
     const [message, setMessage] = useState({userId: sessionUser.id, date: new Date() , content:""});
 
 
-    //initally button will not be disabled because nothing will be loading
     const [isLoading, setIsLoading] = useState(false)
     
     const handleFieldChange = event => {
