@@ -29,9 +29,11 @@ const EventDetail = props => {
   return (
     <div className="card">
       <div className="card-content">
-        <h3>title: <span style={{ color: "darkslategrey" }}>{event.title}</span></h3>
-        <p>location: {event.location}</p>
-        <p>date: {event.date}</p>
+        <h3><span style={{ color: "darkslategrey" }}>{event.title}</span></h3>
+        <li>Location:</li> 
+        <li><span>{event.location}</span></li>
+        <li>Date:</li> 
+        <li><span>{event.date}</span></li>
         <button type="button" disabled={isLoading} onClick={handleDelete}>Cancel</button>
       </div>
     </div>

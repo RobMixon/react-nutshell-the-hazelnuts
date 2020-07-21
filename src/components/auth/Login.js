@@ -36,7 +36,7 @@ const Login = props => {
       <div className="loginBoxContainer">
         <div className="loginBox">
           <div className="loginLogo">
-            <img src="./nutshell2logo.png" alt="logo" />
+            <img src="./nutshellLogoBlack.png" alt="logo" />
           </div>
 
 

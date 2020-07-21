@@ -5,14 +5,14 @@
   margin-top: 20px;
   border-radius: 3px;
   box-shadow: 1px 1px 4px #302e2ece;
-  background-color: silver;
+  background-color: #ffffff;
 }
 
 .chatLog {
   margin-left: 0;
   padding: 0;
   height: 100%;
-  background-color: silver;
+  background-color: #ffffff;
 }
 
 .chatCard {
@@ -29,15 +29,15 @@
 }
 
 .chat__userImage {
-  padding: 10px;
-  width: 50px;
-  height: 50px;
+  padding: 10px 20px 10px 10px;
+  width: 35px;
+  height: 35px;
   border-radius: 50px;
 }
 
 .chatCard__middle {
   display: flex;
-  width: 60%;
+  width: 70%;
   flex-direction: column;
   float: left;
   padding: 10px 0;
@@ -47,17 +47,19 @@
 .chatAbove__userName {
   display: flex;
   flex-direction: row;
+  padding-bottom: 0;
+  margin-bottom: 0;
 }
 
-.chatAbove__userName > h4 {
-  margin: 0 5px 5px 10px;
+.postDetails > h4 {
+  margin: 0;
   padding-top: 0px;
   font-size: 14px;
   color: #008DDE;
 }
 
 .chat__text {
-  margin: 0 5px 5px 10px;
+  margin: 10px 5px 5px 0;
   padding-top: 0px;
   font-size: 18px;
 }
@@ -68,15 +70,23 @@
   float: right;
   text-align: right;
   margin-right: 10px;
-  width: 30%;
+  width: 20%;
+}
+
+.chatEditButton {
+  margin-top: 10px
 }
 
 .chatDate__text {
-  margin: 0 0 5px 10px;
-  padding-top: 10px;
+  margin: 0 0 5px 0;
+  padding-top: 0;
   font-size: 12px;
 }
 
 .chatEditButton {
   margin-bottom: 5px;
+}
+
+.chat__addFriendBtn {
+  margin-top: 0;
 }

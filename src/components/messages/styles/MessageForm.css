@@ -6,6 +6,7 @@
   border-radius: 3px;
   position: -webkit-sticky;
   position: sticky; top: 0px;
+  box-shadow: 1px 1px 4px #302e2ece;
 }
 
 .messageForm__title > h3 {
