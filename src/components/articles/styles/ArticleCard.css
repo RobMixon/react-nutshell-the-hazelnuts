@@ -73,24 +73,32 @@
   font-size: 10px;
 }
 
+.userArticleContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: right;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
 #user-style {
   background-color: rgb(240, 240, 240);
   box-shadow: 2px 2px 4px #302e2ece;
   padding: 5px;
-  width: auto;
+  width: 90%;
   height: auto;
   margin: 15px 0;
-  flex: 0 0 30%;
 }
 
 #friend-style {
   background-color: #373737;
   box-shadow: 2px 2px 4px #302e2ece;
   padding: 5px;
-  width: auto;
+  width: 90%;
   height: auto;
   margin: 15px 0;
-  flex: 0 0 30%;
   font-style: italic;
   color: white;
 }

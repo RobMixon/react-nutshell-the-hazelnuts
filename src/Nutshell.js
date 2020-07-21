@@ -28,8 +28,6 @@ const NutShell = () => {
           <picture>
             <img src="./nutshell2logo.png" alt="logo" className="bannerLogo" />
           </picture>
-          <br />
-          <h2>A Website for Chit Chat and Pictures of What You Ate Last Night.</h2>
         </div>
       </header>
       
