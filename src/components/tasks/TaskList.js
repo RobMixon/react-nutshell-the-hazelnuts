@@ -10,8 +10,9 @@ import FriendList from "../friends/FriendList";
 
 
 const TaskList = (props) => {
-    const userId = 1;
     
+   
+ 
     const [task, setTask] = useState([])
    
 
@@ -50,9 +51,9 @@ return (
                 <div className="postTask__button">
                     <button type="button" className="wideBlueBtn" onClick={() => {props.history.push("/tasks/new")}}>Add Task</button>
                 </div>
-                <div className="taskCard">{ task.map(element => 
-                    <TaskCard key={element.id} task={element} deleteTask={deleteTask} userId={userId}{...props}/>
-                    )}
+                <div className="taskCard">{task.map(element => 
+                    <TaskCard key={element.id} task={element} deleteTask={deleteTask} {...props}/>
+                    ) }
                 </div>
             </section>
             <section className="mainFlex__friendList">

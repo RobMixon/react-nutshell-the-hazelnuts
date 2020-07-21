@@ -3,12 +3,30 @@
 
 import React from 'react';
 import { Link } from "react-router-dom";
+import TaskManager from '../../components/modules/TaskManager'
 
 
 
 const TaskCard = (props) => {
 
-    return (
+
+    let user = sessionStorage.getItem('user')
+    const UserId = user.slice(user.search("id"))
+    const myId = UserId.split(":")[1]
+   let userId = (myId.split("}")[0])
+    const checkBox = () => {
+        let newTask = {
+            userId: userId,
+            title: props.task.title,
+            completeBy: props.task.completeBy,
+            status: true
+        }
+       
+        TaskManager.post(newTask);
+    }
+
+
+    return (userId == props.task.userId && !props.task.status ?
         <div id={`task__${props.task.id}`} className="singleTask">
             <div className="taskBody__left">
                 <div className="task__checkbox">
@@ -28,15 +46,15 @@ const TaskCard = (props) => {
                 <div className="taskButtonContainer">
                     <div className="clearfix">
                         
-                        {props.userId == props.task.userId ?  <div className="clearfix"> <Link to={`/tasks/${props.task.id}/edit`}><button type="button" className="editbtn" id="darkBtn">Edit</button></Link></div>:null}
+                        {userId == props.task.userId ?  <div className="clearfix"> <Link to={`/tasks/${props.task.id}/edit`}><button type="button" className="editbtn" id="darkBtn">Edit</button></Link></div>:null}
                     </div>
                     <div className="taskDeleteButton">
-                    {props.userId == props.task.userId ?  <div className="clearfix"> <button id={`deleteTask__${props.task.id}`} className="fullDeleteBtn" type="button" onClick={() => props.deleteTask(props.task.id)}>Delete</button></div>:null}
+                    {userId == props.task.userId ?  <div className="clearfix"> <button id={`deleteTask__${props.task.id}`} className="fullDeleteBtn" type="button" onClick={() => props.deleteTask(props.task.id)}>Delete</button></div>:null}
                         
                     </div>
                 </div>   
             </div>
-        </div>
+        </div> : null
     )}
 
 export default TaskCard
