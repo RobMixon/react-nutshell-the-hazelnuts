@@ -1,24 +1,22 @@
 import React, { useState, useEffect} from "react";
 import FriendManager from "../modules/FriendManager";
 import {Link} from "react-router-dom"
+import MessageManager from "../modules/MessageManager";
 
 const AddFriendFromMessage = (props) => {
-    const [friend, setFriend] = useState({userId: 2})
+    
+    //active user needs to be current logged in user from session storage?
+    const [friend, setFriend] = useState({userId: "", activeUserId: 1})
     const [isLoading, setIsLoading] = useState(false)
     
     const postNewFriend = (event) => {
         event.preventDefault();
         setIsLoading(true)
-        const stateToChange = {userId: 2, activeUserId: parseInt(friend.activeUserId)}
-        stateToChange[event.target] = event.target.value
-        console.log(event.target)
-        console.log(event.target.value)
+        const stateToChange = {userId:"", activeUserId: 1}
         setFriend(stateToChange)
         
-       FriendManager.postNewFriend(friend)
-        .then(() => props.history.push("/messages"))
-        // window.location.reload(true)
-        
+       FriendManager.postNewFriend(stateToChange)
+        .then(() => props.history.push("/messages")) 
         
     }
           
@@ -29,8 +27,6 @@ const AddFriendFromMessage = (props) => {
         <div className="clearfix">
         <button 
         type="button"
-        // set this to value of props 
-        value={friend.userId}
         onClick={postNewFriend}
         disabled={isLoading}
         className="confirmbtn">

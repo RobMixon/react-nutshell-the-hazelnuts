@@ -20,13 +20,10 @@
                         <button
                         className="chat__addFriendBtn"
                         type="button"
-                        id="addFriendBtn"
-                        // onClick={props.history.push("/messages/addFriend")} 
-                        >
+                        id="addFriendBtn">
                             <img src="./addFriend-black.png" className="addFriendIcon" alt="addFriend" />
                         </button>
-                       
-                        </Link> }
+                    </Link> }
                 </div>
                 <div className="chatBelow__message">
                     <p className="chat__text">
@@ -47,9 +44,7 @@
             <Link to={`/messages/${props.message.id}/edit`}>
             <button 
                 className="chat__editBtn" 
-                type="button"
-                // onClick={() => props.history.push(`/messages/${props.message.id}/edit`)}
-                >
+                type="button">
                 Edit
             </button>
             </Link>}
