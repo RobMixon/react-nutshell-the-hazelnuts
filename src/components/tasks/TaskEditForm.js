@@ -25,6 +25,7 @@ const TaskFormEdit = props => {
             userId: task.userId,
             title: task.title,
             completeBy: task.completeBy,
+            status: task.status
         };
 
         TaskManager.update(editTask)
