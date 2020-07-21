@@ -26,7 +26,7 @@ const Login = props => {
           // sessionStorage.removeItem('user');
           sessionStorage.setItem('user', JSON.stringify(user))
           props.setUser(user);
-          activeSession = user
+          activeSession = user;
           props.history.push("/");
         } 
         }
