@@ -6,12 +6,12 @@ import ArticleManager from '../modules/ArticleManager';
 import { currentDateTime } from "../modules/helperFunctions";
 
 
-const sessionUser = JSON.parse(sessionStorage.getItem("user"))
 
 const ArticleForm = props => {
   const [article, setArticle] = useState({ title: "", description: "", url: "", date: "", userId: "" });
   const [isLoading, setIsLoading] = useState(false);
-
+  
+  const sessionUser = JSON.parse(sessionStorage.getItem("user"))
   
 
   const handleFieldChange = evt => {

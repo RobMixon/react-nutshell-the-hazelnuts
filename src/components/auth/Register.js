@@ -4,7 +4,7 @@ import LoginManager from "../modules/LoginManager";
 
 
 const Register = props => {
-const [user, setUser] = useState({username: "", email:"", password:""})
+const [user, setUser] = useState({username: "", email:"", password:"", image: ""})
 const [isLoading, setIsLoading]= useState(false);
 
 const handleFieldChange = evt => {
@@ -22,6 +22,7 @@ const constructNewUser = evt => {
     window.alert("Your password does not match")
   } else {
     console.log(user, "it works")
+    user.image = "./userIcon-black.png"
     setIsLoading(true);
     sessionStorage.setItem("user", JSON.stringify(user))
     window.alert("Your account has been created, please login")

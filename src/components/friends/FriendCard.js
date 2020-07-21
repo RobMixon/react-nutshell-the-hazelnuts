@@ -12,11 +12,13 @@ const FriendCard = (props) => {
   //   }
   // }
   
+  const sessionUser = JSON.parse(sessionStorage.getItem("user"))
+
     return (
         <>
         <div className="singleFriend">
             <div className="friend__userDetails">
-              <img className="friend__userImage" src="./userIcon-black.png" alt="userIcon" />
+              <img className="friend__userImage" src={(`./images/${props.friend.user.image}`)} alt="userIcon" />
               <div className="friend__name">
             
               {props.friend.user === undefined ? null : props.friend.user.username}

@@ -12,7 +12,8 @@ const ArticleList = (props) => {
   const getArticles = () => {
 
     return ArticleManager.getWithUser().then(articlesFromAPI => {
-      setArticles(articlesFromAPI)
+      const articlesByDate = articlesFromAPI.sort((date2, date1) => new Date(date1.date) - new Date(date2.date))
+      setArticles(articlesByDate)
     });
   };
 
