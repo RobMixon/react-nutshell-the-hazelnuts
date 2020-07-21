@@ -36,8 +36,12 @@ const NewFriendSearch = (props) => {
         
   
     const postFriend = () => {
+        const postFriendObject = {
+            userId: friendSearch.friendsArray.id,
+            activeUserId: 1
+        }
         
-        FriendManager.postNewFriend(friendSearch.friendsArray)
+        FriendManager.postNewFriend(postFriendObject)
         .then(() => props.history.push("/messages"))
     } 
     
