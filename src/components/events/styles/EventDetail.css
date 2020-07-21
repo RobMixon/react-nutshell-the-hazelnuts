@@ -8,15 +8,36 @@
     background-color: lightgray;
 }
 
-.card-content > li {
-  font-weight: 400;
+.card-content-details {
+  padding: 0px 10px 10px 10px;
+}
+
+.card-content-details > h3 {
+  font-weight: 700;
+  padding: 10px 0;
+  border-bottom: 2px solid black;
+  text-transform: uppercase;
+}
+
+.card-content-details > li {
+  font-weight: 700;
+  color: #008DDE;
   list-style-type: none;
 }
 
-.card-content > li:nth-child(4) {
+.card-content-details > li:nth-child(4) {
   margin-top: 30px;
 }
 
-.card-content > li > span {
-  font-weight: 700;
+.card-content-details > li > span {
+  font-weight: 400;
+  color: black;
+}
+
+.card-content-details > li:nth-child(6) {
+  margin-top: 30px;
+}
+
+.card-content-details > li:nth-child(7) {
+  margin-bottom: 30px;
 }
