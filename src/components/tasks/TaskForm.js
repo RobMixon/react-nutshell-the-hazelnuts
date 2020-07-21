@@ -2,11 +2,13 @@
 import React, { useState } from 'react';
 import TaskManager from '../../components/modules/TaskManager'
 
-let user = sessionStorage.getItem('user')
+const TaskForm = (props) => {
+    //gets userID
+    let user = sessionStorage.getItem('user')
     const UserId = user.slice(user.search("id"))
     const myId = UserId.split(":")[1]
-   let userId = (myId.split("}")[0])
-const TaskForm = (props) => {
+    let userId = (myId.split("}")[0])
+
 
     const [task, setTask] = useState({userId: userId, title: "", completeBy: "", status: false})
     const [isLoading, setIsLoading] = useState(false);
