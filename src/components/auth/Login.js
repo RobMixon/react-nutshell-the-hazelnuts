@@ -2,6 +2,8 @@ import React, { useState } from "react"
 import { Link } from "react-router-dom";
 import LoginManager from "../modules/LoginManager";
 
+let activeSession = {}
+
 const Login = props => {
   const [user, setUser] = useState({email: "", password: ""});
 
@@ -25,6 +27,7 @@ const Login = props => {
           sessionStorage.setItem('user', JSON.stringify(user))
           console.log(sessionStorage.getItem('user', user))
           props.setUser(user);
+          activeSession = user
           props.history.push("/");
         }
         })

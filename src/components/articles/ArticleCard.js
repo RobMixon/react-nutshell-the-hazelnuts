@@ -1,7 +1,10 @@
 import React from "react";
 
+const sessionUser = JSON.parse(sessionStorage.getItem("user"))
+console.log('sessionUser', sessionUser)
+
 const ArticleCard = (props) => {
-  if (props.article.user.id === 1) {  
+  if (props.article.user.id === sessionUser.id) {  
     return (
       <div className="userArticleContainer">
         <div className="userArticle" id="user-style">
@@ -37,7 +40,7 @@ const ArticleCard = (props) => {
       </div>
     );
   }
-  else if (props.article.user.id !== 1) {
+  else if (props.article.user.id !== sessionUser.id) {
     return (
       <div className="friendArticleContainer">
       <div className="userArticle" id="friend-style">

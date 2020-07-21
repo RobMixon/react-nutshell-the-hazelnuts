@@ -4,11 +4,14 @@
 import React, { useState } from 'react';
 import ArticleManager from '../modules/ArticleManager';
 import { currentDateTime } from "../modules/helperFunctions";
-import './styles/ArticleForm.css'
+
+
+const sessionUser = JSON.parse(sessionStorage.getItem("user"))
 
 const ArticleForm = props => {
   const [article, setArticle] = useState({ title: "", description: "", url: "", date: "", userId: "" });
   const [isLoading, setIsLoading] = useState(false);
+
   
 
   const handleFieldChange = evt => {
@@ -25,7 +28,7 @@ const ArticleForm = props => {
       setIsLoading(true);
       const timestamp = Date.now()
       article.date = currentDateTime(timestamp);
-      article.userId= 1;
+      article.userId= sessionUser.id;
       ArticleManager.postArticle(article)
         .then(() => props.history.push("/articles"));
     }
