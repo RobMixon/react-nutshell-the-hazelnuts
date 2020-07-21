@@ -2,7 +2,7 @@ import React, { useState } from "react"
 import { Link } from "react-router-dom";
 import LoginManager from "../modules/LoginManager";
 
-
+let activeSession = {}
 
 const Login = props => {
   const [user, setUser] = useState({email: "", password: ""});
@@ -23,8 +23,10 @@ const Login = props => {
       .then(users => {
         users.find(user => {
         if(user.username===username&&user.password===password) {
+          // sessionStorage.removeItem('user');
           sessionStorage.setItem('user', JSON.stringify(user))
           props.setUser(user);
+          activeSession = user
           props.history.push("/");
         } 
         }
@@ -38,7 +40,7 @@ const Login = props => {
       <div className="loginBoxContainer">
         <div className="loginBox">
           <div className="loginLogo">
-            <img src="./nutshell2logo.png" alt="logo" />
+            <img src="./nutshellLogoBlack.png" alt="logo" />
           </div>
 
 
@@ -49,7 +51,7 @@ const Login = props => {
 
             <div className="form-input">
               <input onChange={handleFieldChange} className="inputField" type="text" id="username"/>
-              <span className="focus-inputField" data-placeholder="username"></span>
+              <span className="focus-inputField" data-placeholder="Username"></span>
             </div>
 
             <div className="form-input">

@@ -88,26 +88,26 @@ const ApplicationViews = (props) => {
             if (hasUser) {
               return <ArticleList {...props} />
             } else {
-              return <Redirect to="/login" />  
-            }
+              return <Redirect to="/login" /> 
+            } 
         }}
         />
         <Route
           exact
           path="/articles/new"
           render={props => {
-              return <ArticleForm {...props} />
+              return <ArticleForm {...props}  />
         }}
         />
 
         {/* EVENT ROUTES */}
         {/* route to get all events */}
         <Route exact path="/events" render={props => {
-              if (hasUser) {
-              return <EventList {...props} />
-              } else {
-                return <Redirect to="/login" /> 
-              } }}/>
+            if (hasUser) {
+            return <EventList {...props} />
+            } else {
+              return <Redirect to="/login" /> 
+            } }}/>
         {/* route to get specific event and details of it  */}
         <Route exact path="/events/:eventId(\d+)" render={(props) => {
           return (
@@ -131,8 +131,8 @@ const ApplicationViews = (props) => {
             if (hasUser) {
               return <TaskList {...props} />
             } else {
-              return <Redirect to="/login" /> 
-            }
+                return <Redirect to="/login" /> 
+            } 
         }}
         />
         <Route

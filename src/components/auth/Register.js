@@ -4,7 +4,7 @@ import LoginManager from "../modules/LoginManager";
 
 
 const Register = props => {
-const [user, setUser] = useState({username: "", email:"", password:""})
+const [user, setUser] = useState({username: "", email:"", password:"", image: ""})
 const [isLoading, setIsLoading]= useState(false);
 
 const handleFieldChange = evt => {
@@ -22,6 +22,7 @@ const constructNewUser = evt => {
     window.alert("Your password does not match")
   } else {
     console.log(user, "it works")
+    user.image = "./userIcon-black.png"
     setIsLoading(true);
     sessionStorage.setItem("user", JSON.stringify(user))
     props.setUser(user)
@@ -35,7 +36,7 @@ const constructNewUser = evt => {
       <div className="loginBoxContainer">
         <div className="loginBox">
           <div className="loginLogo">
-            <img src="./nutshell2logo.png" alt="logo" />
+            <img src="./nutshellLogoBlack.png" alt="logo" />
           </div>
 
 

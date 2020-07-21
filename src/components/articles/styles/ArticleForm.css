@@ -1,6 +1,5 @@
-
 .articleForm__form {
-  width: 45%;
+  width: 100%;
 }
 
 .articleForm__fieldset {
@@ -11,7 +10,7 @@
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   border-radius: 5px;
   background: #cfcfcf;
-  width: 100%;
+  width: 50%;
 }
 
 .articleForm__fieldset input, 
@@ -22,6 +21,10 @@
   margin: .2em 0;
   outline: none;
   box-shadow: none;
+}
+
+.article__formgrid > #description {
+  height: 100px;
 }
 
 

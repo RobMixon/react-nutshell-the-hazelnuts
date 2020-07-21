@@ -1,6 +1,4 @@
 import React, { useState } from "react";
-// import UserCard from "./components/auth/UserCard";
-// import FriendList from "./components/friends/FriendList";
 import ApplicationViews from "./ApplicationViews";
 import "./Nutshell.css";
 import "./Main.css";
@@ -27,8 +25,6 @@ const NutShell = () => {
           <picture>
             <img src="./nutshell2logo.png" alt="logo" className="bannerLogo" />
           </picture>
-          <br />
-          <h2>A Website for Chit Chat and Pictures of What You Ate Last Night.</h2>
         </div>
       </header>
       

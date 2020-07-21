@@ -1,8 +1,7 @@
 //Gavin Swofford 7/20/2020
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import TaskManager from '../../components/modules/TaskManager'
-import UserCard from "../auth/UserCard";
-import FriendList from "../friends/FriendList";
+
 const userId = 1; 
 const TaskForm = (props) => {
 
@@ -37,44 +36,41 @@ const constructNewTask = evt => {
 
 return (
     <>
-     <UserCard />
-            <form>
-                <fieldset>
-                    <div className="formgrid">
-                    <label htmlFor="title">Title: </label>
-                        <input
-                            type="text"
-                            required
-                            onChange={handleFieldChange}
-                            id="title"
-                            placeholder="Enter a Title"
-                        />
+        <form className="taskForm__form">
+            <fieldset className="taskForm__fieldset">
+                <div className="taskForm__formgrid">
+                <label htmlFor="title">Title: </label>
+                    <input
+                        type="text"
+                        required
+                        onChange={handleFieldChange}
+                        id="title"
+                        placeholder="Enter a Title"
+                    />
 
 
-                        <label htmlFor="completeBy">Complete By: </label>
-                        <input
-                            type="date"
-                            required
-                            onChange={handleFieldChange}
-                            id="completeBy"
-                            placeholder="Enter a completion data"
-                        />
-                        
+                    <label htmlFor="completeBy">Complete By: </label>
+                    <input
+                        type="date"
+                        required
+                        onChange={handleFieldChange}
+                        id="completeBy"
+                        placeholder="Enter a completion data"
+                    />
+                    
 
-                    </div>
-                    <div className="alignRight">
-                        <button
-                            type="button"
-                            disabled={isLoading}
-                            onClick={constructNewTask}
-                        >Submit</button>
-                    </div>
-                </fieldset>
-            </form>
+                </div>
+                <div className="alignRight">
+                    <button
+                        type="button"
+                        disabled={isLoading}
+                        onClick={constructNewTask}
+                    >Submit</button>
+                </div>
+            </fieldset>
+        </form>
 
-        <FriendList />
-
-        </>
+    </>
 )
 }
 

@@ -13,6 +13,12 @@
     margin-bottom: 2em;
     width: 40%;
   }
+
+  .card:last-child {
+    width: 100%;
+    font-size: 1.5em;
+    font-weight: 700;
+  }
   
   .card-content {
     padding: .5em;
@@ -23,11 +29,7 @@
     margin-bottom: .5em;
     font-weight: bold;
     color: black;
-  }
-  
-  .card-content p {
-    font-size: 80%;
-    color: darkslategrey;
+    text-transform: uppercase;
   }
   
   .content-eventtitle {
@@ -50,4 +52,28 @@
   
   .card button:hover {
     background-color: grey;
+  }
+
+  .card-eventtitle {
+    margin-left: 5px;
+    font-size: 18px;
+  }
+
+  .card-content > li {
+    font-weight: 700;
+    list-style-type: none;
+    margin-left: 5px;
+  }
+  
+  .card-content > li:nth-child(4) {
+    margin-top: 10px;
+  }
+
+  .card-content > li:nth-child(5) {
+    margin-bottom: 10px;
+  }
+  
+  .card-content > li > span {
+    font-weight: 400;
+    margin-left: 5px;
   }
