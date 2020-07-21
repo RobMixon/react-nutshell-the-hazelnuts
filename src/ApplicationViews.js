@@ -86,7 +86,11 @@ console.log("app view" ,props)
           exact
           path="/articles"
           render={props => {
+            if (hasUser) {
               return <ArticleList {...props} />
+            } else {
+              return <Redirect to="/login" />  
+            }
         }}
         />
         <Route
@@ -125,7 +129,11 @@ console.log("app view" ,props)
           exact
           path="/tasks"
           render={props => {
+            if (hasUser) {
               return <TaskList {...props} />
+            } else {
+              return <Redirect to="/login" /> 
+            }
         }}
         />
         <Route

@@ -5,6 +5,13 @@ import UserCard from "../auth/UserCard";
 import FriendList from "../friends/FriendList";
 
 
+
+console.log(sessionStorage.getItem("user",))
+let blue = JSON.parse(sessionStorage.getItem("user",))
+console.log(blue)
+console.log(blue.id)
+
+
 const EventList = (props) => {
     //Initial state of empty array
     const [events, setEvents] = useState([]);
