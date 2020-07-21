@@ -22,18 +22,22 @@ export default {
 
     },
 
-   
     getUserFriends() {
         return fetch(`${remoteURL}/friends/?_expand=user`).then(result => result.json())
     },
 
-    // getUserFriendsById(userId) {
-    //     return fetch(`${remoteURL}/users/${userId}?_embed=friends`).then(result => result.json())
-    // },
+    getUsers() {
+        return fetch(`${remoteURL}/users`).then(result => result.json())
+        
+    },
 
-    // getUserFriends() {
-    //     return fetch(`${remoteURL}/users/?_embed=friends`).then(result => result.json())
-    // }
+    getFriendsWithUsers() {
+        return fetch(`${remoteURL}/users/?_embed=friends`).then(result => result.json())
+    }
+
+    
+
+
 
     
 }

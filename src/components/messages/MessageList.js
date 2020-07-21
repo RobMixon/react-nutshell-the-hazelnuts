@@ -17,8 +17,7 @@ const MessageList = (props) => {
     const getMessages = () => {
         return MessageManager.getWithUser().then(messagesFromAPI => {
             const messagesByDate = messagesFromAPI.sort((date1, date2) => new Date(date1.date) - new Date(date2.date))
-            //update state of messages array with all the messages retrieved from API
-            console.log(messagesByDate)
+            //update state of messages array with all the messages retrieved from API after sorting
             setMessages(messagesByDate)
         })
     };

@@ -30,7 +30,6 @@ import AddFriendFromMessage from "./components/messages/AddFriendFromMessage";
 
 
 const ApplicationViews = (props) => {
-
     const hasUser = props.hasUser;
     const setUser = props.setUser;
 

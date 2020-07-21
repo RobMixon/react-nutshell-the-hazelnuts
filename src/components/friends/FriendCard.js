@@ -1,21 +1,12 @@
 import React from "react";
 
 const FriendCard = (props) => {
-
-  // const showFriends = () => {
-  //   if (props.friend.user === undefined) {
-  //    null
-  //   } else if (props.friend.userId === 1) {
-  //     return null
-  //   }else {
-  //     return props.friend.user.username
-  //   }
-  // }
+  let currentUser = JSON.parse(sessionStorage.getItem("user",))
   
-  const sessionUser = JSON.parse(sessionStorage.getItem("user"))
-
     return (
-        <>
+     <>
+       {props.friend.activeUserId !== currentUser.id ? null : 
+
         <div className="singleFriend">
             <div className="friend__userDetails">
               <img className="friend__userImage" src={(`./images/${props.friend.user.image}`)} alt="userIcon" />
@@ -26,10 +17,16 @@ const FriendCard = (props) => {
             </div>
             <div className="friendsList__deleteBtn">
               <button id="deleteFriend" className="deleteBtn" type="button" onClick={() => props.deleteFriend(props.friend.id)}>&times;</button>
-            </div>
-        </div>
+          </div>
+      </div>
+    }
     </>
-    )
+
+      
+  )
+      
+  
+  
 }
 
 export default FriendCard;

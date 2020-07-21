@@ -2,7 +2,7 @@
   import {Link} from "react-router-dom"
 
   const MessageCard = props => {
-    
+     
     const sessionUser = JSON.parse(sessionStorage.getItem("user"))
 
     return (
@@ -22,8 +22,7 @@
                                     <p className="chatDate__text">{props.message.date}</p>
                                 </div>
                             </div>
-                        </div>
-                        {/* added add friend button if not the current user */}                  
+                        </div>                  
                     </div>
                     <div className="chatBelow__message">
                         <p className="chat__text">
@@ -35,14 +34,12 @@
                 
                 <div className="chat__buttonContainer">
                     <div className="chatEditButton">
-                        {/* shows edit button only for current user */}
                         {props.message.userId !== sessionUser.id ? null : 
                         <Link to={`/messages/${props.message.id}/edit`}>
                             <button 
                                 className="chat__editBtn" 
                                 id="darkBtn"
                                 type="button"
-                                // onClick={() => props.history.push(`/messages/${props.message.id}/edit`)}
                                 >
                                 Edit
                             </button>
@@ -55,7 +52,6 @@
                             className="chat__addFriendBtn"
                             type="button"
                             id="addFriendBtn"
-                            // onClick={props.history.push("/messages/addFriend")} 
                             >
                                 <img src="./addFriend-black.png" className="addFriendIcon" alt="addFriend" />
                             </button>
