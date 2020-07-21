@@ -1,34 +1,35 @@
 import React, { useState } from "react"
 import { Link } from "react-router-dom";
+import LoginManager from "../modules/LoginManager";
 
 const Login = props => {
-  const [credentials, setCredentials] = useState({ username:"", email: "", password: "", id:1 });
+  const [user, setUser] = useState({email: "", password: ""});
 
   // Update state whenever an input field is edited
   const handleFieldChange = (evt) => {
-    const stateToChange = { ...credentials};
+    const stateToChange = { ...user};
     stateToChange[evt.target.id] = evt.target.value;
-    setCredentials(stateToChange);
+    setUser(stateToChange);
     
   };
 
-  
-  const handleLogin = (e) => {
-    e.preventDefault();
-
-    /*
-        For now, just store the email and password that
-        the customer enters into session storage.
-        ...Let's just trust the user... That's a good idea, right????
-    */
-    // sessionStorage.setItem(
-    //   "credentials",
-    //   JSON.stringify(credentials)
-    // );
-    props.setUser(credentials);
-    console.log(credentials)
-    props.history.push("/");
-  }
+    const handleLogin = (e) => {
+      e.preventDefault();
+      let email = document.querySelector("#email").value
+      let password = document.querySelector("#password").value
+      LoginManager.getAll()
+      .then(users => {
+        users.find(user => {
+        if(user.email===email&&user.password===password) {
+          // sessionStorage.removeItem('user');
+          sessionStorage.setItem('user', JSON.stringify(user))
+          console.log(sessionStorage.getItem('user', user))
+          props.setUser(user);
+          props.history.push("/");
+        }
+        })
+      })
+    }
 
   return (
     <div className="limiter">
@@ -45,12 +46,12 @@ const Login = props => {
             </span>
 
             <div className="form-input">
-              <input onChange={handleFieldChange} className="inputField" type="text" name="email"/>
+              <input onChange={handleFieldChange} className="inputField" type="text" id="email"/>
               <span className="focus-inputField" data-placeholder="Email"></span>
             </div>
 
             <div className="form-input">
-              <input onChange={handleFieldChange} className="inputField" type="password" name="pass"/>
+              <input onChange={handleFieldChange} className="inputField" type="password" id="password"/>
               <span className="focus-inputField" data-placeholder="Password"></span>
             </div>
 
@@ -76,6 +77,6 @@ const Login = props => {
       </div>
 	  </div>
   );
-};
+  };
 
 export default Login;

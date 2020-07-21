@@ -17,7 +17,7 @@ const UserCard = props => {
       });
   }, [props.userId]);
 
-  const isAuthenticated = () => sessionStorage.getItem("credentials") !== null;
+  const isAuthenticated = () => sessionStorage.getItem("user") !== null;
 
   const clearUser = () => {
     sessionStorage.clear()

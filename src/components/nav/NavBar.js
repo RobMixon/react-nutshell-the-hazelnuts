@@ -1,12 +1,12 @@
 import React from "react";
 // import { withRouter } from 'react-router-dom';
-import { Link, Redirect } from "react-router-dom";
+import { Link} from "react-router-dom";
 import "./NavBar.css";
 
 const NavBar = props => {
   const handleLogout = () => {
-    props.clearUser();
-    return <Redirect to ="/"></Redirect>
+    props.clearUser()
+    window.location.reload(false);
   }
 
   return (

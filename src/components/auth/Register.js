@@ -23,6 +23,9 @@ const constructNewUser = evt => {
   } else {
     console.log(user, "it works")
     setIsLoading(true);
+    sessionStorage.setItem("user", JSON.stringify(user))
+    window.alert("Your account has been created, please login")
+    // props.setUser(user)
     LoginManager.post(user)
     .then(()=>props.history.push("/"));
   }
