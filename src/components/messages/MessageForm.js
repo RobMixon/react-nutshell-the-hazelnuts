@@ -4,14 +4,12 @@ import { currentDateTime } from "../modules/helperFunctions";
 
 
 const MessageForm = props => { 
-    //need to add userId: sessionStorage.getItem("user", parseInt(....))
-    //date will be converted in MessageCard
+     //date will be converted in MessageCard
     const sessionUser = JSON.parse(sessionStorage.getItem("user"))
     
     const [message, setMessage] = useState({userId: sessionUser.id, date: new Date() , content:""});
 
 
-    //initally button will not be disabled because nothing will be loading
     const [isLoading, setIsLoading] = useState(false)
     
     const handleFieldChange = event => {
@@ -35,7 +33,6 @@ const MessageForm = props => {
            }   
         }
    
-
     return (
         <>
             <div className="messageForm">
