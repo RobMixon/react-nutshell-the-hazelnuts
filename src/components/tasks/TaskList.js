@@ -11,8 +11,28 @@ import FriendList from "../friends/FriendList";
 
 const TaskList = (props) => {
     
-   
- 
+   //below gets the userID from session storage
+    let user = sessionStorage.getItem('user')
+    const UserId = user.slice(user.search("id"))
+    const myId = UserId.split(":")[1]
+   let userId = (myId.split("}")[0])
+
+   //below handles the logic for when a check box is marked
+    const checkBox = (tim) => {
+        let newTask = {
+            userId: userId,
+            title: tim.title,
+            completeBy: tim.completeBy,
+            status: true,
+            id: tim.id
+        }
+       
+       console.log(tim)
+         TaskManager.update(newTask).then(() => {
+getTask()
+         })
+    }
+
     const [task, setTask] = useState([])
    
 
@@ -24,16 +44,14 @@ TaskManager.getAll().then((result) => {
 })
 }
 
+
+
+// delete task function
 const deleteTask = (id) => {
     TaskManager.delete(id).then(() => {
         getTask()
     })
 }
-
-// console.log(task)
-
-
-// delete task function
 
 // useEffect
 useEffect(() => {
@@ -52,7 +70,7 @@ return (
                     <button type="button" className="wideBlueBtn" onClick={() => {props.history.push("/tasks/new")}}>Add Task</button>
                 </div>
                 <div className="taskCard">{task.map(element => 
-                    <TaskCard key={element.id} task={element} deleteTask={deleteTask} {...props}/>
+                    <TaskCard key={element.id} task={element} userId={userId} checkBox={checkBox}deleteTask={deleteTask} {...props}/>
                     ) }
                 </div>
             </section>
