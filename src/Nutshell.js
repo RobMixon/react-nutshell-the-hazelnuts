@@ -16,7 +16,7 @@ const NutShell = () => {
   const [hasUser, setHasUser] = useState(isAuthenticated());
 
   const setUser = user => {
-    sessionStorage.setItem("credentials", JSON.stringify(user));
+    sessionStorage.setItem("user", JSON.stringify(user));
     setHasUser(isAuthenticated());
   };
 

@@ -1,10 +1,9 @@
 import React, { useState } from "react"
-import { Link, useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 import LoginManager from "../modules/LoginManager";
 
 const Login = props => {
-  const [user, setUser] = useState([]);
-  const [isLoading, setIsLoading]= useState(false);
+  const [user, setUser] = useState({email: "", password: ""});
 
   // Update state whenever an input field is edited
   const handleFieldChange = (evt) => {
@@ -14,35 +13,23 @@ const Login = props => {
     
   };
 
-    const handleLogin = e => {
+    const handleLogin = (e) => {
       e.preventDefault();
-      
+      let email = document.querySelector("#email").value
+      let password = document.querySelector("#password").value
       LoginManager.getAll()
       .then(users => {
-        console.log(users)
         users.find(user => {
-        if(user.username===username&&user.password===password) {
-          sessionStorage.removeItem('user');
+        if(user.email===email&&user.password===password) {
+          // sessionStorage.removeItem('user');
           sessionStorage.setItem('user', JSON.stringify(user))
           console.log(sessionStorage.getItem('user', user))
-          props.history.push('/');
-        } 
+          props.setUser(user);
+          props.history.push("/");
+        }
         })
       })
     }
-    /*
-        For now, just store the email and password that
-        the customer enters into session storage.
-        ...Let's just trust the user... That's a good idea, right????
-    */
-    // sessionStorage.setItem(
-    //   "credentials",
-    //   JSON.stringify(credentials)
-    // );
-    // console.log(credentials)
-    // props.setUser(credentials);
-    // props.history.push("/");
-  
 
   return (
     <div className="limiter">
