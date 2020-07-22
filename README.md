@@ -1,87 +1,50 @@
-# Nutshell: The Information Dashboard
+
+<!-- Beginning of Readme to present -->
+# MyNutshell: The Revolution in Informational Dashboards
+
+## Description: 
+Note: This dashboard is not for the fainthearted. There's a difference between us. You think the people of this country exist to provide you with position. I think your position exists to provide those people with freedom. And I go to make sure that they have it. This dashboard is to provide you and your associates the ability to disseminate information between one another or cute dog pics. 
 
 ## Setup: Follow these steps exactly
 
 1. Clone this repository
 1. `cd` into the directory it creates
 1. Make a `database.json` file in the `api` directory
-1. Delete the `.ignore` file in the `api` directory
+1. Serve the JSON file database.json utilizing the json-server -p 3000 -w database.json in terminal. Note: you must have npm installed.
+1. Now serve main.js in scripts directory. 
+1. Open google chrome web browser and go to the port that you have served the site to. You should be seeing the webpage at this point in chrome. 
+1. Register and begin your journey in the world of free flowing information. 
+
 
 > **Note:** Your `database.json` file is already in the `.gitignore` file for this project, so it will never be added to the repo or pushed to Github.
 
-## Instructions
+###### How it works:
 
-Nutshell is a new product offering that you have been tasked with building. It's a dashboard for people to use to organize their daily tasks, events, news article, friends, and chat messages.
+Each user has a unique ID by which it can be associated with other tables.
+Each table has a unique ID and a reference to an associated user via the user's id; this is represented by "userId".
 
-You will be utilizing all of the skills and concepts that you've learned up to this point in the course.
+In the case of the "friends" table, each object is to be thought of as a relationship.  Each object, or "relationship", is represented with a unique ID.  The essence of the relationship is constructed by the "userId" and the "followingUserId", wherein the "userId" represents the user and the "followingUserId" represents the friend of the user. 
 
-1. Functions
-1. Databases
-1. Github
-1. Objects
-1. CSS/Flexbox
-1. Array methods
-1. Components
-1. Handling user events
-1. Implementing CRUD operations
-1. Relational data
-1. ERDs
+In the "example.json" file, Jane (userId 3) is friends with both Billy (userId 2) and Bob (userId 1); consequently Billy and Bob are both friends with Jane. So in the first and second relationship object, in the "friends" table, userId 3 has a followingUserId of 2 in the relationship with the ID of 1 and followingUserId of 1 in the relationship with the ID of 2. Thus, Jane is friends with both Billy and Bob.
 
-To start you off, here's an example of what the resources in your API should look like once it's populated with some data from your application.
 
-### Users
+## JSON folder
+Your JSON folder will be automatically populated with the information you and your allies add into the dashboard. Do not worry if this is blank at start up but, if it stays blank after registration, please check your ports for proper flow path of information. 
 
-```json
-{ "id": 1, "username": "Steve", "email": "me@me.com", "password": "xxxxxxxxxxxxxxxxxxxxx" }
-```
+## Database Structure and nomenclature
+For reference of what the database should look like, see "example.json" in the API directory.  Please ensure that variable names are identical to those listed in the example file.
 
-### Messages
+## Support
 
-```json
-{ "id": 1, "userId": 1, "message": "What's up?" }
-```
+Support and assistance can be found from your fellow allies at NSS-day-cohort-41/react-nutshell-the-hazelnuts. 
 
-### News
+## Release
 
-```json
-{
-    "id": 1,
-    "userId": 2,
-    "url": "https://www.quantamagazine.org/newfound-wormhole-allows-information-to-escape-black-holes-20171023/",
-    "title": "Wormholes Allow Information to Escape Black Holes",
-    "synopsis": "Check out this recent discovery about workholes"
-}
-```
+Expected release should be July 22, 2020 but we are coders so be prepared for delays. 
 
-### Friends
+## Authors and Acknowledgements
 
-```json
-{ "id": 1, "userId": 1, "following": 3 }
-```
+The Creators of this dashboard are: Chad Jones, Sisi Freeley, Gavin Swofford, and Rob Mixon. Contributions were made form Rose Wisotzky, Sage Klein and Brenda Long. 
 
-### Tasks
-
-```json
-{ "id": 1, "userId": 3, "task": "Take out garbage", "complete": false }
-```
-
-## Professional Requirements
-
-1. Each module should have a comment at the top with the following info: author(s) and purpose of module
-1. The README for your project should include instructions on how another person can download and run the application
-
-## How to Handle Authentication
-
-Be very clear that what you will be implemeting is not real authentication. It is a simulation of it using very simplistic tools.
-
-You will be using session storage to keep track of which user has logged into Nutshell. When the user fills out the registration form, you will POST their email, username and password to the `users` collection in your API. You will then immediately take the `id` of the object in the response and save it to [session storage](https://javascript.info/localstorage#sessionstorage).
-
-```js
-sessionStorage.setItem("activeUser", user.id)
-```
-
-If you want to add a Logout feature, all you need to do it remove the session storage item.
-
-```js
-sessionStorage.removeItem("activeUser")
-```
+## License
+[MIT](https://choosealicense.com/licenses/mit/)
