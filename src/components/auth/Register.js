@@ -21,7 +21,7 @@ const constructNewUser = evt => {
   } else if (user.password!== password2) {
     window.alert("Your password does not match")
   } else {
-    user.image = "./userIcon-black.png"
+    user.image = "userIcon-black.png"
     setIsLoading(true);
     sessionStorage.setItem("user", JSON.stringify(user))
     props.setUser(user)
