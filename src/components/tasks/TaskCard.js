@@ -1,9 +1,8 @@
 // renders individual task card
 //Gavin Swofford 7/20/2020
 
-import React, { useEffect } from 'react';
+import React from 'react';
 import { Link } from "react-router-dom";
-import TaskManager from '../../components/modules/TaskManager'
 
 
 

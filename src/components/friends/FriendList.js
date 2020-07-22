@@ -20,8 +20,7 @@ const FriendList = (props) => {
         FriendManager.deleteFriend(id)
         .then(() => {
             FriendManager.getUserFriends().then((friendsFromAPI) => {
-              console.log(friendsFromAPI)
-                 setFriends(friendsFromAPI)
+              setFriends(friendsFromAPI)
             });
         });
     };

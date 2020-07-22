@@ -11,7 +11,7 @@
     border-radius: 5px;
     background: #d3d3d3;
     margin-bottom: 2em;
-    width: 40%;
+    width: 45%;
   }
 
   .card:last-child {
@@ -30,10 +30,11 @@
     font-weight: bold;
     color: black;
     text-transform: uppercase;
+    padding-left: 5px;
   }
   
-  .content-eventtitle {
-    color: rgb(17, 255, 255);
+  .card-eventtitle {
+    font-size: 18px;
   }
   
   .card button {
@@ -54,15 +55,10 @@
     background-color: grey;
   }
 
-  .card-eventtitle {
-    margin-left: 5px;
-    font-size: 18px;
-  }
-
   .card-content > li {
     font-weight: 700;
     list-style-type: none;
-    margin-left: 5px;
+    margin-bottom: 10px;
   }
   
   .card-content > li:nth-child(4) {

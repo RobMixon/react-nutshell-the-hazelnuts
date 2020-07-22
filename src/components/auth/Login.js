@@ -25,7 +25,6 @@ const Login = props => {
         if(user.username===username&&user.password===password) {
           // sessionStorage.removeItem('user');
           sessionStorage.setItem('user', JSON.stringify(user))
-          console.log(sessionStorage.getItem('user', user))
           props.setUser(user);
           activeSession = user
           props.history.push("/");

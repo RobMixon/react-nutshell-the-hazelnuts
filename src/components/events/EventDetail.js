@@ -32,11 +32,11 @@ const EventDetail = props => {
     <div className="card">
       <div className="card-content-details">
         <h3><span style={{ color: "darkslategrey" }}>{event.title}</span></h3>
-        <li>&#x1F3E0; Location:</li> 
+        <li><span role="img" aria-label="location">&#x1F3E0;</span> Location:</li> 
         <li><span>{event.location}</span></li>
-        <li>&#x1F4C5; Date:</li> 
+        <li><span role="img" aria-label="date">&#x1F4C5;</span> Date:</li> 
         <li><span>{event.date}</span></li>
-        <li>&#x23F2; Time:</li> 
+        <li><span role="img" aria-label="time">&#x23F2;</span> Time:</li> 
         <li><span>{event.startTime} to {event.endTime}</span></li>
         <button type="button" disabled={isLoading} onClick={handleDelete}>Cancel</button>
       </div>
