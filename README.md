@@ -10,8 +10,8 @@ Note: This dashboard is not for the fainthearted. There's a difference between u
 1. Clone this repository
 1. `cd` into the directory it creates
 1. Make a `database.json` file in the `api` directory
-1. Serve the JSON file database.json utilizing the json-server -p 3000 -w database.json in terminal. Note: you must have npm installed.
-1. Now serve main.js in scripts directory. 
+1. Serve the JSON file database.json utilizing the json-server -p 5002 -w database.json in terminal. Note: you must have npm installed.
+1. Now serve main.js in scripts directory using command `npm start`
 1. Open google chrome web browser and go to the port that you have served the site to. You should be seeing the webpage at this point in chrome. 
 1. Register and begin your journey in the world of free flowing information. 
 
@@ -25,7 +25,7 @@ Each table has a unique ID and a reference to an associated user via the user's 
 
 In the case of the "friends" table, each object is to be thought of as a relationship.  Each object, or "relationship", is represented with a unique ID.  The essence of the relationship is constructed by the "userId" and the "followingUserId", wherein the "userId" represents the user and the "followingUserId" represents the friend of the user. 
 
-In the "example.json" file, Jane (userId 3) is friends with both Billy (userId 2) and Bob (userId 1); consequently Billy and Bob are both friends with Jane. So in the first and second relationship object, in the "friends" table, userId 3 has a followingUserId of 2 in the relationship with the ID of 1 and followingUserId of 1 in the relationship with the ID of 2. Thus, Jane is friends with both Billy and Bob.
+In the "example.json" file, Jane (userId 3) is friends with both Billy (userId 2) and Bob (userId 1); consequently Billy and Bob are both friends with Jane. So in the first and second relationship object, in the "friends" table, activeUserId 3 has a userId of 2 in the relationship with the ID of 1 and userId of 1 in the relationship with the ID of 2. Thus, Jane is friends with both Billy and Bob.
 
 
 ## JSON folder
