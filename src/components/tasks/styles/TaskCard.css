@@ -6,6 +6,11 @@
     box-shadow: 2px 2px 4px #302e2ece;
 }
 
+.postTask__button {
+    position: -webkit-sticky;
+    position: sticky; top: 10px;
+}
+
 .taskLabel {
     margin-bottom: 0;
     padding-bottom: 0;
