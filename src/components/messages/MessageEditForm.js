@@ -75,7 +75,7 @@ const MessageEditForm = (props) => {
                 </fieldset>
             </form>
             
-            <section classname="messageToBeEdited">
+            <section className="messageToBeEdited">
                 <MessageWithUser {...props} /> 
             </section> 
         </main>
