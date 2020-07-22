@@ -10,11 +10,10 @@ const MessageWithUser = props => {
     useEffect(() => {
         MessageManager.getMessageWithId(props.match.params.messageId, message.userId)
             .then(APIResult => {
-                console.log(APIResult)
                 setMessage(APIResult)
                
             })
-    }, []);
+    }, [props.match.params.messageId, message.userId]);
 
 
     return (

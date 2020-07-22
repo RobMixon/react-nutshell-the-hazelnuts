@@ -11,8 +11,9 @@ const EventList = (props) => {
 
     const getEvent = () => {
         //data comes back from API, we use setanimals to update state
-        return EventManager.getAll().then(eventsfromAPI => {
-            setEvents(eventsfromAPI)
+        return EventManager.getAll().then(eventsFromAPI => {
+            const eventsByDate = eventsFromAPI.sort((date1, date2) => new Date(date1.date) - new Date(date2.date))
+            setEvents(eventsByDate)
         })
     };
 

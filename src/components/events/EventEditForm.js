@@ -3,7 +3,7 @@ import EventManager from "../modules/EventManager"
 
 
 const EventEditForm = props => {
-  const [event, setEvent] = useState({ title: "", location: "", date: "" });
+  const [event, setEvent] = useState({ title: "", location: "", date: "", startTime: "", endTime: "" });
   const [isLoading, setIsLoading] = useState(false);
 
   const handleFieldChange = evt => {
@@ -21,7 +21,9 @@ const EventEditForm = props => {
       id: props.match.params.eventId,
       title: event.title,
       location: event.location,
-      date: event.date
+      date: event.date,
+      startTime: event.startTime,
+      endTime: event.endTime
     };
 
     EventManager.update(editedEvent)
@@ -54,9 +56,15 @@ const EventEditForm = props => {
             <input type="text" required className="form-control"
                 onChange={handleFieldChange} id="location" value={event.location}/>
                 <label htmlFor="location">Location</label>
-            <input type="text" required className="form-control"
+            <input type="date" required className="form-control"
                 onChange={handleFieldChange} id="date" value={event.date}/>
-                <label htmlFor="location">Date</label>
+                <label htmlFor="date">Date</label>
+            <input type="time" required className="form-control"
+                onChange={handleFieldChange} id="startTime" value={event.startTime}/>
+                <label htmlFor="startTime">Starts</label>
+            <input type="time" required className="form-control"
+                onChange={handleFieldChange} id="endTime" value={event.endTime}/>
+                <label htmlFor="endTime">Ends</label>
           </div>
           <div className="alignRight">
             <button

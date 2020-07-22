@@ -3,7 +3,6 @@ import React from "react";
 
 const ArticleCard = (props) => {
   const sessionUser = JSON.parse(sessionStorage.getItem("user"))
-  console.log('sessionUser', sessionUser)
   if (props.article.user.id === sessionUser.id) {  
     return (
       <div className="userArticleContainer">

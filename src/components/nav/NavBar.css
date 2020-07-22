@@ -3,9 +3,28 @@ h2 {
   margin-top: 0;
 }
 
-header {
-  background-color: #40005e;
+/* header {
+  background: #3b0a52;
+  background: -webkit-linear-gradient(to left, #21d4fd, #3b0a52);
+  background: -o-linear-gradient(to left, #21d4fd, #3b0a52);
+  background: -moz-linear-gradient(to left, #21d4fd, #3b0a52);
+  background: linear-gradient(to left, #21d4fd, #3b0a52);
   border: #40005e solid 3px;
+} */
+
+header {
+  background: #3b0a52;
+  background: -webkit-linear-gradient(to left,  #3b0a52, #3b0a52, #3b0a52, #1eb7da, #3b0a52);
+  background: -o-linear-gradient(to left, #3b0a52, #3b0a52, #3b0a52, #1eb7da, #3b0a52);
+  background: -moz-linear-gradient(to left, #3b0a52, #3b0a52, #1eb7da, #3b0a52);
+  background: linear-gradient(to left, #3b0a52, #3b0a52, #1eb7da, #3b0a52);
+  top: 0;
+  left: -100%;
+
+  -webkit-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  transition: all 0.4s;
 }
 
 .site-title {

@@ -8,10 +8,8 @@ const EventCard = props => {
     <div className="card">
         <div className="card-content">
             <h3><span className="card-eventtitle">{props.event.title}</span></h3>
-            <li>&#x1F3E0; Location:</li> 
-            <li><span>{props.event.location}</span></li>
-            <li>&#x1F4C5; Date:</li> 
-            <li><span>{props.event.date}</span></li>
+            <li><span role="img" aria-label="date">&#x1F4C5;</span> Date: 
+            <span>{props.event.date}</span></li>
             <button type="button"
                 onClick={() => props.history.push(`/events/${props.event.id}/edit`)}> Edit 
             </button>

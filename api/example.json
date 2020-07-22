@@ -115,14 +115,6 @@
       "url": "",
       "date": "",
       "id": 1
-    },
-    {
-      "userId": 1,
-      "title": "",
-      "description": "",
-      "url": "",
-      "date": "",
-      "id": 2
     }
   ],
   "tasks": [
@@ -132,20 +124,6 @@
       "completeBy": "",
       "status": false,
       "id": 1
-    },
-    {
-      "userId": 1,
-      "title": "",
-      "completeBy": "",
-      "status": false,
-      "id": 2
-    },
-    {
-      "userId": 2,
-      "title": "",
-      "completeBy": "",
-      "status": false,
-      "id": 3
     }
   ],
   "events": [
@@ -154,14 +132,9 @@
       "title": "",
       "location": "",
       "date": "",
+      "startTime": "",
+      "endTime": "",
       "id": 1
-    },
-    {
-      "userId": 3,
-      "title": "",
-      "location": "",
-      "date": "",
-      "id": 2
     }
   ],
   "messages": [
@@ -170,24 +143,6 @@
       "content": "",
       "date": "",
       "id": 1
-    },
-    {
-      "userId": 1,
-      "content": "",
-      "date": "",
-      "id": 2
-    },
-    {
-      "userId": 3,
-      "content": "",
-      "date": "",
-      "id": 3
-    },
-    {
-      "userId": 2,
-      "content": "",
-      "date": "",
-      "id": 4
     }
   ]
 }

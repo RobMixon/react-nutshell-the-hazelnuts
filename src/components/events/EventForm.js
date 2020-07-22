@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import EventManager from '../modules/EventManager';
-import onTimeChange from '../modules/helperFunctions';
 
 
 const EventForm = props => {

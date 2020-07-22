@@ -39,7 +39,7 @@ const TaskFormEdit = props => {
                 setIsLoading(false);
                 
             });
-    }, []);
+    }, [props.match.params.tasksId]);
 
 
 
